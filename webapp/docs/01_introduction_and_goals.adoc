@@ -10,15 +10,15 @@ avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contact
 
 [role="arc42help"]
 ****
-	*Implementación de una aplicación web que funcionará en un servidor en el que se almacenará información sobre localizaciones.
-	*La aplicación permitirá que los usuarios puedan gestionar y visualizar sus localizaciones y también incluirá opciones de administración para gestionar usuarios y monitorizar el estado del servidor.
-	*Implementación de una aplicación que funcionará en el dispositivo móvil de los usuarios enviando localizaciones al servidor y recibiendo notificaciones de usuarios conocidos cercanos.
-	*La aplicación que actúa como servidor almacenará la información mínima necesaria sobre un usuario, el resto de información del usuario, como sus amigos, será consultada en el pod de dicho usuario
-	*El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como heroku.
-	*La aplicación móvil desplegada también incluirá un sistema de monitorización.
-	*Se desarrollarán pruebas unitarias, de aceptación y de carga que se ejecutarán de forma automatizada a través de un servidor de integración continua.
+* Implementación de una aplicación web que funcionará en un servidor en el que se almacenará información sobre localizaciones.
+* La aplicación permitirá que los usuarios puedan gestionar y visualizar sus localizaciones y también incluirá opciones de administración para gestionar usuarios y monitorizar el estado del servidor.
+* Implementación de una aplicación que funcionará en el dispositivo móvil de los usuarios enviando localizaciones al servidor y recibiendo notificaciones de usuarios conocidos cercanos.
+* La aplicación que actúa como servidor almacenará la información mínima necesaria sobre un usuario, el resto de información del usuario, como sus amigos, será consultada en el pod de dicho usuario
+* El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como heroku.
+* La aplicación móvil desplegada también incluirá un sistema de monitorización.
+* Se desarrollarán pruebas unitarias, de aceptación y de carga que se ejecutarán de forma automatizada a través de un servidor de integración continua.
 
-.Motivation
+.Motivación
 En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento facial. Queremos que el cliente final pueda distinguir a sus amigos aunque lleven mascarilla y puedan interaccionar entre ellos respetando las medidas establecidas.
 ****
 
