@@ -3,11 +3,15 @@
 
 [role="arc42help"]
 ****
-Describes the relevant requirements and the driving forces that software architects and development team must consider. These include
+En este trabajo se intentara desarrollar un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías. De esta forma permitirá
+avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contacto.
 
+<<<<<<< Updated upstream
 * underlying business goals, essential features and functional requirements for the system
 * quality goals for the architecture
 * relevant stakeholders and their expectations.
+=======
+>>>>>>> Stashed changes
 ****
 
 === Requirements Overview
@@ -15,17 +19,15 @@ Describes the relevant requirements and the driving forces that software archite
 [role="arc42help"]
 ****
 .Contents
-Short description of the functional requirements, driving forces, extract (or abstract)
-of requirements. Link to (hopefully existing) requirements documents
-(with version number and information where to find it).
-
+	*Implementación de una aplicación web que funcionará en un servidor en el que se almacenará información sobre localizaciones.
+	*La aplicación permitirá que los usuarios puedan gestionar y visualizar sus localizaciones y también incluirá opciones de administración para gestionar usuarios y monitorizar el estado del servidor.
+	*Implementación de una aplicación que funcionará en el dispositivo móvil de los usuarios enviando localizaciones al servidor y recibiendo notificaciones de usuarios conocidos cercanos.
+	*La aplicación que actúa como servidor almacenará la información mínima necesaria sobre un usuario, el resto de información del usuario, como sus amigos, será consultada en el pod de dicho usuario
+	*El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como heroku.
+	*La aplicación móvil desplegada también incluirá un sistema de monitorización.
+	*Se desarrollarán pruebas unitarias, de aceptación y de carga que se ejecutarán de forma automatizada a través de un servidor de integración continua.
 .Motivation
-From the point of view of the end users a system is created or modified to
-improve support of a business activity and/or improve the quality.
-
-.Form
-Short textual description, probably in tabular use-case format.
-If requirements documents exist this overview should refer to these documents.
+En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento facial. Queremos que el cliente final pueda distinguir a sus amigos aunque lleven mascarilla y puedan interaccionar entre ellos respetando las medidas establecidas.
 
 Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
 ****
@@ -34,42 +36,26 @@ Keep these excerpts as short as possible. Balance readability of this document w
 
 [role="arc42help"]
 ****
-.Contents
-The top three (max five) quality goals for the architecture whose fulfillment is of highest importance to the major stakeholders. We really mean quality goals for the architecture. Don't confuse them with project goals. They are not necessarily identical.
+[options="header",cols="1,2,2"]
+|===
+|Prioridad|Objetivo|Motivación
+| _1_ | _Privacidad_| _Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD_
+| _2_ | _Usabilidad_| _El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática_
+| _3_ | _Eficiencia_| _Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla_
+| _4_ | _Portabilidad_| _El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android_
 
-.Motivation
-You should know the quality goals of your most important stakeholders, since they will influence fundamental architectural decisions. Make sure to be very concrete about these qualities, avoid buzzwords.
-If you as an architect do not know how the quality of your work will be judged …
-
-.Form
-A table with quality goals and concrete scenarios, ordered by priorities
+|===
 ****
 
 === Stakeholders
 
 [role="arc42help"]
 ****
-.Contents
-Explicit overview of stakeholders of the system, i.e. all person, roles or organizations that
-
-* should know the architecture
-* have to be convinced of the architecture
-* have to work with the architecture or with code
-* need the documentation of the architecture for their work
-* have to come up with decisions about the system or its development
-
-.Motivation
-You should know all parties involved in development of the system or affected by the system.
-Otherwise, you may get nasty surprises later in the development process.
-These stakeholders determine the extent and the level of detail of your work and its results.
-
-.Form
-Table with role names, person names, and their expectations with respect to the architecture and its documentation.
-****
-
 [options="header",cols="1,2,2"]
 |===
-|Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+|Role/Nombre|Descripción|Expectativas
+| _Profesores_ | _<Contact-1>_ | _<Expectation-1>_
+| _Usuarios_ | _<Contact-2>_ | _<Expectation-2>_
+| _Desarrolladores_ | _<Contact-2>_ | _<Expectation-2>_
 |===
+****
