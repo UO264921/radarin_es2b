@@ -2,7 +2,8 @@
 == Introduction and Goals
 
 [role="arc42help"]
-
+****
+****
 En este trabajo se intentara desarrollar un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías. De esta forma permitirá
 avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contacto.
 
@@ -17,7 +18,6 @@ avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contact
 * El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como heroku.
 * La aplicación móvil desplegada también incluirá un sistema de monitorización.
 * Se desarrollarán pruebas unitarias, de aceptación y de carga que se ejecutarán de forma automatizada a través de un servidor de integración continua.
-
 .Motivación
 En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento facial. Queremos que el cliente final pueda distinguir a sus amigos aunque lleven mascarilla y puedan interaccionar entre ellos respetando las medidas establecidas.
 ****
