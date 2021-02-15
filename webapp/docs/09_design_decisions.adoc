@@ -24,3 +24,10 @@ Various options:
 * more detailed in form of separate sections per decision
 * ADR (architecture decision record) for every important decision
 ****
+|===
+|Decisión|Ventajas|Desventajas
+| _Documentación en español_ | _Mayor velocidad a la hora de crear la documentación y mayor calidad y riqueza del lenguaje_| _No es el idioma mas usado en proyectos_
+| _Uso de SOLID_ | _._| _._
+| _Uso de Open Street Maps_ | _Parte del grupo ya esta familiarizado con él y nos parece más fácil de usar_| _Al no ser el más utilizado quizá haya problemas a la hora de buscar información o en caso de tener algun error poco común_
+
+|===
