@@ -37,13 +37,13 @@ There are many notations for describing scenarios, e.g.
 * _Introduce los datos y solicita el inicio de sesión, si todo es correcto entra,
 si no deberá introducir de nuevo los datos_
 
-image:inicioDeSesion6.png
+image:inicioDeSesion6.png["UML"]
 === Añadir un amigo
 
 * _El usuario introduce el nombre de usuario del amigo_
 * _Lo añade a su Pod y devuelve todos sus amigos_
 
-image:añadirAmigo6.png
+image:añadirAmigo6.png["UML"]
 
 
 === Eliminar un amigo
@@ -51,14 +51,14 @@ image:añadirAmigo6.png
 * _El usuario introduce el nombre del amigo que quiere eliminar_
 * _Eliminar el amigo de su Pod y se muestran sus amigos actuales_
 
-image:eliminarAmigo6.png
+image:eliminarAmigo6.png["UML"]
 
 === Ver amigos
 
 * _El usuario solicita ver todos sus amigos_
 * _Se accede al Pod y devuelte todos los amigos que tiene_
 
-image:verAmigo6.png
+image:verAmigo6.png["UML"]
 
 === Notificaciones
 
@@ -66,15 +66,15 @@ image:verAmigo6.png
 * _Se comprueba que haya amigos cerca_
 * _En el caso de haberlos el usuario recibe una notificación_
 
-image:notificaciones6.png
+image:notificaciones6.png["UML"]
 
 === Leyenda
 
 |===
 |Símbolo|Significado
-| image:leyendaUsuario.png| _Usuario que interactúa con la aplicación_
-| image:leyendabase.png | _Pod de Solid (La base de datos personal)_
-| image:leyendaparticipante.png | _Modulo del sistema_
+| image:leyendaUsuario.png["UML"]| _Usuario que interactúa con la aplicación_
+| image:leyendabase.png["UML"] | _Pod de Solid (La base de datos personal)_
+| image:leyendaparticipante.png["UML"] | _Modulo del sistema_
 
 
 |===
