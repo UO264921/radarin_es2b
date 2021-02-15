@@ -38,6 +38,8 @@ There are many notations for describing scenarios, e.g.
 si no deberá introducir de nuevo los datos_
 
 image:inicioDeSesion6.png["UML"]
+
+
 === Añadir un amigo
 
 * _El usuario introduce el nombre de usuario del amigo_
@@ -72,9 +74,9 @@ image:notificaciones6.png["UML"]
 
 |===
 |Símbolo|Significado
-| image:leyendaUsuario.png["UML"]| _Usuario que interactúa con la aplicación_
-| image:leyendabase.png["UML"] | _Pod de Solid (La base de datos personal)_
-| image:leyendaparticipante.png["UML"] | _Modulo del sistema_
+| image:leyendaUsuario.PNG["UML"]| _Usuario que interactúa con la aplicación_
+| image:leyendabase.PNG["UML"] | _Pod de Solid (La base de datos personal)_
+| image:leyendaparticipante.PNG["UML"] | _Modulo del sistema_
 
 
 |===
