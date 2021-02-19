@@ -18,7 +18,7 @@ image:05_nivel1.png["Diagrama nivel 1"]
 * El usuario interacciona con la aplicacións para buscar amigos.
 * La aplicación accede a los archivos del POD para obtener y guardar datos.
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
  Componente | Responsabilidad |
  Usuario |
@@ -35,7 +35,7 @@ image:05_nivel2.png["Diagrama nivel 2"]
 
 En este nivel se empieza a detallar sobre todos los contenedores con los que interactuará el usuario una vez esté desarrollada la aplicación. Son todas las opciones que tendrá la aplicación.
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
  Contenedor | Responsabilidad |
  Registro |
@@ -58,7 +58,7 @@ image:05_nivel3.png["Diagrama nivel 3"]
 
 Este último nivel es el más detallado y el más bajo. Nos da una visión de la lógica necesaria para comunicarse con el POD del usuario para acceder a sus datos.
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
  Nombre | Responsabilidad |
  _RadarinManager_ |
