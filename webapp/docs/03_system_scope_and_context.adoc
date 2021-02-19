@@ -1,7 +1,7 @@
 [[section-system-scope-and-context]]
 == Ámbito del sistema y contexto
 
-.Interfaces con las que contará Radarin
+.Interfaces con las que contará Radarin:
 * _Login_. Interfaz de inicio de sesión.
 * Main page. Enseñará un mapa con los amigos cercanos.
 * Amigos. Interfaz donde podrás ver, añadir y eliminar a tus amigos.
