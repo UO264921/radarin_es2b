@@ -27,10 +27,6 @@ image:bussines.png["bussines context diagram"]
 | _Monotorización del servidor_ | _El administrador podrá ver el estado del servidor_
 |===
 
-**<Diagram or Table>**
-
-**<optionally: Explanation of external domain interfaces>**
-
 === Technical Context
 
 Radarin es una aplicación web descentralizada. Para lograrlo todos los datos se almacenan en los Pod de los usuarios.
