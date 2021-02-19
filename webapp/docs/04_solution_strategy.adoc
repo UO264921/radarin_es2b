@@ -1,8 +1,6 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
-
-[role="arc42help"]
 .Contenido
 Para llevar a cabo el desarrollo de esta aplicación, utilizaremos Javascript junto con su biblioteca React. Se ha llegado a esta decisión dadas 
 las recomendaciones del profesorado de la asignatura. Además de esto, nos parece un lenguaje que proporciona grandes facilidades para el proceso 

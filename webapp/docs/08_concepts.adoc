@@ -23,9 +23,11 @@ _Se considera una aplicación segura gracias al uso del protocolo HTTPS. Además
 
 === Desarrollo
 ==== Construcción
-_Respecto a este apartado usaremos el administrador de paquetes Node.js para lograr los objetivos en cuanto a funcionalidad que deseamos._
+_Respecto a este apartado usaremos la libreria React.js para lograr los objetivos en cuanto a funcionalidad que deseamos._
+
 ==== APIs
 _Usaremos una API de mapas (OpenStreetMap) para mostrar un mapa al usuario._
+
 ==== Migración
 _Habrá que desarrollar una aplicación Web y una para móviles, por tanto intentaremos no cambiar mucho en cuanto a desarrollo según se use una plataforma u otra._
 
