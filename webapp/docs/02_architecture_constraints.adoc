@@ -17,3 +17,23 @@ If needed you can subdivide them into
 technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
+.Restricciones técnicas
+|===
+|Restricción|Descripción
+| _Solid_| _El uso de solid nos implica que sea una aplicación descentralizada teniendo que tener hacer uso de los Pods_
+| _GitHub_| _Nuestro proyecto originalmente está alojado en Github
+| _Tests_ | _Uso obligatorio de pruebas unitarias para probar el buen funcionamiento_
+|===
+.Restricciones de organizacíon
+|===
+|Restricción|Descripción
+| _Tiempo_| _El desarrollo de todo el proyecto esta limitado, solo se dispone de 3 meses_
+| _Miembros_| _En este proyecto somos 5 estudiantes de la Universidad de Oviedo, con lo cual no podremos centrarnos exclusivamente en este proyecto_
+| _Entregas_| _Hay entregas previas a la finalizacion del proyecto, con lo cual es necesario trabajar de forma constante sobre el proyecto_
+|===
+.Restricciones de documentation
+|===
+|Restricción|Descripción
+| _Arc42_| _Es requisito recomendado el uso de arc42 para la documentacion_
+| _Asciidoctor_ | _ Uso de asciidoctor para la creacion de nuestra documentacion_
+|===

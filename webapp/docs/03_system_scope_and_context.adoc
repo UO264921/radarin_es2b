@@ -1,7 +1,6 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
-
 [role="arc42help"]
 ****
 .Contents
@@ -20,6 +19,10 @@ Various options:
 * Lists of communication partners and their interfaces.
 ****
 
+Radarin contará con varias interfaces:
+* Login: interfaz de inicio de sesión
+* Main page: enseñará un mapa con los amigos cercanos
+* Amigos: interfaz donde podrás ver, añadir y eliminar a tus amigos
 
 === Business Context
 
@@ -38,6 +41,23 @@ All kinds of diagrams that show the system as a black box and specify the domain
 Alternatively (or additionally) you can use a table.
 The title of the table is the name of your system, the three columns contain the name of the communication partner, the inputs, and the outputs.
 ****
+
+Radarin es una aplicación web donde el usuario, a través de la aplicación móvil, podrá ver a sus amigos mas cercanos en un mapa.
+El usuario podrá gestionar a sus amigos y recibir notificaiones al móvil en caso de que haya algun amigo cerca.
+
+|===
+|Acción|Descripción
+| _Login_| _El usuario, a través de la aplicación móvil, iniciará sesión con su webId_
+| _Eliminar amigo_| _El usuario, a través de la aplicación móvil, podrá eliminar amigos de su lista de amigos_
+| _Añadir amigo_ | _El usuario, a través de la aplicación móvil, podrá añadir usuarios a su lista de amigos_
+| _Ver amigo_ | _El usuario, a través de la aplicación móvil, podrá ver un listado completo de su lista de amigos_
+| _Mostrar amigos cercanos_ | _El usuario, a través de la aplicación móvil, podrá ver en un mapa la localización de los amigos cercanos_
+| _Enviar localización_ | _La aplicación, de forma frecuente, pedirá la localización del usuario_
+| _Proyectar los amigos cercanos_ | _La aplicación web accederá a los Pod de sus amigos y si estan cerca del usuario le pasará la localización a la api de OpenStreetMap que pintará las localización es en el mapa_
+| _Comparatir localización_ | _La aplicación web accederá al pod, tanto del usuario como de sus amigos, para obtener o guardar la localización y compararlas entre ellas_
+| _Gestión de usuarios_ | _El administrador podrá gestionar los usuarios_
+| _Monotorización del servidor_ | _El administrador podrá ver el estado del servidor_
+|===
 
 **<Diagram or Table>**
 
@@ -58,6 +78,18 @@ E.g. UML deployment diagram describing channels to neighboring systems,
 together with a mapping table showing the relationships between channels and input/output.
 
 ****
+
+Radarin es una aplicación web descentralizada. Para lograrlo todos los datos se almacenan en los Pod de los usuarios.
+Sus localizaciones se enviarán a través de de la aplicación utilizando las url de SOLID Pod, lo que requiere una conexión a internet.
+
+|===
+|Objeto|Descripción
+| _USER(1|2)_| _Representa el usuario de la aplicación_
+| _Aplicación móvil_| _Representa la aplicación a través de la cual, el usuario interaccionará con la aplicación web_
+| _RADARIN_ | _La aplicación web_
+| _POD od USER(1|2)_ | _Almacenamiento individual donde se guardará la informacion de cada usuario_
+| _SOLID_ | _Un proyecto donde se busca que el usuario tenga control sobre sus datos mejorando la privacidad_
+|===
 
 **<Diagram or Table>**
 
