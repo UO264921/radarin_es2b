@@ -1,44 +1,41 @@
 [[section-runtime-view]]
-== Runtime View
-
+== Vista en tiempo de ejecución
 
 === Inicio de sesión
 
-
-* _El usuario interacciona con la interfaz y abre la pantalla para registrarse_
-* _Introduce los datos y solicita el inicio de sesión, si todo es correcto entra,
-si no deberá introducir de nuevo los datos_
+. El usuario interacciona con la interfaz y abre la pantalla para registrarse.
+. Introduce los datos y solicita el inicio de sesión, si todo es correcto entra, si no deberá introducir de nuevo los datos.
 
 image:inicioDeSesion6.png["UML"]
 
 
 === Añadir un amigo
 
-* _El usuario introduce el nombre de usuario del amigo_
-* _Lo añade a su Pod y devuelve todos sus amigos_
+. El usuario introduce el nombre de usuario del amigo.
+. Lo añade a su POD y devuelve todos sus amigos.
 
 image:añadirAmigo6.png["UML"]
 
 
 === Eliminar un amigo
 
-* _El usuario introduce el nombre del amigo que quiere eliminar_
-* _Eliminar el amigo de su Pod y se muestran sus amigos actuales_
+. El usuario introduce el nombre del amigo que quiere eliminar.
+. Eliminar el amigo de su POD y se muestran sus amigos actuales.
 
 image:eliminarAmigo6.png["UML"]
 
 === Ver amigos
 
-* _El usuario solicita ver todos sus amigos_
-* _Se accede al Pod y devuelte todos los amigos que tiene_
+. El usuario solicita ver todos sus amigos.
+. Se accede al POD y devuelve todos los amigos que tiene.
 
 image:verAmigo6.png["UML"]
 
 === Notificaciones
 
-* _El usuario activa la ubicación y permite usarlo a la aplicación_
-* _Se comprueba que haya amigos cerca_
-* _En el caso de haberlos el usuario recibe una notificación_
+. El usuario activa la ubicación y permite usarlo a la aplicación.
+. Se comprueba que haya amigos cerca.
+. En el caso de haberlos el usuario recibe una notificación.
 
 image:notificaciones6.png["UML"]
 
@@ -46,10 +43,11 @@ image:notificaciones6.png["UML"]
 
 [options="header"]
 |===
-|Símbolo|Significado
-| image:leyendaUsuario.PNG["UML"]| _Usuario que interactúa con la aplicación_
-| image:leyendabase.PNG["UML"] | _Pod de Solid (La base de datos personal)_
-| image:leyendaparticipante.PNG["UML"] | _Modulo del sistema_
-
-
+ Símbolo | Significado |
+ image:leyendaUsuario.PNG["UML"] |
+    Usuario que interactúa con la aplicación. |
+ image:leyendabase.PNG["UML"] |
+    POD de SoLiD (La base de datos personal) |
+ image:leyendaparticipante.PNG["UML"] |
+    Modulo del sistema |
 |===
