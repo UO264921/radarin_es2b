@@ -41,7 +41,7 @@ image:notificaciones6.png["UML"]
 
 === Leyenda
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
  Símbolo | Significado |
  image:leyendaUsuario.PNG["UML"] |
