@@ -2,9 +2,9 @@
 == System Scope and Context
 
 Radarin contará con varias interfaces:
-* Login: interfaz de inicio de sesión.
-* Main page: enseñará un mapa con los amigos cercanos.
-* Amigos: interfaz donde podrás ver, añadir y eliminar a tus amigos.
+*    Login: interfaz de inicio de sesión.
+*    Main page: enseñará un mapa con los amigos cercanos.
+*    Amigos: interfaz donde podrás ver, añadir y eliminar a tus amigos.
 
 === Business Context
 
