@@ -45,7 +45,7 @@ image:05_nivel3.png["Diagrama nivel 3"]
 _Este último nivel es el más detallado y el más bajo. Nos da una visión de la lógica necesaria para comunicarse con el POD del usuario para acceder a sus datos._
 |===
 |Nombre|Responsabilidad
-| _RadarinManager | _Será un manager intermediario entre el servidor y la capa de usuario (interfaz de usuario)._
+| _RadarinManager_| _Será un manager intermediario entre el servidor y la capa de usuario (interfaz de usuario)._
 | _Permisos_ | _Los permisos dentro de la aplicación son una parte muy importante. Por ello habrá un servicio encargado de manejar los permisos de cada usuario. Un usuario sin permisos no podrá acceder a los datos de otro usuario y es éste mismo el encargado de dar/quitar permisos a otros usuarios (sus amigos)._
 | _Parser_ | _La aplicación necesita un parser para transformar los archivos del POD de una forma que el usuario los pueda leer sin problemas._
 | _HelpAmigos_ | _También necesitará un servicio para poder añadir, borrar y almacenar amigos._

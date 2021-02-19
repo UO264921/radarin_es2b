@@ -14,6 +14,7 @@ _Basamos nuestra aplicación en el patrón arquitectónico MVC, consiste en sepa
 === Experiencia de usuario
 ==== Diseño de la interfaz de usuario
 _La idea de la interfaz es hacerla intuitiva y dirigida para todos los tipos de usuarios. Además buscamos hacerla limpia y bonita estéticamente._
+
 ==== Internacionalización
 _La idea primera del desarrollo de la aplicación es hacerla en español, ya que es nuestro idioma materno y nos sentimos más comodos para desarrollar la aplicación y la documentación._
 

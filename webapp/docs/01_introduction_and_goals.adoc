@@ -1,16 +1,11 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-[role="arc42help"]
-****
-****
 En este trabajo se intentara desarrollar un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías. De esta forma permitirá
 avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contacto.
 
 === Requirements Overview
 
-[role="arc42help"]
-****
 * Implementación de una aplicación web que funcionará en un servidor en el que se almacenará información sobre localizaciones.
 * La aplicación permitirá que los usuarios puedan gestionar y visualizar sus localizaciones y también incluirá opciones de administración para gestionar usuarios y monitorizar el estado del servidor.
 * Implementación de una aplicación que funcionará en el dispositivo móvil de los usuarios enviando localizaciones al servidor y recibiendo notificaciones de usuarios conocidos cercanos.
@@ -18,14 +13,13 @@ avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contact
 * El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como heroku.
 * La aplicación móvil desplegada también incluirá un sistema de monitorización.
 * Se desarrollarán pruebas unitarias, de aceptación y de carga que se ejecutarán de forma automatizada a través de un servidor de integración continua.
-.Motivación
+
+.Motivaciones
 En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento facial. Queremos que el cliente final pueda distinguir a sus amigos aunque lleven mascarilla y puedan interaccionar entre ellos respetando las medidas establecidas.
-****
+
 
 === Quality Goals
 
-[role="arc42help"]
-****
 [options="header",cols="1,2,2"]
 |===
 |Prioridad|Objetivo|Motivación
@@ -35,12 +29,11 @@ En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento fa
 | _4_ | _Portabilidad_| _El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android_
 
 |===
-****
+
 
 === Stakeholders
 
-[role="arc42help"]
-****
+
 [options="header",cols="1,2,2"]
 |===
 |Role/Nombre|Descripción|Expectativas
@@ -48,4 +41,3 @@ En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento fa
 | _Usuarios_ | _<Contact-2>_ | _<Expectation-2>_
 | _Desarrolladores_ | _<Contact-2>_ | _<Expectation-2>_
 |===
-****
