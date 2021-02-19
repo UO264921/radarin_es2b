@@ -3,7 +3,7 @@
 
 .Radarin contará con varias interfaces:
 - Login. Interfaz de inicio de sesión.
-- Main page. enseñará un mapa con los amigos cercanos.
+- Main page. Enseñará un mapa con los amigos cercanos.
 - Amigos. Interfaz donde podrás ver, añadir y eliminar a tus amigos.
 
 === Business Context
