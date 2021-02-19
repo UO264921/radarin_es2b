@@ -11,7 +11,7 @@ Radarin contará con varias interfaces:
 Radarin es una aplicación web donde el usuario, a través de la aplicación móvil, podrá ver a sus amigos mas cercanos en un mapa.
 El usuario podrá gestionar a sus amigos y recibir notificaiones al móvil en caso de que haya algun amigo cerca.
 
-images:bussines.png["bussines context diagram"]
+image:bussines.png["bussines context diagram"]
 
 |===
 |Acción|Descripción
@@ -36,7 +36,7 @@ images:bussines.png["bussines context diagram"]
 Radarin es una aplicación web descentralizada. Para lograrlo todos los datos se almacenan en los Pod de los usuarios.
 Sus localizaciones se enviarán a través de de la aplicación utilizando las url de SOLID Pod, lo que requiere una conexión a internet.
 
-images:technical.png["technical context diagram"]
+image:technical.png["technical context diagram"]
 
 |===
 |Objeto|Descripción
