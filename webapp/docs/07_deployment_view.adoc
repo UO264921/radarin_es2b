@@ -21,7 +21,9 @@ Una arquitectura de una aplicación basada en el patrón Modelo-Vista-Controlado
 Dependeremos de la plataforma que mantenga el POD en cuestiones como la disponibilidad de los datos, aunque esto ofrece una garantía al usuario de que absolutamente 
 ningún dato será guardado en la aplicación RadarIn, dando la confianza de que éstos no serán manipulados de ninguna manera que el usuario no permita explícitamente.
 
-[plantuml, {plantUMLDir}architecture, png]
+
+
+[plantuml, {plantUMLDir}infrastructure, png]
 ----
 cloud "Model (MVC)" {
   database "POD1" {
