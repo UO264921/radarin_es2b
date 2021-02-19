@@ -10,7 +10,7 @@ avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contact
 * La aplicación permitirá que los usuarios puedan gestionar y visualizar sus localizaciones y también incluirá opciones de administración para gestionar usuarios y monitorizar el estado del servidor.
 * Implementación de una aplicación que funcionará en el dispositivo móvil de los usuarios enviando localizaciones al servidor y recibiendo notificaciones de usuarios conocidos cercanos.
 * La aplicación que actúa como servidor almacenará la información mínima necesaria sobre un usuario, el resto de información del usuario, como sus amigos, será consultada en el pod de dicho usuario
-* El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como heroku.
+* El sistema será desplegable desde contenedores docker y también estará desplegada en un servicio en la nube como https://www.heroku.com/[Heroku].
 * La aplicación móvil desplegada también incluirá un sistema de monitorización.
 * Se desarrollarán pruebas unitarias, de aceptación y de carga que se ejecutarán de forma automatizada a través de un servidor de integración continua.
 
@@ -19,22 +19,36 @@ En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento fa
 
 === Objetivos de calidad
 
-[options="header",cols="1,2,2"]
+[options = "header", cols = "1,2,2"]
 |===
  Objetivo | Motivación | Prioridad |
 
- Privacidad | Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD | Muy alta |
- Usabilidad | El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática | Alta |
- Eficiencia |  Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla | Alta |
- Portabilidad | El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android | Baja |
+ Privacidad |
+    Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD |
+        Muy alta |
+ Usabilidad |
+    El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática |
+        Alta |
+ Eficiencia |
+    Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla |
+        Alta |
+ Portabilidad |
+    El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android |
+        Baja |
 |===
 
 === _Stakeholders_
 
-[options="header",cols="1,2,2"]
+[options = "header", cols = "1,2,2"]
 |===
  Rol | Descripción | Expectativas |
- Profesores | Evaluarán nuestro proyecto | Comprobar que la aplicación cumple los requerimientos acordados |
- Usuarios | Usar la aplicación | Uso de la aplicación utilizando las diferentes funcionalidades |
- Desarrolladores | Encargados de desarrollo y realización de pruebas de la aplicación | Crear una buena aplicación funcional cumpliendo los requisitos y requerimientos |
+ Profesores |
+    Evaluarán nuestro proyecto |
+        Comprobar que la aplicación cumple los requerimientos acordados |
+ Usuarios |
+    Usar la aplicación |
+        Uso de la aplicación utilizando las diferentes funcionalidades |
+ Desarrolladores |
+    Encargados de desarrollo y realización de pruebas de la aplicación |
+        Crear una buena aplicación funcional cumpliendo los requisitos y requerimientos |
 |===

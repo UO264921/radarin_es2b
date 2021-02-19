@@ -1,46 +1,61 @@
 [[section-system-scope-and-context]]
-== System Scope and Context
+== Ámbito del sistema y contexto
 
-.Radarin contará con varias interfaces:
-- Login. Interfaz de inicio de sesión.
-- Main page. Enseñará un mapa con los amigos cercanos.
-- Amigos. Interfaz donde podrás ver, añadir y eliminar a tus amigos.
+Radarin contará con varias interfaces:
+* _Login_. Interfaz de inicio de sesión.
+* Main page. Enseñará un mapa con los amigos cercanos.
+* Amigos. Interfaz donde podrás ver, añadir y eliminar a tus amigos.
 
-=== Business Context
+=== Contexto de negocio
 
 Radarin es una aplicación web donde el usuario, a través de la aplicación móvil, podrá ver a sus amigos mas cercanos en un mapa.
 El usuario podrá gestionar a sus amigos y recibir notificaiones al móvil en caso de que haya algun amigo cerca.
 
 image:bussines.png["bussines context diagram"]
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
-|Acción|Descripción
-| _Login_| _El usuario, a través de la aplicación móvil, iniciará sesión con su webId_
-| _Eliminar amigo_| _El usuario, a través de la aplicación móvil, podrá eliminar amigos de su lista de amigos_
-| _Añadir amigo_ | _El usuario, a través de la aplicación móvil, podrá añadir usuarios a su lista de amigos_
-| _Ver amigo_ | _El usuario, a través de la aplicación móvil, podrá ver un listado completo de su lista de amigos_
-| _Mostrar amigos cercanos_ | _El usuario, a través de la aplicación móvil, podrá ver en un mapa la localización de los amigos cercanos_
-| _Enviar localización_ | _La aplicación, de forma frecuente, pedirá la localización del usuario_
-| _Proyectar los amigos cercanos_ | _La aplicación web accederá a los Pod de sus amigos y si estan cerca del usuario le pasará la localización a la api de OpenStreetMap que pintará las localización es en el mapa_
-| _Comparatir localización_ | _La aplicación web accederá al pod, tanto del usuario como de sus amigos, para obtener o guardar la localización y compararlas entre ellas_
-| _Gestión de usuarios_ | _El administrador podrá gestionar los usuarios_
-| _Monotorización del servidor_ | _El administrador podrá ver el estado del servidor_
+ Acción | Descripción |
+ _Login_ |
+    El usuario, a través de la aplicación móvil, iniciará sesión con su webId. |
+ Eliminar amigo |
+    El usuario, a través de la aplicación móvil, podrá eliminar amigos de su lista de amigos. |
+ Añadir amigo |
+    El usuario, a través de la aplicación móvil, podrá añadir usuarios a su lista de amigos. |
+ Ver amigo |
+    El usuario, a través de la aplicación móvil, podrá ver un listado completo de su lista de amigos. |
+ Mostrar amigos cercanos |
+    El usuario, a través de la aplicación móvil, podrá ver en un mapa la localización de los amigos cercanos. |
+ Enviar localización |
+    La aplicación, de forma frecuente, pedirá la localización del usuario. |
+ Proyectar los amigos cercanos |
+    La aplicación web accederá a los POD de sus amigos y si estan cerca del usuario le pasará la localización a la api de OpenStreetMap que pintará las localización es en el mapa. |
+ Comparatir localización |
+    La aplicación web accederá al POD, tanto del usuario como de sus amigos, para obtener o guardar la localización y compararlas entre ellas. |
+ Gestión de usuarios |
+    El administrador podrá gestionar los usuarios. |
+ Monotorización del servidor |
+    El administrador podrá ver el estado del servidor. |
 |===
 
-=== Technical Context
+=== Contexto técnico
 
-Radarin es una aplicación web descentralizada. Para lograrlo todos los datos se almacenan en los Pod de los usuarios.
-Sus localizaciones se enviarán a través de de la aplicación utilizando las url de SOLID Pod, lo que requiere una conexión a internet.
+Radarin es una aplicación web descentralizada. Para lograrlo todos los datos se almacenan en los POD de los usuarios.
+Sus localizaciones se enviarán a través de de la aplicación utilizando las url de SoLiD POD, lo que requiere una conexión a internet.
 
 image:technical.png["technical context diagram"]
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
-|Objeto|Descripción
-| _USER(1/2)_| _Representa el usuario de la aplicación_
-| _Aplicación móvil_| _Representa la aplicación a través de la cual, el usuario interaccionará con la aplicación web_
-| _RADARIN_ | _La aplicación web_
-| _POD of USER(1/2)_ | _Almacenamiento individual donde se guardará la informacion de cada usuario_
-| _SOLID_ | _Un proyecto donde se busca que el usuario tenga control sobre sus datos mejorando la privacidad_
+ Objeto | Descripción |
+ _USER(1/2)_ |
+    Representa el usuario de la aplicación. |
+ Aplicación móvil |
+    Representa la aplicación a través de la cual, el usuario interaccionará con la aplicación web. |
+ RADARIN |
+    La aplicación web. |
+ POD of USER(1/2) |
+    Almacenamiento individual donde se guardará la informacion de cada usuario. |
+ SoLiD |
+    Un proyecto donde se busca que el usuario tenga control sobre sus datos mejorando la privacidad. |
 |===

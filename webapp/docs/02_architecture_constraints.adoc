@@ -2,25 +2,35 @@
 == Architecture Constraints
 
 .Restricciones técnicas
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
-|Restricción|Descripción
-| _Solid_| _El uso de solid nos implica que sea una aplicación descentralizada teniendo que tener hacer uso de los Pods_
-| _GitHub_| _Nuestro proyecto originalmente está alojado en Github_
-| _Tests_ | _Uso obligatorio de pruebas unitarias para probar el buen funcionamiento_
+ Restricción | Descripción |
+ https://solidproject.org/[_SoLiD_] |
+    El uso de solid nos implica que sea una aplicación descentralizada teniendo que tener hacer uso de los POD. |
+ https://github.com/[GitHub] |
+    Nuestro proyecto originalmente está alojado en esta plataforma. |
+ Tests |
+    Uso obligatorio de pruebas unitarias para probar el buen funcionamiento. |
 |===
+
 .Restricciones de organizacíon
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
-|Restricción|Descripción
-| _Tiempo_| _El desarrollo de todo el proyecto esta limitado, solo se dispone de 3 meses_
-| _Miembros_| _En este proyecto somos 5 estudiantes de la Universidad de Oviedo, con lo cual no podremos centrarnos exclusivamente en este proyecto_
-| _Entregas_| _Hay entregas previas a la finalizacion del proyecto, con lo cual es necesario trabajar de forma constante sobre el proyecto_
+ Restricción | Descripción |
+ Tiempo |
+    El desarrollo de todo el proyecto esta limitado, sólo se dispone de 3 meses. |
+ Miembros |
+    En este proyecto somos 5 estudiantes de la Universidad de Oviedo, con lo cual no podremos centrarnos exclusivamente en este proyecto. |
+ Entregas |
+    Hay entregas previas a la finalizacion del proyecto, con lo cual es necesario trabajar de forma constante sobre el proyecto. |
 |===
+
 .Restricciones de documentation
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
-|Restricción|Descripción
-| _Arc42_| _Es requisito recomendado el uso de arc42 para la documentacion_
-| _Asciidoctor_ | _Uso de asciidoctor para la creacion de nuestra documentacion_
+ Restricción | Descripción |
+ https://arc42.org/[Arc42] |
+    Es requisito recomendado su uso para la documentación. |
+ https://asciidoctor.org/[AsciiDoctor] |
+    Para la creación de nuestra documentación. |
 |===
