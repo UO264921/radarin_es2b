@@ -1,67 +1,39 @@
 [[section-concepts]]
 == Cross-cutting Concepts
 
+=== Conceptos del dominio
 
-[role="arc42help"]
-****
-.Content
-This section describes overall, principal regulations and solution ideas that are
-relevant in multiple parts (= cross-cutting) of your system.
-Such concepts are often related to multiple building blocks.
-They can include many different topics, such as
+* _Usuario: es la persona que usa la aplicación. El sistema almacenará su localización en un instante de tiempo, no almacenará ningún tipo de información que no sea necesaria._
+* _Pod: es un repositorio de usuarios que almacenará la información que no se considera mínima del usuario, por ejemplo sus amigos. Sigue las especificaciones SOLID y puede almacenarse en cualquier plataforma. Es el propio usuario el que tiene gestón total de su información._
+* _Amigo: un usuario tendrá amigos y le informará (mediante notificaciones) cuando uno de ellos esté cerca._
 
-* domain models
-* architecture patterns or design patterns
-* rules for using specific technology
-* principal, often technical decisions of overall decisions
-* implementation rules
-
-.Motivation
-Concepts form the basis for _conceptual integrity_ (consistency, homogeneity)
-of the architecture. Thus, they are an important contribution to achieve inner qualities of your system.
-
-Some of these concepts cannot be assigned to individual building blocks
-(e.g. security or safety). This is the place in the template that we provided for a
-cohesive specification of such concepts.
-
-.Form
-The form can be varied:
-
-* concept papers with any kind of structure
-* cross-cutting model excerpts or scenarios using notations of the architecture views
-* sample implementations, especially for technical concepts
-* reference to typical usage of standard frameworks (e.g. using Hibernate for object/relational mapping)
-
-.Structure
-A potential (but not mandatory) structure for this section could be:
-
-* Domain concepts
-* User Experience concepts (UX)
-* Safety and security concepts
-* Architecture and design patterns
-* "Under-the-hood"
-* development concepts
-* operational concepts
-
-Note: it might be difficult to assign individual concepts to one specific topic
-on this list.
-
-image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscutting concepts"]
-****
+=== Patrones de arquitectura
+_Basamos nuestra aplicación en el patrón arquitectónico MVC, consiste en separar los datos y la lógica de negocio de la aplicación de la representación visual y los canales de comunicación._
 
 
-=== Domain model
+=== Experiencia de usuario
+==== Diseño de la interfaz de usuario
+_La idea de la interfaz es hacerla intuitiva y dirigida para todos los tipos de usuarios. Además buscamos hacerla limpia y bonita estéticamente._
+==== Internacionalización
+_La idea primera del desarrollo de la aplicación es hacerla en español, ya que es nuestro idioma materno y nos sentimos más comodos para desarrollar la aplicación y la documentación._
 
-image:UmlDiagram.png["Example UML Diagram"]
+=== Seguridad
+_Se considera una aplicación segura gracias al uso del protocolo HTTPS. Además, gracias a los PODS los datos del usuario se almacenarán de una forma privada y es el propio usuario el que tiene que dar acceso a estos datos._
+
+=== Desarrollo
+==== Construcción
+_Respecto a este apartado usaremos el administrador de paquetes Node.js para lograr los objetivos en cuanto a funcionalidad que deseamos._
+==== APIs
+_Usaremos una API de mapas (OpenStreetMap) para mostrar un mapa al usuario._
+==== Migración
+_Habrá que desarrollar una aplicación Web y una para móviles, por tanto intentaremos no cambiar mucho en cuanto a desarrollo según se use una plataforma u otra._
+
+=== Recuperación ante un imprevisto
+_Gracias al uso de los PODS la recuperación de información no está en riesgo, ya que la información almacenada es independiente de la aplicación y está alojada en otro sitio._
+
+=== Pruebas
+_Hemos acordado realizar pruebas exhaustivas cuando la aplicación esté en funcionamiento._
 
 
 
-=== _<Concept 2>_
 
-_<explanation>_
-
-...
-
-=== _<Concept n>_
-
-_<explanation>_

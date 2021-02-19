@@ -3,204 +3,52 @@
 
 == Building Block View
 
-[role="arc42help"]
-****
-.Content
-The building block view shows the static decomposition of the system into building blocks (modules, components, subsystems, classes,
-interfaces, packages, libraries, frameworks, layers, partitions, tiers, functions, macros, operations,
-datas structures, ...) as well as their dependencies (relationships, associations, ...)
+_En esta sección se descompone estáticamente nuestro sistema en bloques de construcción mostrando sus dependencias internas._
 
-This view is mandatory for every architecture documentation.
-In analogy to a house this is the _floor plan_.
+_Con una vista general, pretendemos dar una idea estructurada del código fuente, de modo que sea fácil de entender sin detalles de implementación._
 
-.Motivation
-Maintain an overview of your source code by making its structure understandable through
-abstraction.
-
-This allows you to communicate with your stakeholder on an abstract level without disclosing implementation details.
-
-.Form
-The building block view is a hierarchical collection of black boxes and white boxes
-(see figure below) and their descriptions.
-
-image:05_building_blocks-EN.png["Hierarchy of building blocks"]
-
-*Level 1* is the white box description of the overall system together with black
-box descriptions of all contained building blocks.
-
-*Level 2* zooms into some building blocks of level 1.
-Thus it contains the white box description of selected building blocks of level 1, together with black box descriptions of their internal building blocks.
-
-*Level 3* zooms into selected building blocks of level 2, and so on.
-****
-
-=== Whitebox Overall System
-
-[role="arc42help"]
-****
-Here you describe the decomposition of the overall system using the following white box template. It contains
-
- * an overview diagram
- * a motivation for the decomposition
- * black box descriptions of the contained building blocks. For these we offer you alternatives:
-
-   ** use _one_ table for a short and pragmatic overview of all contained building blocks and their interfaces
-   ** use a list of black box descriptions of the building blocks according to the black box template (see below).
-   Depending on your choice of tool this list could be sub-chapters (in text files), sub-pages (in a Wiki) or nested elements (in a modeling tool).
+_Se explicará de más general a más concreto._
 
 
- * (optional:) important interfaces, that are not explained in the black box templates of a building block, but are very important for understanding the white box.
-Since there are so many ways to specify interfaces why do not provide a specific template for them.
- In the worst case you have to specify and describe syntax, semantics, protocols, error handling,
- restrictions, versions, qualities, necessary compatibilities and many things more.
-In the best case you will get away with examples or simple signatures.
+=== Nivel 1
 
-****
+image:05_nivel1.png["Diagrama nivel 1"]
 
-_**<Overview Diagram>**_
+* _El usuario interacciona con la aplicacións para buscar amigos._
+* _La aplicación accede a los archivos del POD para obtener y guardar datos._
 
-Motivation::
-
-_<text explanation>_
-
-
-Contained Building Blocks::
-_<Description of contained building block (black boxes)>_
-
-Important Interfaces::
-_<Description of important interfaces>_
-
-[role="arc42help"]
-****
-Insert your explanations of black boxes from level 1:
-
-If you use tabular form you will only describe your black boxes with name and
-responsibility according to the following schema:
-
-[cols="1,2" options="header"]
 |===
-| **Name** | **Responsibility**
-| _<black box 1>_ | _<Text>_
-| _<black box 2>_ | _<Text>_
+|Componente|Responsabilidad
+| _Usuario_ | _Es el usuario que interacciona con la aplicación._
+| _Radarin_ | _Es la aplicación con la que interacionará el usuario._
+| _PODs_ | _Es el servicio de almacenamiento escogido. Almacenará la información básica del usuario y sólo se tendrá acceso a él con la autorización del usuario propietario._
 |===
 
+=== Nivel 2
 
+image:05_nivel2.png["Diagrama nivel 2"]
 
-If you use a list of black box descriptions then you fill in a separate black box template for every important building block .
-Its headline is the name of the black box.
-****
+_En este nivel se empieza a detallar sobre todos los contenedores con los que interactuará el usuario una vez esté desarrollada la aplicación. Son todas las opciones que tendrá la aplicación._
+|===
+|Contenedor|Responsabilidad
+| _Registro_ | _Antes de empezar a usar la aplicación el usuario necesitará registrarse con sus datos personales para tener acceso a guardar datos en su POD._
+| _Login_ | _Una vez el usuario esté registrado, cada vez que use la aplicación tendrá que entrar en sesión para que sus datos se puedan guardar._
+| _Mis Amigos_ | _Es la lista de amigos del usuario, podrá añadir más amigos o eliminarlos._
+| _Nuevo amigo_ | _Envía una solicitud de amistad al amigo que deseamos añadir a nuestra lista. Nuestro amigo tendrá que aceptar la solicitud para poder tener acceso a sus datos principales._
+| _Notificaciones_ | _La aplicación enviará una notificación cada vez que un amigo nuestro esté cerca. Podremos activarlas y desactivarlas._
+| _Mapa_ | _Habrá un mapa dentro de la aplicación para mostrar nuestra situación respecto a la de nuestros amigos._
+|===
 
+=== Nivel 3
 
-==== <Name black box 1>
-
-[role="arc42help"]
-****
-Here you describe <black box 1>
-according the the following black box template:
-
-* Purpose/Responsibility
-* Interface(s), when they are not extracted as separate paragraphs. This interfaces may include qualities and performance characteristics.
-* (Optional) Quality-/Performance characteristics of the black box, e.g.availability, run time behavior, ....
-* (Optional) directory/file location
-* (Optional) Fulfilled requirements (if you need traceability to requirements).
-* (Optional) Open issues/problems/risks
-
-****
-
-_<Purpose/Responsibility>_
-
-_<Interface(s)>_
-
-_<(Optional) Quality/Performance Characteristics>_
-
-_<(Optional) Directory/File Location>_
-
-_<(Optional) Fulfilled Requirements>_
-
-_<(optional) Open Issues/Problems/Risks>_
-
-
-
-
-==== <Name black box 2>
-
-_<black box template>_
-
-==== <Name black box n>
-
-_<black box template>_
-
-
-==== <Name interface 1>
-
-...
-
-==== <Name interface m>
-
-
-
-=== Level 2
-
-[role="arc42help"]
-****
-Here you can specify the inner structure of (some) building blocks from level 1 as white boxes.
-
-You have to decide which building blocks of your system are important enough to justify such a detailed description.
-Please prefer relevance over completeness. Specify important, surprising, risky, complex or volatile building blocks.
-Leave out normal, simple, boring or standardized parts of your system
-****
-
-==== White Box _<building block 1>_
-
-[role="arc42help"]
-****
-...describes the internal structure of _building block 1_.
-****
-
-_<white box template>_
-
-==== White Box _<building block 2>_
-
-
-_<white box template>_
-
-...
-
-==== White Box _<building block m>_
-
-
-_<white box template>_
-
-
-
-=== Level 3
-
-[role="arc42help"]
-****
-Here you can specify the inner structure of (some) building blocks from level 2 as white boxes.
-
-When you need more detailed levels of your architecture please copy this
-part of arc42 for additional levels.
-****
-
-
-==== White Box <_building block x.1_>
-
-[role="arc42help"]
-****
-Specifies the internal structure of _building block x.1_.
-****
-
-
-_<white box template>_
-
-
-==== White Box <_building block x.2_>
-
-_<white box template>_
-
-
-
-==== White Box <_building block y.1_>
-
-_<white box template>_
+image:05_nivel3.png["Diagrama nivel 3"]
+_Este último nivel es el más detallado y el más bajo. Nos da una visión de la lógica necesaria para comunicarse con el POD del usuario para acceder a sus datos._
+|===
+|Nombre|Responsabilidad
+| _RadarinManager | _Será un manager intermediario entre el servidor y la capa de usuario (interfaz de usuario)._
+| _Permisos_ | _Los permisos dentro de la aplicación son una parte muy importante. Por ello habrá un servicio encargado de manejar los permisos de cada usuario. Un usuario sin permisos no podrá acceder a los datos de otro usuario y es éste mismo el encargado de dar/quitar permisos a otros usuarios (sus amigos)._
+| _Parser_ | _La aplicación necesita un parser para transformar los archivos del POD de una forma que el usuario los pueda leer sin problemas._
+| _HelpAmigos_ | _También necesitará un servicio para poder añadir, borrar y almacenar amigos._
+| _HelpNotificaciones_ | _Este es el servicio encargado de enviar notificaciones al usuario cuando un amigo está cerca._
+| _HelpMapa_ | _También tendrá que haber un servicio que localice en un mapa a los usuarios amigos._
+|===
