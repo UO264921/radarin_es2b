@@ -16,7 +16,7 @@ Radarin es un sistema para facilitar encuentros entre amigos utilizando nuevas t
 - Miguel Fernández Álvarez UO269736@uniovi.es
 
 
-Última revisión: febrero de 2021.
+Curso 2020 - 2021.
 
 (C)
 [Arquitectura del Software](https://arquisoft.github.io/).
