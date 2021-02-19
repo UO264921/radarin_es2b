@@ -1,5 +1,5 @@
 [[section-architecture-constraints]]
-== Architecture Constraints
+== Restricciones de arquitectura
 
 .Restricciones técnicas
 [options = "header", cols = "1,2"]
