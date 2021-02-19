@@ -6,6 +6,8 @@ Radarin contará con varias interfaces:
 * Main page. Enseñará un mapa con los amigos cercanos.
 * Amigos. Interfaz donde podrás ver, añadir y eliminar a tus amigos.
 
+//-
+
 === Contexto de negocio
 
 Radarin es una aplicación web donde el usuario, a través de la aplicación móvil, podrá ver a sus amigos mas cercanos en un mapa.
