@@ -48,7 +48,7 @@ image:technical.png["technical context diagram"]
 [options = "header", cols = "1,2"]
 |===
  Objeto | Descripción |
- _USER(1/2)_ |
+ USER(1/2) |
     Representa el usuario de la aplicación. |
  Aplicación móvil |
     Representa la aplicación a través de la cual, el usuario interaccionará con la aplicación web. |
