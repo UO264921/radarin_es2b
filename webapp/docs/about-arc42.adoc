@@ -1,21 +1,15 @@
-:homepage: http://arc42.org
-
 :keywords: software-architecture, documentation, template, arc42
 
-:numbered!:
 **Sobre Radarin ES2B**
 
-[role="lead"]
 Radarin es un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías.
 
-.Hecho por:
+= Autores
 - Iván Álvarez López UO264862@uniovi.es
 - Andrés del Pozo Amo UO271035@uniovi.es
 - Esther González García de Vega UO269763@uniovi.es
 - Iyan Sanjurjo Luna UO264921@uniovi.es
 - Miguel Fernández Álvarez UO269736@uniovi.es
-
-
 Curso 2020 - 2021.
 
-(C) <https://arquisoft.github.io> Arquitectura del Software. Escuela de Ingeniería Informática. Universidad de Oviedo.
+(C) https://arquisoft.github.io[Arquitectura del Software] . Escuela de Ingeniería Informática. Universidad de Oviedo.

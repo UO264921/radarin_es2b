@@ -1,10 +1,10 @@
 [[section-introduction-and-goals]]
-== Introduction and Goals
+== Introducción y objetivos
 
 En este trabajo se intentara desarrollar un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías. De esta forma permitirá
 avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contacto.
 
-=== Requirements Overview
+=== Resumen de los requisitos
 
 * Implementación de una aplicación web que funcionará en un servidor en el que se almacenará información sobre localizaciones.
 * La aplicación permitirá que los usuarios puedan gestionar y visualizar sus localizaciones y también incluirá opciones de administración para gestionar usuarios y monitorizar el estado del servidor.
@@ -17,27 +17,24 @@ avisar a un usuario cuándo tiene amigos cerca para que puedan entrar en contact
 .Motivaciones
 En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento facial. Queremos que el cliente final pueda distinguir a sus amigos aunque lleven mascarilla y puedan interaccionar entre ellos respetando las medidas establecidas.
 
-
-=== Quality Goals
-
-[options="header",cols="1,2,2"]
-|===
-Objetivo|Motivación|Prioridad|
-_Privacidad_| _Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD_| _High, High_ |
-_Usabilidad_| _El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática_| _High,Medium_ |
-_Eficiencia_| _Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla_| _High,Medium_ |
-_Portabilidad_| _El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android_| _High,Low_ |
-
-|===
-
-
-=== Stakeholders
-
+=== Objetivos de calidad
 
 [options="header",cols="1,2,2"]
 |===
-|Role/Nombre|Descripción|Expectativas
-| _Profesores_ | _Evaluarán nuestro proyecto_ | _Comprobar que la aplicación cumple los requerimientos acordados_
-| _Usuarios_ | _Usar la aplicación_ | _Uso de la aplicación utilizando las diferentes funcionalidades_
-| _Desarrolladores_ | _Encargados de desarrollo y realización de pruebas de la aplicación_ | _Crear una buena aplicación funcional cumpliendo los requisitos y requerimientos_
+ Objetivo | Motivación | Prioridad |
+
+ Privacidad | Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD | Muy alta |
+ Usabilidad | El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática | Alta |
+ Eficiencia |  Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla | Alta |
+ Portabilidad | El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android | Baja |
+|===
+
+=== _Stakeholders_
+
+[options="header",cols="1,2,2"]
+|===
+ Rol | Descripción | Expectativas |
+ Profesores | Evaluarán nuestro proyecto | Comprobar que la aplicación cumple los requerimientos acordados |
+ Usuarios | Usar la aplicación | Uso de la aplicación utilizando las diferentes funcionalidades |
+ Desarrolladores | Encargados de desarrollo y realización de pruebas de la aplicación | Crear una buena aplicación funcional cumpliendo los requisitos y requerimientos |
 |===
