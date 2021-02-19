@@ -44,7 +44,7 @@ image:notificaciones6.png["UML"]
 
 === Leyenda
 
-[options="header",cols="1,2,2"]
+[options="header"]
 |===
 |Símbolo|Significado
 | image:leyendaUsuario.PNG["UML"]| _Usuario que interactúa con la aplicación_

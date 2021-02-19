@@ -13,7 +13,7 @@ El usuario podrá gestionar a sus amigos y recibir notificaiones al móvil en ca
 
 image:bussines.png["bussines context diagram"]
 
-[options="header",cols="1,2,2"]
+[options="header"]
 |===
 |Acción|Descripción
 | _Login_| _El usuario, a través de la aplicación móvil, iniciará sesión con su webId_
@@ -35,7 +35,7 @@ Sus localizaciones se enviarán a través de de la aplicación utilizando las ur
 
 image:technical.png["technical context diagram"]
 
-[options="header",cols="1,2,2"]
+[options="header"]
 |===
 |Objeto|Descripción
 | _USER(1/2)_| _Representa el usuario de la aplicación_

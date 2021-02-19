@@ -22,11 +22,11 @@ En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento fa
 
 [options="header",cols="1,2,2"]
 |===
-|Prioridad|Objetivo|Motivación
-| _1_ | _Privacidad_| _Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD_
-| _2_ | _Usabilidad_| _El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática_
-| _3_ | _Eficiencia_| _Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla_
-| _4_ | _Portabilidad_| _El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android_
+Objetivo|Motivación|Prioridad|
+_Privacidad_| _Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD_| _High, High_ |
+_Usabilidad_| _El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática_| _High,Medium_ |
+_Eficiencia_| _Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla_| _High,Medium_ |
+_Portabilidad_| _El usuario podrá correr la aplicación en la mayoría de los dispositivo con SO android_| _High,Low_ |
 
 |===
 
@@ -37,7 +37,7 @@ En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento fa
 [options="header",cols="1,2,2"]
 |===
 |Role/Nombre|Descripción|Expectativas
-| _Profesores_ | _<Contact-1>_ | _<Expectation-1>_
-| _Usuarios_ | _<Contact-2>_ | _<Expectation-2>_
-| _Desarrolladores_ | _<Contact-2>_ | _<Expectation-2>_
+| _Profesores_ | _Evaluarán nuestro proyecto_ | _Comprobar que la aplicación cumple los requerimientos acordados_
+| _Usuarios_ | _Usar la aplicación_ | _Uso de la aplicación utilizando las diferentes funcionalidades_
+| _Desarrolladores_ | _Encargados de desarrollo y realización de pruebas de la aplicación_ | _Crear una buena aplicación funcional cumpliendo los requisitos y requerimientos_
 |===
