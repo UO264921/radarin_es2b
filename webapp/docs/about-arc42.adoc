@@ -3,18 +3,22 @@
 :keywords: software-architecture, documentation, template, arc42
 
 :numbered!:
-**About arc42**
+**Sobre Radarin ES2B**
 
 [role="lead"]
-arc42, the Template for documentation of
-software and system architecture.
+Radarin es un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías.
 
-By Dr. Gernot Starke, Dr. Peter Hruschka and contributors.
+.Hecho por:
+- Iván Álvarez López UO264862@uniovi.es
+- Andrés del Pozo Amo UO271035@uniovi.es
+- Esther González García de Vega UO269763@uniovi.es
+- Iyan Sanjurjo Luna UO264921@uniovi.es
+- Miguel Fernández Álvarez UO269736@uniovi.es
 
 
-Template Revision: 7.0 EN (based on asciidoc), January 2017
+Última revisión: febrero de 2021.
 
 (C)
-We acknowledge that this document uses material from the
-arc 42 architecture template, http://www.arc42.de.
-Created by Dr. Peter Hruschka & Dr. Gernot Starke.
+[Arquitectura del Software](https://arquisoft.github.io/).
+Escuela de Ingeniería Informática.
+Universidad de Oviedo.
