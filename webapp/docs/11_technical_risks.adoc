@@ -4,7 +4,7 @@
 _Un problema conocido en compañías de desarrollo de software grandes es cómo balancear la priorización de la capacidad de respuesta a corto plazo con la capacidad de respuesta a largo plazo, específicamente violaciones de arquitectura._
 
 [.text-right]
-- https://www.researchgate.net/publication/265822240_Architecture_Technical_Debt_Understanding_Causes_and_a_Qualitative_Model[Architecture Technical Debt. Antonio Martini, Jan Bosch, Michel Chaudron].
+https://www.researchgate.net/publication/265822240_Architecture_Technical_Debt_Understanding_Causes_and_a_Qualitative_Model[Architecture Technical Debt. Antonio Martini, Jan Bosch, Michel Chaudron].
 
 En esta sección prevendremos las diferentes vías por las cuales pueden surgir violaciones de arquitectura y ofreceremos una posible solución a estas.
 
