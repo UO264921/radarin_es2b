@@ -1,26 +1,28 @@
 [[section-quality-scenarios]]
-== Quality Requirements
+== Requisitos de calidad
 
-=== Quality Tree
+=== Árbol de calidad
 
 image:10_arbol.png["Arbol de calidad"]
 
-=== Quality Scenarios
+=== Escenarios de calidad
 
 ==== Privacidad
 
-Seguridad, confidencialidad e integridad.
-Se trata de la principal preocupación de los usuarios actuales.
+Seguridad, confidencialidad e integridad. 
+Se trata de la principal preocupación de los usuarios actuales. 
 La disposición de los datos individuales debe ser limitada al funcionamiento de la aplicación y en ningún caso quedará abierta al exterior de la misma sin consentimiento del usuario.
 
 ==== Usabilidad
 
-La aplicación debe facilitar su utilización por el usuario final. Este debe interactuar y realizar su trabajo con ella sin sentir dificultades ni frustración por no entender cierto funcionamiento.
+La aplicación debe facilitar su utilización por el usuario final. 
+Este debe interactuar y realizar su trabajo con ella sin sentir dificultades ni frustración por no entender cierto funcionamiento. 
 Con ello debe mejorarse la experiencia de los clientes, lo cual aumentará la relación con ellos y por tanto el tráfico de usuarios en la misma.
 
 ==== Eficiencia
 
-Se conseguirá un rendimiento adecuado haciendo que la aplicación centre su esfuerzo en trabajo útil para su funcionalidad frente al trabajo total. Cumplirá los requisitos de forma adecuada y completamente simplificada a los usuarios.
+Se conseguirá un rendimiento adecuado haciendo que la aplicación centre su esfuerzo en trabajo útil para su funcionalidad frente al trabajo total. 
+Cumplirá los requisitos de forma adecuada y completamente simplificada a los usuarios.
 
 ==== Portabilidad
 
