@@ -1,19 +1,35 @@
 [[section-glossary]]
-== Glossary
+== Glosario
 
-[options="header"]
+[options = "header", cols = "1,2"]
 |===
-| Término         | Definición
-| API     | Conjunto de subrutinas, funciones y procedimientos (o métodos, en la programación orientada a objetos) que ofrece cierta biblioteca para ser utilizado por otro software como una capa de abstracción.
-| Arc42     | Plantilla para la comunicación y documentación de arquitectura que responde a qué debemos documentar y a cómo debemos documentar.
-| Asciidoctor     | Es un procesador de texto y una cadena de herramientas de publicación para convertir el marcado AsciiDoc en HTML 5, DocBook 4.5 y otros formatos.  
-| Docker     | Crear contenedores ligeros y portables para las aplicaciones sofware que puedan ejecutarse en cualquier máquina.
-| GitHub     | Es un sistema de gestión de proyectos y control de versiones de código, así como una plataforma de red social diseñada para desarrolladores.
-| Https     | Es un protocolo de aplicación basado en el protocolo HTTP, destinado a la transferencia segura de datos de hipertexto.
-| JavaScript     | Es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones complejas en páginas web, cada vez que una página web hace algo más que sentarse allí y mostrar información estática para que la veas, muestra oportunas actualizaciones de contenido, mapas interactivos, animación de Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc.
-| MVC     | Es un patrón de diseño de aplicaciones que consta de tres partes interconectadas. Incluyen el modelo ( datos ), la vista ( interfaz de usuario ) y el controlador ( procesos que manejan la entrada).
-| OpenStreetMap | Es un mapa del mundo creado por una multitud de personas, que se ha convertido en una de las fuentes más detalladas de datos de mapas
-| POD    | Almacenamiento descentralizado que se usa en aplicaciones Solid que permite al usuario conservar el control y la propiedad de sus datos.
-| React     | Framework de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera fácil e intuitiva.
-| Solid     | Es un proyecto que se basa en descentralizar los datos de la aplicación usando los PODs.
+ Término | Definición |
+ API |
+    Conjunto de subrutinas, funciones y procedimientos (o métodos, en la programación orientada a objetos) 
+    que ofrece cierta biblioteca para ser utilizado por otro software como una capa de abstracción. |
+ Arc42 |
+    Plantilla para la comunicación y documentación de arquitectura que responde a qué debemos documentar y a cómo debemos documentar. |
+ AsciiDoctor |
+    Es un procesador de texto y una cadena de herramientas de publicación para convertir el marcado AsciiDoc en HTML 5, DocBook 4.5 y otros formatos. |
+ Docker |
+    Crear contenedores ligeros y portables para las aplicaciones sofware que puedan ejecutarse en cualquier máquina. |
+ GitHub |
+    Es un sistema de gestión de proyectos y control de versiones de código, así como una plataforma de red social diseñada para desarrolladores. |
+ HTTPS |
+    Es un protocolo de aplicación basado en el protocolo HTTP, destinado a la transferencia segura de datos de hipertexto. |
+ JavaScript |
+    Es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones complejas en páginas web, 
+    cada vez que una página web hace algo más que sentarse allí y mostrar información estática para que la veas, muestra oportunas 
+    actualizaciones de contenido, mapas interactivos, animación de Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc. |
+ MVC |
+    Es un patrón de diseño de aplicaciones que consta de tres partes interconectadas. 
+    Incluyen el modelo ( datos ), la vista ( interfaz de usuario ) y el controlador ( procesos que manejan la entrada). |
+ OpenStreetMap |
+    Es un mapa del mundo creado por una multitud de personas, que se ha convertido en una de las fuentes más detalladas de datos de mapas. |
+ POD |
+    Almacenamiento descentralizado que se usa en aplicaciones Solid que permite al usuario conservar el control y la propiedad de sus datos. |
+ React |
+    Framework de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera fácil e intuitiva. |
+ SoLiD |
+    Es un proyecto que se basa en descentralizar los datos de la aplicación usando los PODs. |
 |===
