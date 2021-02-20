@@ -21,7 +21,10 @@ Una arquitectura de una aplicación basada en el patrón Modelo-Vista-Controlado
 Dependeremos de la plataforma que mantenga el POD en cuestiones como la disponibilidad de los datos, aunque esto ofrece una garantía al usuario de que absolutamente 
 ningún dato será guardado en la aplicación RadarIn, dando la confianza de que éstos no serán manipulados de ninguna manera que el usuario no permita explícitamente.
 
-
+.Sistemas implicados en la infraestructura.
+- **Dispositivo de usuario**. Puede ser un dispositivo móvil o un equipo de sobremesa.
+- **Heroku**. Sirve de plataforma a la aplicación RadarIn.
+- **POD de SoLiD**. Almacena la información del usuario en un servidor de terceros, cuyo almacenamiento tiene que haber sido llevado a cabo por el usuario previamente.
 
 [plantuml, {plantUMLDir}infrastructure, png]
 ----
