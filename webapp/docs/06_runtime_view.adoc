@@ -1,5 +1,5 @@
 [[section-runtime-view]]
-== Vista en tiempo de ejecución
+== Perspectiva en tiempo de ejecución
 
 === Inicio de sesión
 

@@ -1,7 +1,6 @@
 [[section-building-block-view]]
 
-
-== Vista de la construcción de los bloques
+== Perspectiva de la construcción de los bloques
 
 En esta sección se descompone estáticamente nuestro sistema en bloques de construcción mostrando sus dependencias internas.
 

@@ -1,6 +1,6 @@
 [[section-deployment-view]]
 
-== Vista de despliegue
+== Perspectiva de despliegue
 
 .Contexto
 RadarIn, nuestra aplicación, está orientada a usuarios personales y será desplegada en navegador, tanto en ordenadores personales como en dispositivos móviles.

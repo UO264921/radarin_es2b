@@ -10,6 +10,7 @@ Radarin es un sistema para facilitar encuentros entre amigos utilizando nuevas t
 - Miguel Fernández Álvarez UO269736@uniovi.es
 - Esther González García de Vega UO269763@uniovi.es
 - Andrés del Pozo Amo UO271035@uniovi.es
+
 Curso 2020 - 2021.
 
 (C) https://arquisoft.github.io[Arquitectura del Software] . Escuela de Ingeniería Informática. Universidad de Oviedo.
