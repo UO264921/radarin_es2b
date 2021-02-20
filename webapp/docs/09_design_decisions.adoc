@@ -1,12 +1,19 @@
 [[section-design-decisions]]
 == Design Decisions
 
-[options="header"]
+[options = "header", cols = "1,2,2"]
 |===
-|Decisión|Ventajas|Desventajas
-| _Documentación en español_ | _Mayor velocidad a la hora de crear la documentación y mayor calidad y riqueza del lenguaje_| _No es el idioma mas usado en proyectos_
-| _Uso de SOLID_ | _Conseguimos un medio para el intercambio seguro y descentralizado de datos públicos y privados._| _Mayor complicación a la hora de presentar este medio a los usuarios ya que es algo nuevo._
-| _Uso de OpenStreetMap_ | _Parte del grupo ya esta familiarizado con él y nos parece más fácil de usar_| _Al no ser el más utilizado quizá haya problemas a la hora de buscar información o en caso de tener algun error poco común_
-| _React_ | _Es una libreria que nos puede ayudar a usar la tecnología SOLID en nuetsro proyecto_| _No estamos acostumbrado a trabajar con ellos y quizá al principio nos lleve más tiempo_
-
+ Decisión | Ventajas | Desventajas |
+ Documentación en español |
+    Mayor velocidad a la hora de crear la documentación y mayor calidad y riqueza del lenguaje. |
+        No es el idioma mas usado en proyectos. |
+ Uso de SOLID |
+    Conseguimos un medio para el intercambio seguro y descentralizado de datos públicos y privados. |
+        Mayor complicación a la hora de presentar este medio a los usuarios ya que es algo nuevo. |
+ Uso de _OpenStreetMap_ |
+    Parte del grupo ya esta familiarizado con él y nos parece más fácil de usar. |
+        Al no ser el más utilizado quizá haya problemas a la hora de buscar información o en caso de tener algun error poco común. |
+ _React_ |
+    Es una libreria que nos puede ayudar a usar la tecnología SOLID en nuetsro proyecto. |
+        No estamos acostumbrado a trabajar con ellos y quizá al principio nos lleve más tiempo. |
 |===
