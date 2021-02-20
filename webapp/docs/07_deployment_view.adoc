@@ -26,7 +26,7 @@ ningún dato será guardado en la aplicación RadarIn, dando la confianza de que
 - **Heroku**. Sirve de plataforma a la aplicación RadarIn.
 - **POD de SoLiD**. Almacena la información del usuario en un servidor de terceros, cuyo almacenamiento tiene que haber sido llevado a cabo por el usuario previamente.
 
-[plantuml, {plantUMLDir}infrastructure, png]
+[plantuml, {plantUMLDir}infrastructure, svg]
 ----
 cloud "Model (MVC)" {
   database "POD1" {
