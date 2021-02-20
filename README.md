@@ -5,6 +5,7 @@
 # Proyecto RadarIn ES2B
 - Acceso a la aplicación: [RadarIn-ES2B](https://radarines2bwebapp.herokuapp.com/).
 - Acceso a la documentación: [Documentación de RadarIn-ES2B](https://radarines2bwebapp.herokuapp.com/docs/).
+
 Nótese que a veces **puede tardar en cargar** porque el plan gratis de Heroku pone a dormir sus contenedores cuando no se usan durante un tiempo y volverlos a levantar lleva tiempo.
 
 ## Colaboradores
