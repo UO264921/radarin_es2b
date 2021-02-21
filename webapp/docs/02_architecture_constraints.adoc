@@ -7,8 +7,6 @@
  Restricción | Descripción |
  https://solidproject.org/[_SoLiD_] |
     El uso de solid nos implica que sea una aplicación descentralizada teniendo que tener hacer uso de los POD. |
- https://github.com/[GitHub] |
-    Nuestro proyecto originalmente está alojado en esta plataforma. |
  Tests |
     Uso obligatorio de pruebas unitarias para probar el buen funcionamiento. |
 |===
@@ -17,6 +15,8 @@
 [options = "header", cols = "1,2"]
 |===
  Restricción | Descripción |
+ https://github.com/[GitHub] |
+    Nuestro proyecto originalmente está alojado en esta plataforma. |
  Tiempo |
     El desarrollo de todo el proyecto esta limitado, sólo se dispone de 3 meses. |
  Miembros |
