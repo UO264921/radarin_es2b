@@ -14,7 +14,24 @@ image:inicioDeSesion6.png["UML"]
 . El usuario introduce el nombre de usuario del amigo.
 . Lo añade a su POD y devuelve todos sus amigos.
 
-image:añadirAmigo6.png["UML"]
+[plantuml, {plantUMLDir}infrastructure, svg]
+----
+actor Usuario
+participant Interfaz_Grafica
+participant Pop_Up_AddFriends
+database Pod
+database PodAmigo
+Usuario -> Interfaz_Grafica: Añadir amigo
+Interfaz_Grafica -> Pop_Up_AddFriends: Abrir PopUp
+Usuario -> Pop_Up_AddFriends: Introducir nombre de usuario de tu amigo
+
+Pop_Up_AddFriends -> Pod: Preparar solicitud con el nombre de usuario
+Pod -> PodAmigo: Solicitud de amistad
+Pod <- PodAmigo: Solicitud aceptada
+Pod -> Pod: Se añade al amigo
+Pod -> Interfaz_Grafica: Devuelve los amigos
+Interfaz_Grafica -> Interfaz_Grafica: Muestra los amigos
+----
 
 
 === Eliminar un amigo
@@ -22,14 +39,38 @@ image:añadirAmigo6.png["UML"]
 . El usuario introduce el nombre del amigo que quiere eliminar.
 . Eliminar el amigo de su POD y se muestran sus amigos actuales.
 
-image:eliminarAmigo6.png["UML"]
+@startuml
+actor Usuario
+participant Interfaz_Grafica
+participant Pop_Up_DeleteFriend
+database Pod
+Usuario -> Interfaz_Grafica: Eliminar amigo
+Interfaz_Grafica -> Pop_Up_DeleteFriend: Abrir PopUp
+Usuario -> Pop_Up_DeleteFriend: Introducir nombre de usuario de tu amigo
+
+Pop_Up_DeleteFriend -> Pod: Solicitud de eliminar amigo
+Pod->Pod: Eliminar amigo
+Pod-> Interfaz_Grafica: Devuelve los amigos
+Interfaz_Grafica -> Interfaz_Grafica: Muestra los amigos
+@enduml
 
 === Ver amigos
 
 . El usuario solicita ver todos sus amigos.
 . Se accede al POD y devuelve todos los amigos que tiene.
 
-image:verAmigo6.png["UML"]
+[plantuml, {plantUMLDir}infrastructure, svg]
+----
+@startuml
+actor Usuario
+participant Interfaz_Grafica
+database Pod
+Usuario -> Interfaz_Grafica: Ver amigos
+Interfaz_Grafica -> Pod: Solicitud mostrar amigos
+Pod -> Interfaz_Grafica: Devuelve los amigos
+Interfaz_Grafica -> Interfaz_Grafica: Muestra los amigos
+@enduml
+----
 
 === Notificaciones
 
