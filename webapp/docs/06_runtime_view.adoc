@@ -6,7 +6,7 @@
 . El usuario interacciona con la interfaz y abre la pantalla para registrarse.
 . Introduce los datos y solicita el inicio de sesión, si todo es correcto entra, si no deberá introducir de nuevo los datos.
 
-plantuml, {plantUMLDir}iniciarSesion, svg]
+[plantuml, {plantUMLDir}iniciarSesion, svg]
 ----
 actor Usuario
 participant Interfaz_Grafica
