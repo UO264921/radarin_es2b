@@ -28,6 +28,27 @@ ningún dato será guardado en la aplicación RadarIn, dando la confianza de que
 
 [plantuml, {plantUMLDir}infrastructure, svg]
 ----
+database "POD on SoLiD" {
+  [Ubication]
+}
+
+node "RadarIn Application on heroku" {
+  [View]
+  [Controller]
+}
+
+User  --> [View]
+
+[View] --> [Controller] : notify
+[Controller] --> [View] : update
+
+[Controller] --> [Ubication] : get
+----
+
+////
+
+[plantuml, {plantUMLDir}infrastructureOld, svg]
+----
 cloud "Model (MVC)" {
   database "POD1" {
     [Ubication1]
@@ -65,3 +86,5 @@ Windows_10_User --> [Chrome Desktop] : allows
 [Controller (MVC)] --> [Ubication2] : uses
 [Controller (MVC)] --> [Ubication3] : uses
 ----
+
+ ////
