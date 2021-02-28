@@ -29,7 +29,4 @@ En esta sección prevendremos las diferentes vías por las cuales pueden surgir 
  *Node.js* |
     Node.js requiere de un conocimiento en librerías, operaciones asíncronas y dependencias. |
         Buscaremos cuanta más información mejor acerca de cómo utilizar la librería Node.js. |
- *Scala* |
-    Scala se trata de una tecnología diseñada para expresar patrones comunes de programación en forma concisa, elegante y con tipos seguros. Nuestra experiencia en esta es nula. |
-        Trataremos de aplicarla en nuestro proyecto, aunque si esto consta una complicación mayor, nos replantearemos el uso de esta tecnología. |
 |===
