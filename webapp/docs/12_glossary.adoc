@@ -17,6 +17,8 @@
     Plantilla para la comunicación y documentación de arquitectura que responde a qué debemos documentar y a cómo debemos documentar. |
  AsciiDoctor |
     Es un procesador de texto y una cadena de herramientas de publicación para convertir el marcado AsciiDoc en HTML 5, DocBook 4.5 y otros formatos. |
+ Cliente |
+	Empresa, persona o conjunto de personas que han pedido que se realize este proyecto
  Docker |
     Crear contenedores ligeros y portables para las aplicaciones sofware que puedan ejecutarse en cualquier máquina. |
  GitHub |
@@ -37,9 +39,9 @@
  OpenStreetMap |
     Es un mapa del mundo creado por una multitud de personas, que se ha convertido en una de las fuentes más detalladas de datos de mapas. |
  POD |
-    Almacenamiento descentralizado que se usa en aplicaciones Solid que permite al usuario conservar el control y la propiedad de sus datos. |
+    Almacenamiento descentralizado qhue se usa en aplicaciones Solid que permite al usuario conservar el control y la propiedad de sus datos. |
  Radarin|
-	Aplicación|
+	Conjunto de aplicación y aplicacion móvil|
  React |
     Framework de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera fácil e intuitiva. |
  SoLiD |

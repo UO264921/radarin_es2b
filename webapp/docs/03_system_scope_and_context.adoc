@@ -8,8 +8,8 @@
 
 === Contexto de negocio
 
-Radarin es una aplicación web donde el usuario, a través de la aplicación móvil, podrá ver a sus amigos mas cercanos en un mapa.
-El usuario podrá gestionar a sus amigos y recibir notificaiones al móvil en caso de que haya algun amigo cerca.
+Radarin es una aplicación donde el usuario registrado, a través de la aplicación móvil, podrá ver a sus amigos mas cercanos en un mapa.
+El usuario registrado podrá gestionar a sus amigos y recibir notificaiones al móvil en caso de que haya algun amigo cerca.
 
 image:bussines.png["bussines context diagram"]
 
@@ -19,28 +19,28 @@ image:bussines.png["bussines context diagram"]
  _Login_ |
     El usuario, a través de la aplicación móvil, iniciará sesión con su webId. |
  Eliminar amigo |
-    El usuario, a través de la aplicación móvil, podrá eliminar amigos de su lista de amigos. |
+    El usuario registrado, a través de la aplicación móvil, podrá eliminar amigos de su lista de amigos. |
  Añadir amigo |
-    El usuario, a través de la aplicación móvil, podrá añadir usuarios a su lista de amigos. |
+    El usuario registrado, a través de la aplicación móvil, podrá añadir usuarios a su lista de amigos. |
  Ver amigo |
-    El usuario, a través de la aplicación móvil, podrá ver un listado completo de su lista de amigos. |
+    El usuario registrado, a través de la aplicación móvil, podrá ver un listado completo de su lista de amigos. |
  Mostrar amigos cercanos |
-    El usuario, a través de la aplicación móvil, podrá ver en un mapa la localización de los amigos cercanos. |
+    El usuario registrado, a través de la aplicación móvil, podrá ver en un mapa la localización de los amigos cercanos. |
  Enviar localización |
-    La aplicación, de forma frecuente, pedirá la localización del usuario. |
+    La aplicación, de forma frecuente, pedirá la localización del usuario registrado. |
  Proyectar los amigos cercanos |
-    La aplicación web accederá a los POD de sus amigos y si estan cerca del usuario le pasará la localización a la api de OpenStreetMap que pintará las localización es en el mapa. |
+    La aplicación accederá a los POD de sus amigos y si estan cerca del usuario registrado le pasará la localización a la api de OpenStreetMap que pintará las localización es en el mapa. |
  Comparatir localización |
-    La aplicación web accederá al POD, tanto del usuario como de sus amigos, para obtener o guardar la localización y compararlas entre ellas. |
+    La aplicación accederá al POD, tanto del usuario registrado como de sus amigos, para obtener o guardar la localización y compararlas entre ellas. |
  Gestión de usuarios |
-    El administrador podrá gestionar los usuarios. |
+    El administrador podrá gestionar los usuarios registrados. |
  Monotorización del servidor |
     El administrador podrá ver el estado del servidor. |
 |===
 
 === Contexto técnico
 
-Radarin es una aplicación web descentralizada. Para lograrlo todos los datos se almacenan en los POD de los usuarios.
+Radarin es una aplicación descentralizada. Para lograrlo todos los datos se almacenan en los POD de los usuarios.
 Sus localizaciones se enviarán a través de de la aplicación utilizando las url de SoLiD POD, lo que requiere una conexión a internet.
 
 image:technical.png["technical context diagram"]
@@ -49,13 +49,13 @@ image:technical.png["technical context diagram"]
 |===
  Objeto | Descripción |
  USER(1/2) |
-    Representa el usuario de la aplicación. |
+    Representa un usuario registrado o no de Radarin. |
  Aplicación móvil |
-    Representa la aplicación a través de la cual, el usuario interaccionará con la aplicación web. |
- RADARIN |
-    La aplicación web. |
+    Representa la aplicación móvil a través de la cual, el usuario interaccionará con la aplicación. |
+ Aplicacion |
+    La aplicación donde se trbajará y se procesará las localizaciones. |
  POD of USER(1/2) |
-    Almacenamiento individual donde se guardará la informacion de cada usuario. |
+    Almacenamiento individual donde se guardará la informacion de cada usuario registrado. |
  SoLiD |
-    Un proyecto donde se busca que el usuario tenga control sobre sus datos mejorando la privacidad. |
+    Un proyecto donde se busca que el usuario registrado tenga control sobre sus datos mejorando la privacidad. |
 |===
