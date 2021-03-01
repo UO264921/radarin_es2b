@@ -1,67 +1,50 @@
 [[section-concepts]]
-== Cross-cutting Concepts
+== Conceptos transversales
 
+=== Conceptos del dominio
 
-[role="arc42help"]
-****
-.Content
-This section describes overall, principal regulations and solution ideas that are
-relevant in multiple parts (= cross-cutting) of your system.
-Such concepts are often related to multiple building blocks.
-They can include many different topics, such as
+.Los conceptios del dominio son los siguientes:
+- **Usuario**. Es la persona que usa la aplicación. El sistema almacenará su localización en un instante de tiempo, 
+no almacenará ningún tipo de información que no sea necesaria.
+- **Pod**. Es un repositorio de usuarios que almacenará la información que no se considera mínima del usuario, por ejemplo sus amigos. 
+Sigue las especificaciones SOLID y puede almacenarse en cualquier plataforma. Es el propio usuario el que tiene gestón total de su información.
+- **Amigo**. Un usuario tendrá amigos y le informará (mediante notificaciones) cuando uno de ellos esté cerca.
 
-* domain models
-* architecture patterns or design patterns
-* rules for using specific technology
-* principal, often technical decisions of overall decisions
-* implementation rules
+=== Patrones de arquitectura
+Basamos nuestra aplicación en el patrón arquitectónico MVC, consiste en separar los datos y la lógica de negocio de la aplicación de la 
+representación visual y los canales de comunicación. Este patrón de arquitectura de software se basa en las ideas de reutilización de código y la separación de conceptos, características que buscan facilitar la tarea de desarrollo de aplicaciones y su posterior mantenimiento.
 
-.Motivation
-Concepts form the basis for _conceptual integrity_ (consistency, homogeneity)
-of the architecture. Thus, they are an important contribution to achieve inner qualities of your system.
+=== Experiencia de usuario
+==== Diseño de la interfaz de usuario
+La idea de la interfaz es hacerla intuitiva y dirigida para todos los tipos de usuarios. Además buscamos hacerla limpia y bonita estéticamente.
 
-Some of these concepts cannot be assigned to individual building blocks
-(e.g. security or safety). This is the place in the template that we provided for a
-cohesive specification of such concepts.
+==== Internacionalización
+La idea primera del desarrollo de la aplicación es hacerla en español, ya que es nuestro idioma materno y nos sentimos más comodos para desarrollar la aplicación y la documentación.
 
-.Form
-The form can be varied:
+=== Seguridad
+Se considera una aplicación segura gracias al uso del protocolo HTTPS. 
+Además, gracias a los PODS los datos del usuario se almacenarán de una forma privada y es el propio usuario el que tiene que dar acceso a estos datos.
 
-* concept papers with any kind of structure
-* cross-cutting model excerpts or scenarios using notations of the architecture views
-* sample implementations, especially for technical concepts
-* reference to typical usage of standard frameworks (e.g. using Hibernate for object/relational mapping)
+=== Desarrollo
+==== Construcción
+Respecto a este apartado usaremos la libreria React.js para lograr los objetivos en cuanto a funcionalidad que deseamos.
+React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y la comunidad de software libre. En el proyecto hay más de mil desarrolladores libres.
 
-.Structure
-A potential (but not mandatory) structure for this section could be:
+React intenta ayudar a los desarrolladores a construir aplicaciones que usan datos que cambian todo el tiempo. Su objetivo es ser sencillo, declarativo y fácil de combinar. React sólo maneja la interfaz de usuario en una aplicación; React es la Vista en un contexto en el que se use el patrón MVC (Modelo-Vista-Controlador) o MVVM (Modelo-vista-modelo de vista). 
 
-* Domain concepts
-* User Experience concepts (UX)
-* Safety and security concepts
-* Architecture and design patterns
-* "Under-the-hood"
-* development concepts
-* operational concepts
+==== APIs
+Usaremos una API de mapas (OpenStreetMap) para mostrar un mapa al usuario.
+OpenStreetMap tiene una API de edición para extraer y guardar geoinformación en crudo desde/hacia la base de datos de OpenStreetMap.
 
-Note: it might be difficult to assign individual concepts to one specific topic
-on this list.
+==== Migración
+Habrá que desarrollar una aplicación Web y una para móviles, por tanto intentaremos no cambiar mucho en cuanto a desarrollo según se use una plataforma u otra.
 
-image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscutting concepts"]
-****
+=== Recuperación ante un imprevisto
+Gracias al uso de los PODS la recuperación de información no está en riesgo, ya que la información almacenada es independiente de la aplicación y está alojada en otro sitio.
 
-
-=== Domain model
-
-image:UmlDiagram.png["Example UML Diagram"]
+=== Pruebas
+Hemos acordado realizar pruebas exhaustivas cuando la aplicación esté en funcionamiento.
 
 
 
-=== _<Concept 2>_
 
-_<explanation>_
-
-...
-
-=== _<Concept n>_
-
-_<explanation>_
