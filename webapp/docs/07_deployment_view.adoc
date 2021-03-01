@@ -26,42 +26,21 @@ ningún dato será guardado en la aplicación RadarIn, dando la confianza de que
 - **Heroku**. Sirve de plataforma a la aplicación RadarIn.
 - **POD de SoLiD**. Almacena la información del usuario en un servidor de terceros, cuyo almacenamiento tiene que haber sido llevado a cabo por el usuario previamente.
 
-[plantuml, {plantUMLDir}infrastructure, svg]
+[plantuml, {plantUMLDir}infrastructure1, svg]
 ----
-cloud "Model (MVC)" {
-  database "POD1" {
-    [Ubication1]
-  }
-  database "POD2" {
-    [Ubication2]
-  }
-  database "POD3" {
-    [Ubication3]
-    [PreviousUbication3]
-  }
+database "POD on SoLiD" {
+  [Ubication]
 }
 
-Android_User --> POD2 : manages
-iOS_User --> POD1 : manages
-Windows_10_User --> POD3 : manages
-
-node "RadarIn Application" {
-  package "View (MVC)" {
-    [Chrome Mobile]
-    [Chrome Desktop]
-  }
-  [Controller (MVC)]
+node "RadarIn Application on heroku" {
+  [View]
+  [Controller]
 }
 
-[Chrome Mobile] --> [Controller (MVC)] : notifies
-[Chrome Desktop] --> [Controller (MVC)] : notifies
-[Controller (MVC)] --> [Chrome Mobile] : updates
-[Controller (MVC)] --> [Chrome Desktop] : updates
+User  --> [View]
 
-Android_User  --> [Chrome Mobile] : allows
-iOS_User --> [Chrome Mobile] : does_not_allow
-Windows_10_User --> [Chrome Desktop] : allows
+[View] --> [Controller] : notify
+[Controller] --> [View] : update
 
-[Controller (MVC)] --> [Ubication2] : uses
-[Controller (MVC)] --> [Ubication3] : uses
+[Controller] --> [Ubication]
 ----
