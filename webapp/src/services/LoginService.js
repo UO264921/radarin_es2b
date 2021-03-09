@@ -10,6 +10,7 @@ class LoginService extends React.Component{
                 redirectUrl: window.location.href
             });
         }
+        session.fetch(session.info.webId);
     }
 }
 export default LoginService
