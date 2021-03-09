@@ -1,19 +1,38 @@
 [[section-architecture-constraints]]
-== Architecture Constraints
+== Restricciones de arquitectura
 
+.Restricciones técnicas
+[options = "header", cols = "1,2"]
+|===
+ Restricción | Descripción |
+ https://solidproject.org/[_SoLiD_] |
+    El uso de solid nos implica que sea una aplicación descentralizada teniendo que tener hacer uso de los POD. |
+ https://github.com/[GitHub] |
+    Nuestro proyecto originalmente está alojado en esta plataforma. |
+ Uso exclusivo desde el movil |
+	Es obligatorio que se desarrolle una aplicación móvil para acceder a la aplicación
+ https://arc42.org/[Arc42] |
+    Es requisito recomendado su uso para la documentación. |
+ Tests |
+    Uso obligatorio de pruebas unitarias para probar el buen funcionamiento. |
+|===
 
-[role="arc42help"]
-****
-.Contents
-Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
+.Restricciones de organizacíon
+[options = "header", cols = "1,2"]
+|===
+ Restricción | Descripción |
+ Tiempo |
+    El desarrollo de todo el proyecto esta limitado, sólo se dispone de 3 meses. |
+ Miembros |
+    En este proyecto somos 5 estudiantes de la Universidad de Oviedo, con lo cual no podremos centrarnos exclusivamente en este proyecto. |
+ Entregas |
+    Hay entregas previas a la finalizacion del proyecto, con lo cual es necesario trabajar de forma constante sobre el proyecto. |
+|===
 
-.Motivation
-Architects should know exactly where they are free in their design decisions and where they must adhere to constraints.
-Constraints must always be dealt with; they may be negotiable, though.
-
-.Form
-Simple tables of constraints with explanations.
-If needed you can subdivide them into
-technical constraints, organizational and political constraints and
-conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
-****
+.Restricciones politicas
+[options = "header", cols = "1,2"]
+|===
+ Restricción | Descripción |
+	https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf[Ley_Orgánica_de_Protección_de_Datos_] | La finalidad de la LOPDGDD es proteger la intimidad, privacidad e integridad del individuo. |
+	https://rgpd.es/[_El_Reglamento_General_de_Protección_de_Datos_]  | El reglamento europeo relativo a la protección de las personas físicas en lo que respecta al tratamiento de sus datos personales y a la libre circulación de estos datos. |
+|===

@@ -1,17 +1,32 @@
 [[section-technical-risks]]
-== Risks and Technical Debts
+== Riesgos y deudas técnicas
 
+_Un problema conocido en compañías de desarrollo de software grandes es cómo balancear la priorización de la capacidad de respuesta a corto plazo con la capacidad de respuesta a largo plazo, específicamente violaciones de arquitectura._
 
-[role="arc42help"]
-****
-.Contents
-A list of identified technical risks or technical debts, ordered by priority
+[.text-right]
+https://www.researchgate.net/publication/265822240_Architecture_Technical_Debt_Understanding_Causes_and_a_Qualitative_Model[Architecture Technical Debt. Antonio Martini, Jan Bosch, Michel Chaudron].
 
-.Motivation
-“Risk management is project management for grown-ups” (Tim Lister, Atlantic Systems Guild.) 
+En esta sección prevendremos las diferentes vías por las cuales pueden surgir violaciones de arquitectura y ofreceremos una posible solución a estas.
 
-This should be your motto for systematic detection and evaluation of risks and technical debts in the architecture, which will be needed by management stakeholders (e.g. project managers, product owners) as part of the overall risk analysis and measurement planning.
+=== Riesgos y medidas
 
-.Form
-List of risks and/or technical debts, probably including suggested measures to minimize, mitigate or avoid risks or reduce technical debts.
-****
+[options = "header", cols = "1,2,2"]
+|===
+ Deuda técnica | Riesgos | Medidas |
+ *SoLiD* |
+    El proyecto SoLiD es relativamente nuevo y no tenemos experiencia con él en el equipo. |
+        Nos instruiremos mediante todos nuestros recursos disponibles en SoLiD y en todas las tecnologías relacionadas. |
+ *POD* |
+    El POD almacena la información del usuario en un servidor de terceros, sobre el cual recae la disponibilidad o la consistencia. |
+        Procuraremos seguir las especificaciones de SoLiD para intercambiar información con PODs, 
+        ya que poco podemos hacer con respecto a algo que es mantenido por un servidor ajeno. |
+ *Docker* |
+    Utilizaremos Docker para automatizar el despliegue de nuestra aplicación dentro de un contenedor de software servido por Heroku. |
+        Nuestra aplicación ha de utilizar herramientas que se integren perfectamente en Docker. |
+ *React* |
+    React se basa en JavaScript, lenguaje en el cual no tenemos gran experiencia. |
+        Nos formaremos en React y en JavaScript hasta tal punto que podamos solventar los problemas venideros durante el desarrollo del proyecto, por ejemplo haciendo cursos. |
+ *Node.js* |
+    Node.js requiere de un conocimiento en librerías, operaciones asíncronas y dependencias. |
+        Buscaremos cuanta más información mejor acerca de cómo utilizar la librería Node.js. |
+|===
