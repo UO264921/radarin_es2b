@@ -1,39 +1,36 @@
-import React from 'react';
 import './App.css';
-import logo from './logo.svg';
+import { SessionContext, SessionProvider} from "@inrupt/solid-ui-react";
+import { useState} from "react";
+import LogIn from "./components/LogIn/LogIn"
+import { useSession } from "@inrupt/solid-ui-react/dist";
 import Welcome from './components/Welcome';
-import EmailForm from "./components/EmailForm";
-import UserList from "./components/UserList";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
 
-class App extends React.Component{
-  constructor(){
-    super()
-    this.state = {users:[]}
-  }
 
-  refreshUsers(users){
-    this.setState({users:users})
-  }
 
-  render(){
-    return(
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <Welcome name="ASW students"/>
-        </header>
-        <div className="App-content">
-          <EmailForm refreshUsers={this.refreshUsers.bind(this)}/>
-          <UserList users={this.state.users}/>
-          <a className="App-link"
-            href="https://github.com/pglez82/radarin_0"
-            target="_blank"
-            rel="noopener noreferrer">Source code</a>
-        </div>
-      </div>
-    )
-  }
+const App = () => {
+
+  //We use this state variable
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  //With this we can control the login status for solid
+  const { session } = useSession();
+
+  //We have logged in
+  session.onLogin(()=>{
+    setIsLoggedIn(true)
+  })
+
+  //We have logged out
+  session.onLogout(()=>{
+    setIsLoggedIn(false)
+  })
+
+  return(
+    <SessionProvider sessionId="log-in-example">
+      {(!isLoggedIn) ? <LogIn/> : <Welcome name={getDefaultSession().info.webId}/>}
+    </SessionProvider>
+  )
 }
 
 export default App;
