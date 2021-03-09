@@ -1,86 +1,46 @@
 [[section-deployment-view]]
 
+== Perspectiva de despliegue
 
-== Deployment View
+.Contexto
+RadarIn, nuestra aplicación, está orientada a usuarios personales y será desplegada en navegador, tanto en ordenadores personales como en dispositivos móviles.
+Concretamente, serán Microsoft Edge y Google Chrome los dos navegadores de referencia, ambos basados en https://www.chromium.org/[Chromium].
 
-[role="arc42help"]
-****
-.Content
-The deployment view describes:
+.Tecnologías
+Los datos del usuario serán almacenados en un https://solidproject.org/users/get-a-pod[POD], siguiendo así las especificaciones del proyecto https://solidproject.org/[SoLiD].
+Toda característica de la aplicación dependerá de su homóloga en la plataforma https://www.heroku.com/[Heroku], donde hemos decidido que sea desplegada.
 
- 1. the technical infrastructure used to execute your system, with infrastructure elements like geographical locations, environments, computers, processors, channels and net topologies as well as other infrastructure elements and
+=== Infraestructura
 
-2. the mapping of (software) building blocks to that infrastructure elements.
+Siguiendo el patrón de diseño de software Modelo-Vista-Controlador, la responsabilidad de manejar las peticiones recibidas desde el usuario será delegada por la vista 
+correspondiente a un controlador idealmente común a todas las vistas. No obstante, el usuario exclusivamente podrá mandar peticiones contra su vista correspondiente.
 
-Often systems are executed in different environments, e.g. development environment, test environment, production environment. In such cases you should document all relevant environments.
+El controlador de la aplicación únicamente accederá al POD del usuario, el cual hará las veces de modelo, con previo consentimiento de dicha persona.
 
-Especially document the deployment view when your software is executed as distributed system with more then one computer, processor, server or container or when you design and construct your own hardware processors and chips.
+Una arquitectura de una aplicación basada en el patrón Modelo-Vista-Controlador que siga las especificaciones de SoLiD sugiere un desacoplamiento del modelo.
+Dependeremos de la plataforma que mantenga el POD en cuestiones como la disponibilidad de los datos, aunque esto ofrece una garantía al usuario de que absolutamente 
+ningún dato será guardado en la aplicación RadarIn, dando la confianza de que éstos no serán manipulados de ninguna manera que el usuario no permita explícitamente.
 
-From a software perspective it is sufficient to capture those elements of the infrastructure that are needed to show the deployment of your building blocks. Hardware architects can go beyond that and describe the infrastructure to any level of detail they need to capture.
+.Sistemas implicados en la infraestructura.
+- **Dispositivo de usuario**. Puede ser un dispositivo móvil o un equipo de sobremesa.
+- **Heroku**. Sirve de plataforma a la aplicación RadarIn.
+- **POD de SoLiD**. Almacena la información del usuario en un servidor de terceros, cuyo almacenamiento tiene que haber sido llevado a cabo por el usuario previamente.
 
-.Motivation
-Software does not run without hardware.
-This underlying infrastructure can and will influence your system and/or some
-cross-cutting concepts. Therefore, you need to know the infrastructure.
+[plantuml, {plantUMLDir}infrastructure1, svg]
+----
+database "POD on SoLiD" {
+  [Ubication]
+}
 
-.Form
+node "RadarIn Application on heroku" {
+  [View]
+  [Controller]
+}
 
-Maybe the highest level deployment diagram is already contained in section 3.2. as
-technical context with your own infrastructure as ONE black box. In this section you will
-zoom into this black box using additional deployment diagrams:
+User  --> [View]
 
-* UML offers deployment diagrams to express that view. Use it, probably with nested diagrams,
-when your infrastructure is more complex.
-* When your (hardware) stakeholders prefer other kinds of diagrams rather than the deployment diagram, let them use any kind that is able to show nodes and channels of the infrastructure.
-****
+[View] --> [Controller] : notify
+[Controller] --> [View] : update
 
-=== Infrastructure Level 1
-
-[role="arc42help"]
-****
-Describe (usually in a combination of diagrams, tables, and text):
-
-*  the distribution of your system to multiple locations, environments, computers, processors, .. as well as the physical connections between them
-*  important justification or motivation for this deployment structure
-* Quality and/or performance features of the infrastructure
-*  the mapping of software artifacts to elements of the infrastructure
-
-For multiple environments or alternative deployments please copy that section of arc42 for all relevant environments.
-****
-
-_**<Overview Diagram>**_
-
-Motivation::
-
-_<explanation in text form>_
-
-Quality and/or Performance Features::
-
-_<explanation in text form>_
-
-Mapping of Building Blocks to Infrastructure::
-_<description of the mapping>_
-
-
-=== Infrastructure Level 2
-
-[role="arc42help"]
-****
-Here you can include the internal structure of (some) infrastructure elements from level 1.
-
-Please copy the structure from level 1 for each selected element.
-****
-
-==== _<Infrastructure Element 1>_
-
-_<diagram + explanation>_
-
-==== _<Infrastructure Element 2>_
-
-_<diagram + explanation>_
-
-...
-
-==== _<Infrastructure Element n>_
-
-_<diagram + explanation>_
+[Controller] --> [Ubication]
+----

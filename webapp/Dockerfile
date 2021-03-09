@@ -13,6 +13,7 @@ RUN npm run build
 RUN apt-get update && apt-get -y install ruby openjdk-8-jre
 RUN gem install asciidoctor asciidoctor-diagram
 RUN npm install shx --save-dev
+RUN apt-get -y install graphviz
 #Generate the doc
 RUN npm run docs
 CMD [ "node", "server.js" ]
