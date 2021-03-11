@@ -35,18 +35,18 @@ const Perfil = () => {
             <Typography>
               <span>WebID:</span> {webId}
             </Typography>
-
+            <hr class="line"/>
             <Typography>
-              <span>Nombre:</span> <Text class="text" property={FOAF.name.iri.value} />
+              <span>Nombre:</span><br/> <Text class="text" property={FOAF.name.iri.value} />
             </Typography>
-
+            <hr class="line"/>
             <Typography>
-              <span>Descripcion:</span> <Text class="text" property={VCARD.note.iri.value} />
+              <span>Descripcion:</span> <br/><Text class="text" property={VCARD.note.iri.value} />
             </Typography>
           </CardContent>
           <hr/>
           <LogoutButton>
-            <Button class="botonLogout">Logout</Button>
+            <Button class="botonLogout"><span class="logout">Logout</span></Button>
           </LogoutButton>
         </Card>
       </CombinedDataProvider>
