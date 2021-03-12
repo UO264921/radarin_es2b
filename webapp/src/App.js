@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Welcome from './components/Welcome';
 import LogIn from './components/LogIn/LogIn';
-import EmailForm from "./components/EmailForm";
-import UserList from "./components/UserList";
+import { SessionContext, SessionProvider} from "@inrupt/solid-ui-react";
 import MNavBar from './components/NavBar/MNavBar';
 import MainPage from './components/Main/MainPage';
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
+import { useSession } from "@inrupt/solid-ui-react/dist";
 
 class App extends React.Component {
-
-  constructor(){
+  
+  constructor() {
     super();
   }
 
@@ -25,41 +26,23 @@ class App extends React.Component {
           </header>
           <br /><br /><br /><br /><br /><br />
           <Switch>
-            
-            
             <Route path="/login">
               <LogIn></LogIn>
             </Route>
             <Route path="/">
-              {this.main2()}
+              <div>
+                <MainPage />
+              </div>
             </Route>
           </Switch>
         </div>
-      
+
       </BrowserRouter>
     );
   }
 
-  main() {
-    return (
-      <div className="App-content">
-        <Welcome name="ASW students" />
-        <EmailForm refreshUsers={this.refreshUsers.bind(this)} />
-        <UserList users={this.state.users} />
-        <a className="App-link"
-          href="https://github.com/pglez82/radarin_0"
-          target="_blank"
-          rel="noopener noreferrer">Source code</a>
-      </div>
-    );
-  }
 
-  main2() {
-    return (<div>
-      <MainPage />
-      </div>
-    );
-  }
+
 }
 
 export default App;
