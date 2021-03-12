@@ -1,25 +1,33 @@
+import './LogIn.css';
 import React from 'react';
+import {Container, Grid } from '@material-ui/core'
 import Provider from './Provider';
-import  LoginService from "../../services/LoginService.js"
+import Navbar from '../common/Navbar';
+import WebId from './WebId';
+import {LoginButton, RegisterButton} from "./LoginButtons"
 
 class LogIn extends React.Component {
-
-    getProvider(){
-        var provider = document.getElementById("providers").value;
-        return provider;
-    }
-    
     render() {
         return (
-            <div class="Login">
-                    <div>
-                    <hr />
-                        <Provider />
+            <section>
+                <Navbar />
+                <Container>
+                <Grid className="container-provider-webid" container direction="column">
+                    <Provider />
+                    <div class="divisor">
+                        <span class="divisor-line"></span>
+                        <span class="divisor-text"> OR </span>
+                        <span class="divisor-line"></span>
                     </div>
-                    <div>
-                        <button onClick={()=> new LoginService().login(this.getProvider())}>login</button>
-                    </div>
-            </div>
+                    <WebId />
+                </Grid>
+                </Container>
+                <Grid className="container-buttons" container direction="column">
+                    <RegisterButton/>
+                    <LoginButton />
+                </Grid>
+
+            </section>
         );
     }
 }
