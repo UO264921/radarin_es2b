@@ -1,12 +1,9 @@
 import './App.css';
-import { SessionContext, SessionProvider} from "@inrupt/solid-ui-react";
+import { SessionProvider, useSession} from "@inrupt/solid-ui-react";
 import { useState} from "react";
-import LogIn from "./components/LogIn/LogIn"
-import { useSession } from "@inrupt/solid-ui-react/dist";
+import LogIn from "./components/logIn/LogIn"
 import Welcome from './components/Welcome';
-import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-
-
+import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 
 const App = () => {
 
