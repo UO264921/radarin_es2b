@@ -1,60 +1,19 @@
 import auth from "solid-auth-client";
-//import data from "@solid/query-ldflex";
+import data from "@solid/query-ldflex";
+import {login,getDefaultSession}from "@inrupt/solid-client-authn-browser";
 import FC from "solid-file-client";
 import { NotificationManager } from "react-notifications";
 import { ToastContainer, toast } from 'react-toastify';
 import FileClient from "solid-file-client";
-const { default: data } = require("@solid/query-ldflex");
 
 class FriendService {
   constructor() {
     this.webId = "";
     this.friends = this.getFriends();
   }
-    /*
-  async addFriend(id, webId, added, empty, error) {
-    var ret = 0;
-    const user = data[webId]; //sacamos nuestra informacion
-    if (await this.checkID(id)) {
-      if (id.localeCompare("") !== 0) {
-        //comprobamos que no pasamos un campo vacio
-        if (await this.friendAlreadyAdded(id, webId)) {
-          //notificamos si el amigo estaba añadido
-          NotificationManager.error("", added, 3000);
-          ret = -1;
-        } else {
-          await user.knows.add(data[id]); //añadimos el amigo
-          ret = 1;
-        }
-      } else {
-        NotificationManager.error("", empty, 3000);
-        ret = -1;
-      }
-    } else {
-      NotificationManager.error("", error, 3000);
-      ret = -1;
-    }
-    return await ret;
-  }
-
-  async removeFriend(event, webId, eliminado, error) {
-    try {
-      var selectedOption = document.querySelector("input[name = food]:checked")
-        .value; //sacamos el amigo seleccionado
-      event.preventDefault();
-      const user = data[webId]; //sacamos nuestra informacion
-      if (selectedOption.localeCompare("") !== 0) {
-        await user.knows.delete(data[selectedOption]); //eliminamos el amigo
-        NotificationManager.error("", eliminado, 3000);
-      }
-    } catch (e) {
-      NotificationManager.error("", error, 3000);
-    }
-  }
-  */
 
   async addFriend(friendWebId, userWebId) {
-    const user = data[userWebId]; //sacamos nuestra informacion
+    let user = data[userWebId]; //sacamos nuestra informacion
     if (await this.isWebIdValid(friendWebId)) {
       if (friendWebId.localeCompare("") !== 0) {
         //comprobamos que no pasamos un campo vacio
@@ -185,5 +144,17 @@ class FriendService {
   reload = () => {
     window.location.reload();
   };
+
+  async getSession() {
+    let session = await auth.currentSession(localStorage);
+    return session;
+  };
+
+  async getWebId () {
+    let session = await this.getSession();
+    let webId = session.webId;
+    return webId;
+  };
+
 }
 export default FriendService = new FriendService();

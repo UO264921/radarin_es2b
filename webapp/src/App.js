@@ -5,6 +5,8 @@ import LogIn from "./components/LogIn/LogIn"
 import { useSession } from "@inrupt/solid-ui-react/dist";
 import Welcome from './components/Welcome';
 import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
+import Friends from './components/Friends/Friends';
+import data from "@solid/query-ldflex";
 
 
 
@@ -25,12 +27,12 @@ const App = () => {
   session.onLogout(()=>{
     setIsLoggedIn(false)
   })
-
+  
   return(
     <SessionProvider sessionId="log-in-example">
-      {(!isLoggedIn) ? <LogIn/> : <Welcome name={getDefaultSession().info.webId}/>}
+      {(!isLoggedIn) ? <LogIn/> : <Friends/>} 
     </SessionProvider>
   )
 }
-
+//<Welcome name={getDefaultSession().info.webId}/>
 export default App;
