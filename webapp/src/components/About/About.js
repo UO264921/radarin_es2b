@@ -13,10 +13,7 @@ class About extends React.Component {
                     <Jumbotron className="mt-4">
                         <h1>About Radarin</h1>
                         <p>
-                            Radarin will be a system to facilitate meetings between friends using new technologies.
-                            The application can get access to the mobile phone localization of the users who voluntarily activate it and
-                            will allow other users who are their friends to know when they are near them. Everything will be build with Solid
-                            so you can be the owner of your own data!.
+                        Radarin será un sistema para facilitar encuentros entre amigos utilizando nuevas tecnologías. La aplicación podrá acceder a la información de localización del teléfono móvil de los usuarios que voluntariamente la tengan activada y permitirá que otros usuarios que sean sus amigos puedan conocer cuándo están cerca.
                         </p>
                         <p>
                             <A className="btn btn-primary" href="https://solidproject.org/about" target="_blank">Learn more about Solid</A>
