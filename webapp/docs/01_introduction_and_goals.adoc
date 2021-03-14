@@ -33,7 +33,7 @@ En estas épocas de COVID-19 el uso de mascarilla dificulta el reconocimiento fa
         Alta |
  Portabilidad |
     El usuario podrá correr la aplicación movil en la mayoría de los dispositivo móviles|
-        Baja |
+        Media |
 |===
 
 === _Stakeholders_
