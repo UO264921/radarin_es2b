@@ -36,8 +36,8 @@ function getProvider(webId) {
         const webIdParts = webId.split("/");
         const providerParts = webIdParts[2].split(".");
         const provider = "https://m." + providerParts[1] + "." + providerParts[2];
-        alert(provider)
-        return provider
+        alert(provider);
+        return provider;
     }
     return webId
 
