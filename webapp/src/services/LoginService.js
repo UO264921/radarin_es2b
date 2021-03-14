@@ -2,8 +2,8 @@ import { getDefaultSession, login } from "@inrupt/solid-client-authn-browser";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 
-const Login = async (provider, webId) => {
 
+const Login = async (provider, webId) => {
     const session = getDefaultSession();
     const exist = await existWebId(webId);
     const size = String(webId).length;
@@ -11,6 +11,7 @@ const Login = async (provider, webId) => {
         alert("Valido " + webId);
         provider = getProvider(webId);
         await loginWithProvider(provider, session);
+
     }
     else if (size === parseInt(0)) {
         alert("WebId vacio " + webId);
@@ -31,17 +32,29 @@ async function existWebId(webId) {
         return false;
     }
 }
+
 function getProvider(webId) {
     if (webId.includes("profile")) {
         const webIdParts = webId.split("/");
         const providerParts = webIdParts[2].split(".");
         const provider = "https://m." + providerParts[1] + "." + providerParts[2];
-        alert(provider)
-        return provider
+        alert(provider);
+        return provider;
     }
     return webId
-
 }
+
+//function LoginService (props) {
+//login(provider) {
+//var session = getDefaultSession();
+//if (!session.info.isLoggedIn) {
+//return login({
+//oidcIssuer: provider,
+//redirectUrl: window.location.href
+//});
+//}
+//}
+//}
 
 function loginWithProvider(provider, session) {
     if (!session.info.isLoggedIn) {
@@ -64,4 +77,3 @@ const Register = async (provider) => {
 }
 
 export { Login, Register }
-
