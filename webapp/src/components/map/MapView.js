@@ -4,11 +4,11 @@ import './map.css';
 
 // Import dependences
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { getUser, getFriends } from '../domain/UserGateway';
+import { getUser, getFriends } from '../../domain/UserGateway';
 import { useState } from 'react';
 import { useInterval } from '../hooks/UseInterval';
 import { getMarkers } from './Markers';
-import { getMapBoxAccessToken, getAttributionMessage } from '../persistence/RadarInGateway';
+import { getMapBoxAccessToken, getAttributionMessage } from '../../persistence/RadarInGateway';
 
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
