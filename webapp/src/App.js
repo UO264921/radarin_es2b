@@ -10,8 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
 import MapView from './components/map/MapView';
 import Friends from './components/Friends/Friends';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 
   function App(props) {
     //We use this state variable
