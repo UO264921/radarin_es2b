@@ -5,7 +5,7 @@
 
 image:10_arbol.png["Arbol de calidad"]
 
-=== Escenarios de calidad
+=== Objetivo: Atributos de calidad
 
 ==== Privacidad
 
@@ -27,3 +27,14 @@ Cumplirá los requisitos de forma adecuada y completamente simplificada a los us
 ==== Portabilidad
 
 La aplicación final será un software portable que permitirá su uso en diferentes sistemas operativos y con esto conseguir que un mayor número de usuarios puedan utilizarla.
+
+=== Escenarios de calidad
+
+[options = "header", cols = "1,2,3"]
+|===
+ Atributo de calidad | Escenario de calidad | Prioridad |
+ Privacidad | Todos los datos de los usuarios se almacenarán en PODs de SOLID y se accederá a los mismos de forma puntual e imprescindible | Muy alta |
+ Usabilidad | El usuario debe adaptarse de forma sencilla al uso de la aplicación y de la aplicación móvil. Para ello se diseñará una interfaz basada en la intuición y facilidad de aprendizaje | Alta |
+ Eficiencia | Se desarrollará una aplicación que proporcione al usuario un buen y constante rendimiento además de unos tiempos de respuesta bajos | Alta |
+ Portabilidad | La aplicación podrá ser lanzada en la gran mayoría de navegadores, así como la aplicación móvil en la mayoría de dispositivos móviles | Media |
+|===
