@@ -1,9 +1,11 @@
 import auth from "solid-auth-client";
 import data from "@solid/query-ldflex";
-import {login,getDefaultSession}from "@inrupt/solid-client-authn-browser";
+
+// import {login,getDefaultSession}from "@inrupt/solid-client-authn-browser";
 import FC from "solid-file-client";
-import { NotificationManager } from "react-notifications";
-import { ToastContainer, toast } from 'react-toastify';
+// import { NotificationManager } from "react-notifications";
+import { toast } from 'react-toastify';
+
 import FileClient from "solid-file-client";
 
 class FriendService {
@@ -22,13 +24,14 @@ class FriendService {
           toast.error("Friend already added", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
-          } );
+          });
         } else {
           await user.knows.add(data[friendWebId]); //añadimos el amigo
           toast.info("Your friend has been added", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
-          } );
+
+          });
           await this.sleep(5000);
           this.reload();
         }
@@ -36,21 +39,25 @@ class FriendService {
         toast.error("Empty string", {
           position: toast.POSITION.BOTTOM_LEFT,
           autoClose: 5000
-        } );
+
+        });
+
       }
     } else {
       toast.error("Invalid WebId ", {
         position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 5000
-      } );
+
+      });
     }
   }
 
-   async deleteFriend(friend, userWebId){
+  async deleteFriend(friend, userWebId) {
     var friendWebId = friend.nombre;
     friendWebId = friendWebId.replace("[", "");
     friendWebId = friendWebId.replace("]", "");
-  
+
+
     const user = data[userWebId];
     if (await this.isWebIdValid(friendWebId)) {
       if (friendWebId.localeCompare("") !== 0) {
@@ -58,27 +65,35 @@ class FriendService {
           toast.error("An error occurred when deleting the friend (maybe it was previously deleted)", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
-        } );
+
+          });
+
         } else {
           await user.knows.delete(data[friendWebId]); //añadimos el amigo
           toast.info("User will be deleted from your friends", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
-        } );
-        await this.sleep(5000);
+
+          });
+          await this.sleep(5000);
+
           this.reload();
         }
       } else {
         toast.error("Empty string", {
           position: toast.POSITION.BOTTOM_LEFT,
           autoClose: 5000
-      } );
+
+        });
+
       }
     } else {
       toast.error("Invalid WebId ", {
         position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 5000
-    } );
+
+      });
+
     }
   }
 
@@ -86,7 +101,9 @@ class FriendService {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-   async isWebIdValid(friendWebId) {
+
+  async isWebIdValid(friendWebId) {
+
     const fc = new FileClient(auth);
     let session = await auth.currentSession();
     if (!session) {
@@ -121,10 +138,12 @@ class FriendService {
     return false;
   }
 
-  async friendAlreadyAdded (friendWebId, webId){
+
+  async friendAlreadyAdded(friendWebId, webId) {
     const user = data[webId];
     for await (const friend of user.friends) {
-      if (String(friend).localeCompare(String(friendWebId)) === 0){ return true;}
+      if (String(friend).localeCompare(String(friendWebId)) === 0) { return true; }
+
     }
     return false;
   };
@@ -150,7 +169,9 @@ class FriendService {
     return session;
   };
 
-  async getWebId () {
+
+  async getWebId() {
+
     let session = await this.getSession();
     let webId = session.webId;
     return webId;
