@@ -2,11 +2,11 @@
 == Estrategia de solución
 
 === Contenido
-Para llevar a cabo el desarrollo de esta aplicación, utilizaremos JavaScript junto con su biblioteca https://es.reactjs.org/[React]. 
+Para llevar a cabo el desarrollo de la aplicación, utilizaremos JavaScript junto con su biblioteca https://es.reactjs.org/[React]. 
 Se ha llegado a esta decisión dadas las recomendaciones del profesorado de la asignatura. Además de esto, nos parece un lenguaje que 
 proporciona grandes facilidades para el proceso de desarrollo de aplicaciones web y para su ampliación mediante módulos externos. 
-A su vez, https://es.reactjs.org/[React] nos facilitará en gran medida el diseño de interfaces suprimiendo la mayoría de las 
-dificultades del uso único de JavaScript.
+A su vez, https://es.reactjs.org/[React] nos ayudará en cuanto al diseño de interfaces suprimiendo la mayoría de las 
+dificultades del uso único de JavaScript y nos facilitará el desarrollo de la aplicación móvil.
 
 Para la comunicación del proyecto y su desarrollo conjunto se utilizará https://github.com/[GitHub], no solo por sus ventajas en 
 cuanto al control de versiones sino también para la creación de issues para cada integrante del grupo. https://github.com/[GitHub] 

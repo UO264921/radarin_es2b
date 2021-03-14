@@ -1,12 +1,13 @@
+import { SessionProvider, useSession } from "@inrupt/solid-ui-react";
+// import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
+import { useState } from "react";
+import LogIn from "./components/LogIn/LogIn"
+// import Welcome from './components/Welcome';
+import MapView from './components/map/MapView';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { SessionProvider, useSession} from "@inrupt/solid-ui-react";
-import { useState} from "react";
-import LogIn from "./components/logIn/LogIn"
-import Welcome from './components/Welcome';
-import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 
-const App = () => {
-
+function App(props) {
   //We use this state variable
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -14,18 +15,19 @@ const App = () => {
   const { session } = useSession();
 
   //We have logged in
-  session.onLogin(()=>{
+  session.onLogin(() => {
     setIsLoggedIn(true)
   })
 
   //We have logged out
-  session.onLogout(()=>{
+  session.onLogout(() => {
     setIsLoggedIn(false)
   })
 
-  return(
+  // <Welcome name={getDefaultSession().info.webId}/>}
+  return (
     <SessionProvider sessionId="log-in-example">
-      {(!isLoggedIn) ? <LogIn/> : <Welcome name={getDefaultSession().info.webId}/>}
+      {(!isLoggedIn) ? <LogIn /> : <MapView />}
     </SessionProvider>
   )
 }

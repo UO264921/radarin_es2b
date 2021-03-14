@@ -14,7 +14,7 @@ function getWebId() {
 function LoginButton(props) {
     return (
         <Button variant="contained"
-            class="loginButton"
+            className="loginButton"
             onClick={() => Login(getProvider(), getWebId())}>
             login</Button>);
 }
@@ -23,7 +23,7 @@ function RegisterButton(props) {
     return (
         <Button
             variant="contained"
-            class="registerButton"
+            className="registerButton"
             onClick={() => Register(getProvider())}>
             Crear un pod</Button>);
 }
