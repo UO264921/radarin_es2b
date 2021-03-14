@@ -2,14 +2,12 @@ import './LogIn.css';
 import React from 'react';
 import { Container, Grid } from '@material-ui/core'
 import Provider from './Provider';
-import Navbar from '../common/Navbar';
 import WebId from './WebId';
 import { LoginButton, RegisterButton } from "./LoginButtons"
 
 function LogIn(props) {
     return (
         <section>
-            <Navbar />
             <Container>
                 <Grid className="container-provider-webid" container direction="column">
                     <Provider />

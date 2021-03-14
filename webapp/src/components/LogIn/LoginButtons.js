@@ -1,6 +1,6 @@
 import './LogIn.css';
 import { Button } from '@material-ui/core'
-import { Login, Register } from '../../services/LoginService';
+import { Login, Register } from './LoginService';
 
 function getProvider() {
     var provider = document.getElementById("providers").value;
@@ -14,7 +14,7 @@ function getWebId() {
 function LoginButton(props) {
     return (
         <Button variant="contained"
-            className="loginButton"
+            class="loginButton"
             onClick={() => Login(getProvider(), getWebId())}>
             login</Button>);
 }
@@ -23,7 +23,7 @@ function RegisterButton(props) {
     return (
         <Button
             variant="contained"
-            className="registerButton"
+            class="registerButton"
             onClick={() => Register(getProvider())}>
             Crear un pod</Button>);
 }

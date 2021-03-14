@@ -4,12 +4,12 @@ import LogIn from './components/LogIn/LogIn';
 import { SessionProvider } from "@inrupt/solid-ui-react";
 import MNavBar from './components/NavBar/MNavBar';
 import MainPage from './components/Main/MainPage';
-import { Switch, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Switch, Route, withRouter, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
 import MapView from './components/map/MapView';
 import Friends from './components/Friends/Friends';
+import Perfil from './components/Perfil/Perfil';
 
   function App(props) {
     //We use this state variable
@@ -31,21 +31,30 @@ import Friends from './components/Friends/Friends';
 
     // <Welcome name={getDefaultSession().info.webId}/>}
     return (
+      <SessionProvider sessionId="log-in-example">
       <BrowserRouter>
         <div className="App">
           <header>
             <MNavBar />
           </header>
-          <br /><br /><br /><br /><br /><br />
+          <div style={{height:"60px"}}>
+          </div>
           <Switch>
             <Route path="/login">
-              <SessionProvider sessionId="log-in-example">
-                {(!isLoggedIn) ? <LogIn /> : <MapView />}
-              </SessionProvider>
+              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+            </Route>
+            <Route path="/perfil">
+              {(!isLoggedIn) ? <LogIn /> : <Perfil />}
+            </Route>
+            <Route path="/amigos">
+              {(!isLoggedIn) ? <LogIn /> : <Friends />}
+            </Route>
+            <Route path="/mapa">
+              {(!isLoggedIn) ? <LogIn /> : <MapView />}
             </Route>
             <Route path="/">
               <div>
-                <MainPage />
+              {(!isLoggedIn) ? <MainPage/> : <MapView />}
               </div>
             </Route>
             <Route path="/friends">
@@ -55,8 +64,8 @@ import Friends from './components/Friends/Friends';
             </Route>
           </Switch>
         </div>
-
       </BrowserRouter>
+      </SessionProvider>
     );
   }
   //<Welcome name={getDefaultSession().info.webId} />

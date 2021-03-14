@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import "./Perfil.css";
+import { withRouter } from "react-router-dom";
 
 const Perfil = () => {
   const { session } = useSession();
@@ -33,15 +34,15 @@ const Perfil = () => {
         <hr/>
           <CardContent>
             <Typography>
-              <span>WebID:</span> {webId}
+              <span class="perfil-span">WebID:</span> {webId}
             </Typography>
             <hr class="line"/>
             <Typography>
-              <span>Nombre:</span><br/> <Text class="text" property={FOAF.name.iri.value} />
+              <span class="perfil-span">Nombre:</span><br/> <Text class="text" property={FOAF.name.iri.value} />
             </Typography>
             <hr class="line"/>
             <Typography>
-              <span>Descripcion:</span> <br/><Text class="text" property={VCARD.note.iri.value} />
+              <span class="perfil-span">Descripcion:</span> <br/><Text class="text" property={VCARD.note.iri.value} />
             </Typography>
           </CardContent>
           <hr/>
