@@ -8,27 +8,8 @@ import { Switch, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
-<<<<<<< HEAD
-import Welcome from './components/Welcome';
-import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-import Friends from './components/Friends/Friends';
-import data from "@solid/query-ldflex";
-
-
-
-const App = () => {
-=======
-// import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-// import Welcome from './components/Welcome';
 import MapView from './components/map/MapView';
 import Friends from './components/Friends/Friends';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { useSession } from "@inrupt/solid-ui-react/dist";
-// import Welcome from './components/Welcome';
-// import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-// import data from "@solid/query-ldflex";
->>>>>>> tmp
 
   function App(props) {
     //We use this state variable
