@@ -3,7 +3,6 @@ import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 
 const Login = async (provider, webId) => {
-
     const session = getDefaultSession();
     const exist = await existWebId(webId);
     const size = String(webId).length;
@@ -31,6 +30,7 @@ async function existWebId(webId) {
         return false;
     }
 }
+
 function getProvider(webId) {
     if (webId.includes("profile")) {
         const webIdParts = webId.split("/");
@@ -40,8 +40,19 @@ function getProvider(webId) {
         return provider;
     }
     return webId
-
 }
+
+//function LoginService (props) {
+//login(provider) {
+//var session = getDefaultSession();
+//if (!session.info.isLoggedIn) {
+//return login({
+//oidcIssuer: provider,
+//redirectUrl: window.location.href
+//});
+//}
+//}
+//}
 
 function loginWithProvider(provider, session) {
     if (!session.info.isLoggedIn) {
@@ -64,4 +75,3 @@ const Register = async (provider) => {
 }
 
 export { Login, Register }
-
