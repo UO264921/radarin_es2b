@@ -7,7 +7,7 @@ import { LoginButton, RegisterButton } from "./LoginButtons"
 
 function LogIn(props) {
     return (
-        <section>
+        <section style={{display:"inline-block"}}>
                 <div className="container-provider-webid">
                     <Provider />
                     <div className="divisor">

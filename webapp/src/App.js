@@ -54,7 +54,7 @@ import About from './components/About/About';
               {(!isLoggedIn) ? <LogIn /> : <MapView />}
             </Route>
             <Route path="/about">
-              {(!isLoggedIn) ? <LogIn /> : <About />}
+               <About />
             </Route>
             <Route path="/">
               <div>
