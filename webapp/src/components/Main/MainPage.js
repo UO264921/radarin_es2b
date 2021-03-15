@@ -2,12 +2,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 // import Slider from "react-slick";
-import ArrowBackIos from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
+//import ArrowBackIos from "@material-ui/icons/ArrowBackIos";
+//import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
 // import Button from "@material-ui/core/Button";
 // import { Link } from "react-router-dom";
 
-function SamplePrevArrow(props) {
+/*function SamplePrevArrow(props) {
     const { onClick } = props;
     return (
         <ArrowBackIos
@@ -30,9 +30,9 @@ function SamplePrevArrow(props) {
             onClick={onClick}
         />
     );
-}
+}*/
 
-function SampleNextArrow(props) {
+/*function SampleNextArrow(props) {
     const { onClick } = props;
     return (
         <ArrowForwardIos
@@ -56,9 +56,10 @@ function SampleNextArrow(props) {
         />
     );
 }
+*/
 
 function MainPage(props) {
-    var settings = {
+    /*var settings = {
         dots: true,
         lazyLoad: true,
         fade: true,
@@ -71,6 +72,7 @@ function MainPage(props) {
         prevArrow: <SamplePrevArrow />,
         nextArrow: <SampleNextArrow />
     };
+    **/
     return (
         <div className="contain">
             <div className="bienvenida">

@@ -6,7 +6,6 @@ import {
   Text,
 } from "@inrupt/solid-ui-react";
 import {
-  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -15,39 +14,38 @@ import {
 } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import "./Perfil.css";
-import { withRouter } from "react-router-dom";
 
 const Perfil = () => {
   const { session } = useSession();
   const { webId } = session.info;
 
   return (
-    <Container class="fixed">
+    <Container className="fixed">
       <CombinedDataProvider datasetUrl={webId} thingUrl={webId}>
-        <Card class="card">
+        <Card className="card">
           <Typography>
-            <span class="miPerfil">Mi Perfil</span>
+            <span className="miPerfil">Mi Perfil</span>
           </Typography>
           <CardActionArea>
-            <Image class="perfil" property={VCARD.hasPhoto.iri.value} />
+            <Image className="perfil" property={VCARD.hasPhoto.iri.value} />
           </CardActionArea>
         <hr/>
           <CardContent>
             <Typography>
-              <span class="perfil-span">WebID:</span> {webId}
+              <span className="perfil-span">WebID:</span> {webId}
             </Typography>
-            <hr class="line"/>
+            <hr className="line"/>
             <Typography>
-              <span class="perfil-span">Nombre:</span><br/> <Text class="text" property={FOAF.name.iri.value} />
+              <span className="perfil-span">Nombre:</span><br/> <Text className="text" property={FOAF.name.iri.value} />
             </Typography>
-            <hr class="line"/>
+            <hr className="line"/>
             <Typography>
-              <span class="perfil-span">Descripcion:</span> <br/><Text class="text" property={VCARD.note.iri.value} />
+              <span className="perfil-span">Descripcion:</span> <br/><Text className="text" property={VCARD.note.iri.value} />
             </Typography>
           </CardContent>
           <hr/>
           <LogoutButton>
-            <Button class="botonLogout"><span class="logout">Logout</span></Button>
+            <button className="botonLogout"><span className="logout">Logout</span></button>
           </LogoutButton>
         </Card>
       </CombinedDataProvider>

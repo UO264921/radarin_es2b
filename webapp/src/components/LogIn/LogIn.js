@@ -1,6 +1,6 @@
 import './LogIn.css';
 import React from 'react';
-import { Container, Grid } from '@material-ui/core'
+import {Grid } from '@material-ui/core'
 import Provider from './Provider';
 import WebId from './WebId';
 import { LoginButton, RegisterButton } from "./LoginButtons"
@@ -8,17 +8,15 @@ import { LoginButton, RegisterButton } from "./LoginButtons"
 function LogIn(props) {
     return (
         <section>
-            <Container>
-                <Grid className="container-provider-webid" container direction="column">
+                <div className="container-provider-webid">
                     <Provider />
                     <div className="divisor">
-                        <span className="divisor-line"></span>
-                        <span className="divisor-text"> OR </span>
-                        <span className="divisor-line"></span>
+                        {/*<span className="divisor-line"></span>*/}
+                        <span className="divisor-text"> -OR- </span>
+                        {/*<span className="divisor-line"></span>*/}
                     </div>
                     <WebId />
-                </Grid>
-            </Container>
+                </div>
             <Grid className="container-buttons" container direction="column">
                 <RegisterButton />
                 <LoginButton />

@@ -4,7 +4,7 @@ import LogIn from './components/LogIn/LogIn';
 import { SessionProvider } from "@inrupt/solid-ui-react";
 import MNavBar from './components/NavBar/MNavBar';
 import MainPage from './components/Main/MainPage';
-import { Switch, Route, withRouter, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
 import MapView from './components/map/MapView';

@@ -4,39 +4,47 @@
   }
 
 .container-provider-webid{
-    padding:10%;
+    margin-top: 3%;
+    max-width: 700px;
+    max-height: 700px;
+    padding:3%;
     background-color:var(--primary);
-    border-radius: 10vw;
-    margin-top: 4vh;
+    border-radius: 15%;
     width: 75%;
+    height: 75%;
+    margin-left:35vw;
     
+}
+@media screen and (max-width: 1000px) {
+    .container-provider-webid {
+        margin-left:15%;
+        width: 70vw;
+        height: 40vh;
+    }
 }
 
 .provider-title{
-   
     color:var(--secondary);
     margin:0px;
-    font-size: 6vw;
-    padding-bottom:4vh;
+    font-size: min(100px, 6vw);
+    
 }
 
 .provider-select{
-    max-width: 1000px;
-    min-height: 30px;
     color:var(--primary);
     background-color:var(--secondary);
     border-radius: 70vh;
     height:7vh;
     text-align-last:center;
-    font-size:6vw;
+    font-size:min(60px, 6vw);
     width: 100%
 }
 .divisor{
     text-align-last:center;
     display:inline-block;
     height: 1vh;
-    margin-top:15px;
-    margin-bottom: 40px;
+    margin-top:2%;
+    margin-bottom: 6%;
 
 }
 .divisor-line{
@@ -48,22 +56,20 @@
 }
 
 .divisor-text{
-    font-size:5vw;
+    font-size:max(13px, 2.5vw);
     margin:0;
-    color:var(--secondary);
+    color: var(--secondary);
     
 }
 
 .webid-title{
     color:var(--secondary);
-    margin:0px;
-    font-size:6vw;
+    font-size:min(100px, 6vw);
     
     
 }
 
 .webid-input{
-    min-height: 30px;
     color: var(--primary);
     background-color:var(--secondary);
     border:0px solid var(--secondary);
@@ -79,6 +85,8 @@
     align-content: center
 }
 .registerButton{
+    max-width: 800px;
+    max-height: 800px;
     border: 1px solid var(--primary);
     background-color: var(--secondary);
     color: var(--primary);
@@ -86,16 +94,18 @@
     width: 80vw;
     margin-bottom: 2vh;
     height: 10vh;
-    font-size:4vw;
+    font-size:min(80px,4vw);
 }
 
 .loginButton{
+    max-width: 800px;
+    max-height: 800px;
     border: 1px solid var(--primary);
     background-Color: var(--primary);
     color: var(--secondary);
     border-radius: 20vw;
     width: 80vw;
     height: 10vh;
-    font-size:5vw;
+    font-size:min(80px,5vw);
 }
 

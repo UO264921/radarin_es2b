@@ -9,7 +9,7 @@ function MNavBar() {
         <Navbar.Brand href="/" className="mb-1">Radarin</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav animation={"false"} className="mr-auto">
                 <Nav.Link as={Link} to="/mapa" >Mapa</Nav.Link>
                 <Nav.Link as={Link} to="/perfil" >Perfil</Nav.Link>
                 <Nav.Link as={Link} to="/amigos" >Mis amigos</Nav.Link>
