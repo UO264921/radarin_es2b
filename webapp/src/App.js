@@ -10,6 +10,7 @@ import { useSession } from "@inrupt/solid-ui-react/dist";
 import MapView from './components/map/MapView';
 import Friends from './components/Friends/Friends';
 import Perfil from './components/Perfil/Perfil';
+import About from './components/About/About';
 
   function App(props) {
     //We use this state variable
@@ -51,6 +52,9 @@ import Perfil from './components/Perfil/Perfil';
             </Route>
             <Route path="/mapa">
               {(!isLoggedIn) ? <LogIn /> : <MapView />}
+            </Route>
+            <Route path="/about">
+              {(!isLoggedIn) ? <LogIn /> : <About />}
             </Route>
             <Route path="/">
               <div>
