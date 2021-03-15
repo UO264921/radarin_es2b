@@ -80,26 +80,24 @@
 }
 .registerButton{
     max-width: 800px;
-    max-height: 800px;
     border: 1px solid var(--primary);
     background-color: var(--secondary);
     color: var(--primary);
     border-Radius: 20vw;
     width: 80vw;
     margin-bottom: 2vh;
-    height: 10vh;
+    height: 20%;
     font-size:min(80px,4vw);
 }
 
 .loginButton{
     max-width: 800px;
-    max-height: 800px;
     border: 1px solid var(--primary);
     background-Color: var(--primary);
     color: var(--secondary);
     border-radius: 20vw;
     width: 80vw;
-    height: 10vh;
+    height: 20%;
     font-size:min(80px,5vw);
 }
 
