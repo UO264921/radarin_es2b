@@ -61,7 +61,7 @@ class FriendService {
     const user = data[userWebId];
     if (await this.isWebIdValid(friendWebId)) {
       if (friendWebId.localeCompare("") !== 0) {
-        if (await !this.friendAlreadyAdded(friendWebId, userWebId)) {
+        if (await !this.friendAllreadyAdded(friendWebId, userWebId)) {
           toast.error("An error occurred when deleting the friend (maybe it was previously deleted)", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
@@ -131,24 +131,12 @@ class FriendService {
     }
   }
 
-  async friendAlreadyAdded(id, webId) {
+  async friendAllreadyAdded(id, webId) {
     const user = data[webId];
     for await (const friend of user.friends)
       if (String(friend).localeCompare(String(id)) === 0) return true;
     return false;
   }
-
-
-  async friendAlreadyAdded(friendWebId, webId) {
-    const user = data[webId];
-    for await (const friend of user.friends) {
-      if (String(friend).localeCompare(String(friendWebId)) === 0) { return true; }
-
-    }
-    return false;
-  };
-
-
   async getFriends() {
     const friends = [];
     let session = await auth.currentSession();

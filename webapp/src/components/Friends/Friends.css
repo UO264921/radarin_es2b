@@ -4,71 +4,22 @@
     --secondary: rgb(255, 255, 255);
   }
 
-.container-provider-webid{
-    padding:10%;
-    background-color:var(--primary);
-    border-radius: 10vw;
-    margin-top: 4vh;
-    width: 75%;
-}
-
-.provider-title{
-    color:var(--secondary);
-    margin:0px;
-    font-size: 6vw;
-    padding-bottom:4vh;
-}
-
-.provider-select{
-    max-width: 1000px;
-    min-height: 30px;
-    color:var(--primary);
-    background-color:var(--secondary);
-    border-radius: 70vh;
-    height:7vh;
-    text-align-last:center;
-    font-size:6vw;
-    width: 100%
-}
-.divisor{
-    text-align-last:center;
-    display:inline-block;
-    height: 1vh;
-    margin-top:15px;
-    margin-bottom: 40px;
-
-}
-.divisor-line{
-    width: 30%;
-    height: 0;
-    border: 1px solid var(--secondary);
-    margin: 2%;
-    display:inline-block;
-}
-
-.divisor-text{
-    font-size:5vw;
-    margin:0;
-    color:var(--secondary);
-    
-}
-
-.webid-title{
+.friends-webid-title{
     color:var(--secondary);
     margin:0px;
     font-size:6vw;    
 }
 
-.webid-input{
+.friends-webid-input{
     min-height: 30px;
     color: var(--primary);
     background-color:var(--secondary);
     border:0.04em solid var(--primary);
     border-radius: 70vh;
-    height:3em;
+    height:3.5em;
     text-align-last:center;
     font-size: 1.2em;
-    width: 86%;
+    width: 88%;
     outline: none;
 }
 
@@ -76,26 +27,7 @@
     margin-top: 4vh;
     align-content: center
 }
-.registerButton{
-    border: 1px solid var(--primary);
-    background-color: var(--secondary);
-    color: var(--primary);
-    border-Radius: 20vw;
-    width: 80vw;
-    margin-bottom: 2vh;
-    height: 10vh;
-    font-size:4vw;
-}
 
-.loginButton{
-    border: 1px solid var(--primary);
-    background-Color: var(--primary);
-    color: var(--secondary);
-    border-radius: 20vw;
-    width: 80vw;
-    height: 10vh;
-    font-size:5vw;
-}
 
 .prueba ul {
     padding: 0;
