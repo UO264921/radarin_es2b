@@ -4,39 +4,42 @@
   }
 
 .container-provider-webid{
-    padding:10%;
+    max-width: 700px;
+    max-height: 500px;
+    margin: 10%;
+    padding:3%;
     background-color:var(--primary);
-    border-radius: 10vw;
-    margin-top: 4vh;
-    width: 75%;
+    border-radius: 8%;
+    width: 80%;
+    height: 60%;
     
 }
 
+
 .provider-title{
-   
     color:var(--secondary);
     margin:0px;
-    font-size: 6vw;
-    padding-bottom:4vh;
+    font-size: min(70px, 6vw);
+    text-align: left;
+    margin-left: 2%;
+    
 }
 
 .provider-select{
-    max-width: 1000px;
-    min-height: 30px;
     color:var(--primary);
     background-color:var(--secondary);
     border-radius: 70vh;
-    height:7vh;
+    height:10%;
     text-align-last:center;
-    font-size:6vw;
+    font-size:min(40px, 6vw);
     width: 100%
 }
 .divisor{
     text-align-last:center;
     display:inline-block;
     height: 1vh;
-    margin-top:15px;
-    margin-bottom: 40px;
+    margin-top:2%;
+    margin-bottom: 6%;
 
 }
 .divisor-line{
@@ -48,29 +51,30 @@
 }
 
 .divisor-text{
-    font-size:5vw;
+    font-size:max(8px, 2vw);
     margin:0;
-    color:var(--secondary);
+    color: var(--secondary);
     
 }
 
 .webid-title{
     color:var(--secondary);
-    margin:0px;
-    font-size:6vw;
-    
+    font-size:min(70px, 6vw);
+    margin-bottom: 2%;
+    text-align: left;
+    margin-left: 2%;
     
 }
 
 .webid-input{
-    min-height: 30px;
+    max-height: 90px;
     color: var(--primary);
     background-color:var(--secondary);
     border:0px solid var(--secondary);
     border-radius: 70vh;
-    height:7vh;
     text-align-last:center;
-    font-size: 6vw;
+    font-size:min(40px, 6vw);
+    height: 10%;
     width: 100%
 }
 
@@ -79,23 +83,25 @@
     align-content: center
 }
 .registerButton{
+    max-width: 800px;
     border: 1px solid var(--primary);
     background-color: var(--secondary);
     color: var(--primary);
     border-Radius: 20vw;
     width: 80vw;
     margin-bottom: 2vh;
-    height: 10vh;
-    font-size:4vw;
+    height: 20%;
+    font-size:min(80px,4vw);
 }
 
 .loginButton{
+    max-width: 800px;
     border: 1px solid var(--primary);
     background-Color: var(--primary);
     color: var(--secondary);
     border-radius: 20vw;
     width: 80vw;
-    height: 10vh;
-    font-size:5vw;
+    height: 20%;
+    font-size:min(80px,5vw);
 }
 

@@ -4,31 +4,13 @@ import LogIn from './components/LogIn/LogIn';
 import { SessionProvider } from "@inrupt/solid-ui-react";
 import MNavBar from './components/NavBar/MNavBar';
 import MainPage from './components/Main/MainPage';
-import { Switch, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
-<<<<<<< HEAD
-import Welcome from './components/Welcome';
-import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-import Friends from './components/Friends/Friends';
-import data from "@solid/query-ldflex";
-
-
-
-const App = () => {
-=======
-// import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-// import Welcome from './components/Welcome';
 import MapView from './components/map/MapView';
 import Friends from './components/Friends/Friends';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { useSession } from "@inrupt/solid-ui-react/dist";
-// import Welcome from './components/Welcome';
-// import { getDefaultSession, Session } from '@inrupt/solid-client-authn-browser';
-// import data from "@solid/query-ldflex";
->>>>>>> tmp
+import Perfil from './components/Perfil/Perfil';
+import About from './components/About/About';
 
   function App(props) {
     //We use this state variable
@@ -50,21 +32,33 @@ import { useSession } from "@inrupt/solid-ui-react/dist";
 
     // <Welcome name={getDefaultSession().info.webId}/>}
     return (
+      <SessionProvider sessionId="log-in-example">
       <BrowserRouter>
         <div className="App">
           <header>
             <MNavBar />
           </header>
-          <br /><br /><br /><br /><br /><br />
+          <div style={{height:"60px"}}>
+          </div>
           <Switch>
             <Route path="/login">
-              <SessionProvider sessionId="log-in-example">
-                {(!isLoggedIn) ? <LogIn /> : <MapView />}
-              </SessionProvider>
+              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+            </Route>
+            <Route path="/perfil">
+              {(!isLoggedIn) ? <LogIn /> : <Perfil />}
+            </Route>
+            <Route path="/amigos">
+              {(!isLoggedIn) ? <LogIn /> : <Friends />}
+            </Route>
+            <Route path="/mapa">
+              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+            </Route>
+            <Route path="/about">
+               <About />
             </Route>
             <Route path="/">
               <div>
-                <MainPage />
+              {(!isLoggedIn) ? <MainPage/> : <MapView />}
               </div>
             </Route>
             <Route path="/friends">
@@ -74,8 +68,8 @@ import { useSession } from "@inrupt/solid-ui-react/dist";
             </Route>
           </Switch>
         </div>
-
       </BrowserRouter>
+      </SessionProvider>
     );
   }
   //<Welcome name={getDefaultSession().info.webId} />

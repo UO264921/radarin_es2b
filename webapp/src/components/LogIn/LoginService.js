@@ -8,17 +8,18 @@ const Login = async (provider, webId) => {
     const exist = await existWebId(webId);
     const size = String(webId).length;
     if (exist && size > 0) {
-        alert("Valido " + webId);
+        //alert("Valido " + webId);
         provider = getProvider(webId);
+        //await auth.login(provider);
         await loginWithProvider(provider, session);
-
     }
     else if (size === parseInt(0)) {
-        alert("WebId vacio " + webId);
+        //alert("WebId vacio " + webId);
+        //await auth.login(provider);
         await loginWithProvider(provider, session);
     }
     else {
-        alert("Invalido " + webId);
+        //alert("Invalido " + webId);
     }
 }
 
@@ -44,36 +45,19 @@ function getProvider(webId) {
     return webId
 }
 
-//function LoginService (props) {
-//login(provider) {
-//var session = getDefaultSession();
-//if (!session.info.isLoggedIn) {
-//return login({
-//oidcIssuer: provider,
-//redirectUrl: window.location.href
-//});
-//}
-//}
-//}
-
-function loginWithProvider(provider, session) {
-    if (!session.info.isLoggedIn) {
-        return login({  //Session restore
-            oidcIssuer: provider,
-            redirectUrl: window.location.href
-        });
-    }
+async function loginWithProvider(provider) {
+    return await login({
+        oidcIssuer: provider,
+        redirectUrl: window.location.href
+    });
 }
 
 const Register = async (provider) => {
-    alert(provider)
-    const session = getDefaultSession();
-    if (!session.info.isLoggedIn) {
-        return login({
-            oidcIssuer: provider + "/register",
-            redirectUrl: window.location.href
-        });
-    }
+
 }
 
-export { Login, Register }
+const Logout = async () => {
+    await auth.logout().then().alert("logout")
+}
+
+export { Login, Register, Logout }

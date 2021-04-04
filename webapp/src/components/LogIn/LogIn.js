@@ -1,26 +1,22 @@
 import './LogIn.css';
 import React from 'react';
-import { Container, Grid } from '@material-ui/core'
+import {Grid } from '@material-ui/core'
 import Provider from './Provider';
-import Navbar from '../common/Navbar';
 import WebId from './WebId';
 import { LoginButton, RegisterButton } from "./LoginButtons"
 
 function LogIn(props) {
     return (
-        <section>
-            <Navbar />
-            <Container>
-                <Grid className="container-provider-webid" container direction="column">
+        <section style={{display:"inline-block"}}>
+                <div className="container-provider-webid">
                     <Provider />
                     <div className="divisor">
-                        <span className="divisor-line"></span>
-                        <span className="divisor-text"> OR </span>
-                        <span className="divisor-line"></span>
+                        {/*<span className="divisor-line"></span>*/}
+                        <span className="divisor-text"> -OR- </span>
+                        {/*<span className="divisor-line"></span>*/}
                     </div>
                     <WebId />
-                </Grid>
-            </Container>
+                </div>
             <Grid className="container-buttons" container direction="column">
                 <RegisterButton />
                 <LoginButton />
