@@ -2,8 +2,18 @@
 [![codecov](https://codecov.io/gh/Arquisoft/radarin_es2b/branch/master/graph/badge.svg?token=5KEJ0DQDTU)](https://codecov.io/gh/Arquisoft/radarin_es2b)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/39b5e401a34f4b9eb499b8ecc9e798de)](https://www.codacy.com/gh/Arquisoft/radarin_es2b/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/radarin_es2b&amp;utm_campaign=Badge_Grade)
 
-# Radarin project structure
-Link to the deployed sample application: [radarinES2B](https://radarines2bwebapp.herokuapp.com/). Note that sometimes **it can take a while to load** because Heroku in the free plan, takes the containers to sleep when they are not used for some time and taking them up takes time.
+# Proyecto RadarIn ES2B
+- Acceso a la aplicación: [RadarIn-ES2B](https://radarines2bwebapp.herokuapp.com/).
+- Acceso a la documentación: [Documentación de RadarIn-ES2B](https://radarines2bwebapp.herokuapp.com/docs/).
+
+Nótese que a veces **puede tardar en cargar** porque el plan gratis de Heroku pone a dormir sus contenedores cuando no se usan durante un tiempo y volverlos a levantar lleva tiempo.
+
+## Colaboradores
+- Iván Álvarez López UO264862@uniovi.es
+- Iyan Sanjurjo Luna UO264921@uniovi.es
+- Miguel Fernández Álvarez UO269736@uniovi.es
+- Esther González García de Vega UO269763@uniovi.es
+- Andrés del Pozo Amo UO271035@uniovi.es
 
 ## Quick start guide
 If you want to execute the project you will need [git](https://git-scm.com/downloads), [Node.js and npm](https://www.npmjs.com/get-npm) and [Docker](https://docs.docker.com/get-docker/). Make sure the three of them are installed in your system. Download the project with `git clone https://github.com/Arquisoft/radarin_es2b.git`. The fastest way to launch everything is with docker:
@@ -36,12 +46,4 @@ cd restapi
 npm install
 npm start
 ```
-You should be able to access the application in [http://localhost:3000](http://localhost:3000) and the documentation in [http://localhost:3000/docs](http://localhost:3000/docs)
-
-## Collaborators
- - Esther González García de Vega
- - Andrés del Pozo Amo
- - Miguel Fernández Álvarez
- - Iván Álvarez López
- - Iyán Sanjurjo Luna
- - Pablo Arévalo González
+You should be able to access the application in [http://localhost:3000](http://localhost:3000) and the documentation in [http://localhost:3000/docs](http://localhost:3000/docs)  

@@ -1,26 +1,22 @@
 [[section-design-decisions]]
-== Design Decisions
+== Decisiones de diseño
 
-
-[role="arc42help"]
-****
-.Contents
-Important, expensive, large scale or risky architecture decisions including rationals.
-With "decisions" we mean selecting one alternative based on given criteria.
-
-Please use your judgement to decide whether an architectural decision should be documented
-here in this central section or whether you better document it locally
-(e.g. within the white box template of one building block).
-
-Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
-
-.Motivation
-Stakeholders of your system should be able to comprehend and retrace your decisions.
-
-.Form
-Various options:
-
-* List or table, ordered by importance and consequences or:
-* more detailed in form of separate sections per decision
-* ADR (architecture decision record) for every important decision
-****
+[options = "header", cols = "1,2,2"]
+|===
+ Decisión | Ventajas | Desventajas |
+ Documentación en español |
+    Mayor velocidad a la hora de crear la documentación y mayor calidad y riqueza del lenguaje. |
+        No es el idioma mas usado en proyectos. |
+ Uso de _OpenStreetMap_ |
+    Parte del grupo ya esta familiarizado con él y nos parece más fácil de usar. |
+        Al no ser el más utilizado quizá haya problemas a la hora de buscar información o en caso de tener algun error poco común. |
+ _React_ |
+    Es una libreria que nos puede ayudar a usar la tecnología SOLID en nuetsro proyecto. |
+        No estamos acostumbrado a trabajar con ellos y quizá al principio nos lleve más tiempo. |
+ Base de datos |
+    Nos proporciona mayor velocidad que usando Pod's, además de una buena concurrecia. También estamos más familizarizados con ellas.  |
+        Puede crecer mucho y puede perder fluidez. |
+ Aplicación web |
+    Portabilidad, vale para cualquier dispositivo. |
+        Dificultad a la hora de mandar noficaciones. |
+|===
