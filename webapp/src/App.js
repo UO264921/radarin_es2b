@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import LogIn from './components/LogIn/LogIn';
+import LogIn from './components/logIn/LogIn.js';
 import { SessionProvider } from "@inrupt/solid-ui-react";
 import MNavBar from './components/NavBar/MNavBar';
 import MainPage from './components/Main/MainPage';

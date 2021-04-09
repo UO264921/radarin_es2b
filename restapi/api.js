@@ -9,7 +9,9 @@ const FriendRequest = require("./models/FriendRequest")
 // Devuelve el número de usuarios
 router.get("/usuarios/count", async (req, res) => {
     const users = await Usuarios.find({}).sort('-_id') //Inverse order
-    res.send(users.length)
+    console.log(users)
+    console.log(users.length)
+    res.send(users.length.toString());
 })
 
 //Añadir usuario COMPROBAR
@@ -17,10 +19,11 @@ router.post("/usuario/add", async (req, res) => {
     let webid = req.body.webid;
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ webid: webid })
+    conlose.log(usuario)
     if (usuario)
         res.send({error:"Error: Este usuario ya ha sido añadido"})
     else{
-        usuario = new Usuario({
+        usuario = new Usuarios({
             nombreUsuario: nombreUsuario,
             webid: webid,
             coordinates:""
@@ -88,8 +91,6 @@ router.post("/usuario/nombreUsuario", async (req, res) => {
         res.send("Error: Usuario no encontrado")
     }
 })
-
-//
 
 //Añadir elemento a la tabla de peticiones COMPROBAR
 router.post("/friendrequest/add", async (req, res) => {

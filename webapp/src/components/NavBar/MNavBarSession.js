@@ -2,7 +2,7 @@ import React from "react";
 import { useSession, CombinedDataProvider, Text } from "@inrupt/solid-ui-react";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
-import { FOAF } from "@inrupt/lit-generated-vocab-common";
+//import { FOAF } from "@inrupt/lit-generated-vocab-common";
 import Button from "@material-ui/core/Button";
 import { LogoutButton } from "@inrupt/solid-ui-react";
 
@@ -22,7 +22,7 @@ function MNavBarSession() {
     return <Nav>
     <Nav.Link>
         <CombinedDataProvider datasetUrl={webId} thingUrl={webId}>
-        <Text property={FOAF.name.iri.value} autosave/>
+        
         </CombinedDataProvider>
     </Nav.Link>
     <LogoutButton>
@@ -31,3 +31,7 @@ function MNavBarSession() {
 </Nav>;
 }
 export default MNavBarSession;
+
+
+// linea 25 
+// <Text property={FOAF.name.iri.value} autosave/> 
