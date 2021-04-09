@@ -167,4 +167,5 @@ class FriendsService {
   };
 
 }
-export default FriendService = new FriendService();
+
+export default FriendsService;

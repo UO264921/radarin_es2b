@@ -6,7 +6,7 @@ import { Grid } from '@material-ui/core'
 import Provider from './modules/Provider';
 import WebId from './modules/WebId';
 import { LoginButton, RegisterButton } from "./modules/LoginButtons"
-import './LogIn.css';
+import './logIn.css';
 
 function LogIn(props) {
     return (

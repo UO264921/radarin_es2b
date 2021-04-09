@@ -6,7 +6,7 @@ import { latLng } from 'leaflet';
  * Initially, a POJO (Plain Old Java Object): https://en.wikipedia.org/wiki/Plain_old_Java_object
  * Also includes several functionalities, as "getLatLng()" for "MapView"
  */
-class User {
+export class UserDTO {
 
     constructor(props) {
         this.username = props.username;
@@ -30,5 +30,3 @@ class User {
     }
 
 }
-
-export default User;

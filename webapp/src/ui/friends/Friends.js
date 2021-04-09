@@ -30,7 +30,7 @@ import './Friends.css';
 // Domain dependences
 import ServicesFactory from "../../domain/ServicesFactory";
 
-const friendsService = ServicesFactory.forFriendUsers();
+let friendsService = ServicesFactory.forFriendUsers();
 
 class Friends extends Component {
   constructor() {

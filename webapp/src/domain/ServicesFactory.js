@@ -1,13 +1,15 @@
 // Dependences from: ~/domain
-import CurrentUserService from "../../domain/currentUser/CurrentUserService";
-import FriendsService from "../../domain/friends/FriendUsersService";
+import CurrentUserService from "./currentUser/CurrentUserService";
+import FriendsService from "./friends/FriendUsersService";
 
-function forCurrentUser() {
-    return new CurrentUserService();
+class ServicesFactory {
+    static forCurrentUser() {
+        return new CurrentUserService();
+    }
+
+    static forFriendUsers() {
+        return new FriendsService();
+    }
 }
 
-function forFriendUsers() {
-    return new FriendsService();
-}
-
-export { forCurrentUser, forFriendUsers };
+export default ServicesFactory;
