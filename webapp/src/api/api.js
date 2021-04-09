@@ -4,7 +4,7 @@
 export async function getNumeroUsuarios(){
     const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
     let response = await fetch(apiEndPoint + '/usuarios/count')
-    return await response.json()
+    return await response.json
 }
 
 //Añadir usuario COMPROBAR
@@ -54,9 +54,10 @@ export async function modificarCoordenadas(webid,coordinates){
 
 //METODO PAR LLAMAR A ESTE METODO CADA X TIEMPO (ESTA PUESTO 20 segs) ESTO HAY QUE PONERLO DONDE SE LLAME AL DE ARRIBA, HAY QUE PONER PARAMETROS
 //import { useEffect } from "react"
-useEffect(()=>{
+/*useEffect(()=>{
     setInterval(modificarCoordenadas("webid","coordenadas"),20000)
 });
+*/
 
 //Obtener nombre de usuario con webid COMPROBAR
 export async function getWebIdByUsername(nombreUsuario){
