@@ -12,6 +12,7 @@ import Friends from './components/Friends/Friends';
 import Perfil from './components/Perfil/Perfil';
 import About from './components/About/About';
 
+
   function App(props) {
     //We use this state variable
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,7 +29,6 @@ import About from './components/About/About';
     session.onLogout(() => {
       setIsLoggedIn(false)
     })
-
 
     // <Welcome name={getDefaultSession().info.webId}/>}
     return (
