@@ -1,3 +1,4 @@
+// External dependences
 import { getDefaultSession, login } from "@inrupt/solid-client-authn-browser";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";

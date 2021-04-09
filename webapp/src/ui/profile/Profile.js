@@ -1,3 +1,4 @@
+// External dependences
 import {
   useSession,
   CombinedDataProvider,
@@ -13,9 +14,11 @@ import {
   Typography,
 } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
-import "./Perfil.css";
 
-const Perfil = () => {
+// Dependences from: ~/ui/profile
+import "./profile.css";
+
+const Profile = () => {
   const { session } = useSession();
   const { webId } = session.info;
 
@@ -29,21 +32,21 @@ const Perfil = () => {
           <CardActionArea>
             <Image className="perfil" property={VCARD.hasPhoto.iri.value} />
           </CardActionArea>
-        <hr/>
+          <hr />
           <CardContent>
             <Typography>
               <span className="perfil-span">WebID:</span> {webId}
             </Typography>
-            <hr className="line"/>
+            <hr className="line" />
             <Typography>
-              <span className="perfil-span">Nombre:</span><br/> <Text className="text" property={FOAF.name.iri.value} />
+              <span className="perfil-span">Nombre:</span><br /> <Text className="text" property={FOAF.name.iri.value} />
             </Typography>
-            <hr className="line"/>
+            <hr className="line" />
             <Typography>
-              <span className="perfil-span">Descripcion:</span> <br/><Text className="text" property={VCARD.note.iri.value} />
+              <span className="perfil-span">Descripcion:</span> <br /><Text className="text" property={VCARD.note.iri.value} />
             </Typography>
           </CardContent>
-          <hr/>
+          <hr />
           <LogoutButton>
             <button className="botonLogout"><span className="logout">Logout</span></button>
           </LogoutButton>
@@ -53,4 +56,4 @@ const Perfil = () => {
   );
 };
 
-export default Perfil;
+export default Profile;
