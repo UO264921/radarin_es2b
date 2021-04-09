@@ -6,34 +6,10 @@ const User = require("./models/users")
 const Usuarios = require ("./models/Usuarios")
 const FriendRequest = require("./models/FriendRequest")
 
-// Get all users
-router.get("/users/list", async (req, res) => {
-    const users = await User.find({}).sort('-_id') //Inverse order
-    res.send(users)
-})
-
-//register a new user
-router.post("/users/add", async (req, res) => {
-    let name = req.body.name;
-    let email = req.body.email;
-    //Check if the device is already in the db
-    let user = await User.findOne({ email: email })
-    if (user)
-        res.send({error:"Error: This user is already registered"})
-    else{
-        user = new User({
-            name: name,
-            email: email,
-        })
-        await user.save()
-        res.send(user)
-    }
-})
-
-//buscar EJEMPLO
-router.get("/login", async (req, res) => {
+// Devuelve el número de usuarios
+router.get("/usuarios/count", async (req, res) => {
     const users = await Usuarios.find({}).sort('-_id') //Inverse order
-    res.send(users)
+    res.send(users.length)
 })
 
 //Añadir usuario COMPROBAR
@@ -102,7 +78,16 @@ router.post("/usuario/modificar/coordinates", async (req, res) => {
          res.send("Ha habido un error")
 })
 
-//
+//Obtener nombre de usuario con webid COMPROBAR
+router.post("/usuario/nombreUsuario", async (req, res) => {
+    let nombreUsuario = req.body.nombreUsuario;
+    let usuario = await Usuarios.findOne({ nombreUsuario: nombreUsuario })
+    if (usuario)
+        res.send(usuario.webid)
+    else{
+        res.send("Error: Usuario no encontrado")
+    }
+})
 
 //
 
