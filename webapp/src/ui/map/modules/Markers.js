@@ -1,3 +1,4 @@
+// External dependences
 import { Marker, Popup } from 'react-leaflet';
 import { divIcon } from 'leaflet';
 
@@ -43,5 +44,5 @@ export function getMarkers(users) {
         usersMarkers.push(getMarker(value, colour, markerKey));
         colour = blue;
     });
-    return usersMarkers
+    return usersMarkers;
 }

@@ -1,8 +1,11 @@
+// External dependences
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import MNavBarSession from "./MNavBarSession";
 import { Link } from "react-router-dom";
+
+// Dependences from: ~/ui/navBar
+import MNavBarSession from "./modules/MNavBarSession";
 
 function MNavBar() {
     return <Navbar bg="white" expand="lg" className="navBar fixed-top align-items center shadow rounded">
@@ -15,10 +18,10 @@ function MNavBar() {
                 <Nav.Link as={Link} to="/amigos" >Mis amigos</Nav.Link>
                 <Nav.Link as={Link} to="/config" >Configuracion</Nav.Link>
                 <Nav.Link as={Link} to="/about" >Acerca de</Nav.Link>
-                
             </Nav>
-        <MNavBarSession></MNavBarSession>    
+            <MNavBarSession></MNavBarSession>
         </Navbar.Collapse>
     </Navbar>;
 }
+
 export default MNavBar;
