@@ -14,6 +14,9 @@ import {
 } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import "./Perfil.css";
+import { modificarNombreUsuario,getUsernameByWebId } from "../../api/api";
+import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
+
 
 const Perfil = () => {
   const { session } = useSession();
@@ -38,12 +41,17 @@ const Perfil = () => {
             <Typography>
               <span className="perfil-span">Nombre:</span><br/> <Text className="text" property={FOAF.name.iri.value} />
             </Typography>
+            
             <hr className="line"/>
             <Typography>
               <span className="perfil-span">Descripcion:</span> <br/><Text className="text" property={VCARD.note.iri.value} />
             </Typography>
           </CardContent>
           <hr/>
+          <div>
+            <input id="input" type="text" ></input>
+            <button onClick={()=>modificarNombreUsuario(getDefaultSession().info.webId,document.getElementById("input").value)} ></button>
+            </div>
           <LogoutButton>
             <button className="botonLogout"><span className="logout">Logout</span></button>
           </LogoutButton>

@@ -9,9 +9,7 @@ const FriendRequest = require("./models/FriendRequest")
 // Devuelve el número de usuarios
 router.get("/usuarios/count", async (req, res) => {
     const users = await Usuarios.find({}).sort('-_id') //Inverse order
-    console.log(users)
-    console.log(users.length)
-    res.send(users.length.toString());
+    res.send(users.length);
 })
 
 //Añadir usuario COMPROBAR
@@ -19,12 +17,12 @@ router.post("/usuario/add", async (req, res) => {
     let webid = req.body.webid;
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ webid: webid })
-    conlose.log(usuario)
+    const users = await Usuarios.find({})
     if (usuario)
         res.send({error:"Error: Este usuario ya ha sido añadido"})
     else{
         usuario = new Usuarios({
-            nombreUsuario: nombreUsuario,
+            nombreUsuario: users.length,
             webid: webid,
             coordinates:""
         })
@@ -38,6 +36,7 @@ router.post("/usuario/modificar/nombre", async (req, res) => {
     let webid = req.body.webid;
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ nombreUsuario: nombreUsuario })
+    console.log("1"+usuario)
     if (usuario)
         res.send({error:"Error: Este nombre de usuario ya existe"})
     else{
@@ -50,6 +49,7 @@ router.post("/usuario/modificar/nombre", async (req, res) => {
                     nombreUsuario: nombreUsuario,
                 }
             })
+        console.log("2"+usuario.nombreUsuario)
         if(usuario)
             res.send("El nombre ha sido cambiado con éxito")
         else
@@ -81,12 +81,22 @@ router.post("/usuario/modificar/coordinates", async (req, res) => {
          res.send("Ha habido un error")
 })
 
-//Obtener nombre de usuario con webid COMPROBAR
+//Obtener webid con nombre de usuario COMPROBAR
 router.post("/usuario/nombreUsuario", async (req, res) => {
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ nombreUsuario: nombreUsuario })
     if (usuario)
         res.send(usuario.webid)
+    else{
+        res.send("Error: Usuario no encontrado")
+    }
+})
+//Obtener nombre de usuario con webid COMPROBAR
+router.post("/usuario/webId", async (req, res) => {
+    let webId = req.body.webId;
+    let usuario = await Usuarios.findOne({ webId: webId })
+    if (usuario)
+        res.send(usuario.nombreUsuario)
     else{
         res.send("Error: Usuario no encontrado")
     }
