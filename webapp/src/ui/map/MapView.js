@@ -5,7 +5,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 
 // Dependences from: ~/ui/map
 import './map.css';
-import { getMarkers } from './Markers';
+import { getMarkers } from './modules/Markers';
 
 // Dependences from: ~/util
 import { useInterval } from '../../util/hooks/UseInterval';
@@ -14,7 +14,7 @@ import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDa
 // Domain dependences
 import ServicesFactory from '../../domain/ServicesFactory';
 
-const currentUserService = ServicesFactory.forCurrentUser();
+let currentUserService = ServicesFactory.forCurrentUser();
 
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
