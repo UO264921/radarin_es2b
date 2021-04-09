@@ -1,24 +1,9 @@
 //REACT_APP_API_URI is an enviroment variable defined in the file .env.development or .env.production
-export async function addUser(username,email){
-    const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
-    let response = await fetch(apiEndPoint + '/users/add', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({'name':username, 'email':email})
-      })
-    return await response.json()
-}
 
-export async function getUsers(){
+// Devuelve el número de usuarios
+export async function getNumeroUsuarios(){
     const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
-    let response = await fetch(apiEndPoint + '/users/list')
-    return await response.json()
-}
-
-//buscar EJEMPLO
-export async function getUsuarios(){
-    const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
-    let response = await fetch(apiEndPoint + '/login')
+    let response = await fetch(apiEndPoint + '/usuarios/count')
     return await response.json()
 }
 
@@ -72,6 +57,20 @@ export async function modificarCoordenadas(webid,coordinates){
 useEffect(()=>{
     setInterval(modificarCoordenadas("webid","coordenadas"),20000)
 });
+
+//Obtener nombre de usuario con webid COMPROBAR
+export async function getWebIdByUsername(nombreUsuario){
+    const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
+    let response = await fetch(apiEndPoint + '/usuario/nombreUsuario', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(
+            {
+            'nombreUsuario':nombreUsuario
+        })
+      })
+    return await response.json()
+}
 
 
              
