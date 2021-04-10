@@ -16,6 +16,10 @@ import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
 import Profile from './ui/profile/Profile';
 
 function App(props) {
+
+  //pide permisos de notificaciones al usuario
+  let promise = Notification.requestPermission();
+  
   //We use this state variable
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
