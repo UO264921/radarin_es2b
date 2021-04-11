@@ -1,16 +1,25 @@
-// CSS StyleSheets
+// External dependences
 import 'leaflet/dist/leaflet.css';
+import { useState } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
+
+// Dependences from: ~/ui/map
 import './map.css';
+import { getMarkers } from './modules/Markers';
+
 
 // Import dependences
-import { MapContainer, TileLayer } from 'react-leaflet';
-import { getUser, getFriends } from '../../domain/UserGateway';
-import { useState } from 'react';
-import { useInterval } from '../hooks/UseInterval';
-import { getMarkers } from './Markers';
-import { getMapBoxAccessToken, getAttributionMessage } from '../../persistence/RadarInGateway';
 import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { addUsuario, getNumeroUsuarios } from '../../api/api';
+
+// Dependences from: ~/util
+import { useInterval } from '../../util/hooks/UseInterval';
+import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDataConfiguration';
+
+// Domain dependences
+import ServicesFactory from '../../domain/ServicesFactory';
+
+let currentUserService = ServicesFactory.forCurrentUser();
 
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
@@ -21,12 +30,14 @@ async function checkUser(webId){
 
 function MapView(props) {
     checkUser(getDefaultSession().info.webId)
-    const [state, setState] = useState({ user: getUser(), friends: getFriends() });
+    const [state, setState] = useState({ user: currentUserService.getUser(), friends: currentUserService.getFriends() });
+
+
     let users = [state.user];
     Array.prototype.push.apply(users, state.friends);
     let usersMarkers = getMarkers(users);
     useInterval(() => {
-        setState({ user: getUser(), friends: getFriends() });
+        setState({ user: currentUserService.getUser(), friends: currentUserService.getFriends() });
     }, parseInt(1000 * 5));
 
     return (

@@ -1,5 +1,8 @@
-import "./LogIn.css"
+// External dependences
 import React from 'react';
+
+// Dependences from: ~/ui/logIn/modules
+import "../logIn.css"
 
 function Provider(props) {
     return (

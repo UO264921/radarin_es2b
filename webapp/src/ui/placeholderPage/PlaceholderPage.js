@@ -1,9 +1,10 @@
+// import React from "react";
+
+// External dependences
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from "react";
 
-function MainPage(props) {
-
+function PlaceholderPage(props) {
     return (
         <div className="contain">
             <div className="bienvenida">
@@ -14,4 +15,4 @@ function MainPage(props) {
     );
 }
 
-export default MainPage;
+export default PlaceholderPage;

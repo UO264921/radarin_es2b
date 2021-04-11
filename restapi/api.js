@@ -15,7 +15,6 @@ router.get("/usuarios/count", async (req, res) => {
 //Añadir usuario COMPROBAR
 router.post("/usuario/add", async (req, res) => {
     let webid = req.body.webid;
-    let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ webid: webid })
     const users = await Usuarios.find({})
     if (usuario)
@@ -36,20 +35,17 @@ router.post("/usuario/modificar/nombre", async (req, res) => {
     let webid = req.body.webid;
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ nombreUsuario: nombreUsuario })
-    console.log("1"+usuario)
     if (usuario)
         res.send({error:"Error: Este nombre de usuario ya existe"})
     else{
-        let usuario = Usuarios.findOneAndUpdate(
+        let usuario = await Usuarios.findOneAndUpdate(
             {
                 webid: webid
             },
             {
-                "$set":{
-                    nombreUsuario: nombreUsuario,
-                }
-            })
-        console.log("2"+usuario.nombreUsuario)
+                nombreUsuario: nombreUsuario,
+            },
+            { returnOriginal: false})
         if(usuario)
             res.send("El nombre ha sido cambiado con éxito")
         else
@@ -63,14 +59,12 @@ router.post("/usuario/modificar/coordinates", async (req, res) => {
     let coordinates = req.body.coordinates;
     let usuario = await Usuarios.findOne({ webid: webid })
     if (usuario){
-        let usuario = Usuarios.findOneAndUpdate(
+        let usuario = await Usuarios.findOneAndUpdate(
             {
                 webid: webid
             },
             {
-                "$set":{
-                    coordinates: coordinates,
-                }
+                coordinates: coordinates
             })
         if(usuario)
             res.send("La localización ha sido cambiado con éxito")
@@ -94,9 +88,10 @@ router.post("/usuario/nombreUsuario", async (req, res) => {
 //Obtener nombre de usuario con webid COMPROBAR
 router.post("/usuario/webId", async (req, res) => {
     let webId = req.body.webId;
-    let usuario = await Usuarios.findOne({ webId: webId })
-    if (usuario)
-        res.send(usuario.nombreUsuario)
+    let usuario = await Usuarios.findOne({ webid: webId })
+    if (usuario){
+        res.send(usuario)
+    }
     else{
         res.send("Error: Usuario no encontrado")
     }
@@ -156,7 +151,7 @@ router.post("/friendrequest/aceptar", async (req, res) => {
             webidSolicitado:webidSolicitado
         })
     if (peticion){
-        let peticion = FriendRequest.findOneAndUpdate(
+        let peticion = await FriendRequest.findOneAndUpdate(
             {
                 webidSolicitante:webidSolicitante,
                 webidSolicitado:webidSolicitado

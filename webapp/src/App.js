@@ -1,18 +1,19 @@
+// External dependences
 import React, { useState } from 'react';
-import './App.css';
-import LogIn from './components/logIn/LogIn.js';
-import {CombinedDataProvider, } from "@inrupt/solid-ui-react";
-import MNavBar from './components/NavBar/MNavBar';
-import MainPage from './components/Main/MainPage';
+import { SessionProvider } from "@inrupt/solid-ui-react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
-import MapView from './components/map/MapView';
-import Friends from './components/Friends/Friends';
-import Perfil from './components/Perfil/Perfil';
-import About from './components/About/About';
-import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
+import "bootstrap/dist/css/bootstrap.min.css";
 
+// Dependences from: ~/ui
+import './App.css';
+import About from './ui/about/About';
+import Friends from './ui/friends/Friends';
+import LogIn from './ui/logIn/LogIn';
+import MapView from './ui/map/MapView';
+import MNavBar from './ui/navBar/MNavBar';
+import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
+import Profile from './ui/profile/Profile';
 function App(props) {
   //We use this state variable
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,7 +46,7 @@ function App(props) {
               <MapView />
             </Route>
             <Route path="/perfil">
-            <Perfil />
+            <Profile />
             </Route>
             <Route path="/amigos">
               <Friends />
