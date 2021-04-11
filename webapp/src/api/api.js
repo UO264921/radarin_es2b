@@ -7,16 +7,17 @@ export async function getNumeroUsuarios(){
     return await response.json()
 }
 
+
+
 //Añadir usuario COMPROBAR
-export async function addUsuario(webid,nombreUsuario){
+export async function addUsuario(webid){
     const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
     let response = await fetch(apiEndPoint + '/usuario/add', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(
             {
-                'webid':webid, 
-                'nombreUsuario':nombreUsuario
+                'webid':webid
             })
       })
     return await response.json()
@@ -54,11 +55,12 @@ export async function modificarCoordenadas(webid,coordinates){
 
 //METODO PAR LLAMAR A ESTE METODO CADA X TIEMPO (ESTA PUESTO 20 segs) ESTO HAY QUE PONERLO DONDE SE LLAME AL DE ARRIBA, HAY QUE PONER PARAMETROS
 //import { useEffect } from "react"
-useEffect(()=>{
+/*useEffect(()=>{
     setInterval(modificarCoordenadas("webid","coordenadas"),20000)
 });
+*/
 
-//Obtener nombre de usuario con webid COMPROBAR
+//Obtener webid con nombre de usuario COMPROBAR
 export async function getWebIdByUsername(nombreUsuario){
     const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
     let response = await fetch(apiEndPoint + '/usuario/nombreUsuario', {
@@ -67,6 +69,20 @@ export async function getWebIdByUsername(nombreUsuario){
         body: JSON.stringify(
             {
             'nombreUsuario':nombreUsuario
+        })
+      })
+    return await response.json()
+}
+
+//Obtener nombre de usuario con webid COMPROBAR
+export async function getUsernameByWebId(webId){
+    const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
+    let response = await fetch(apiEndPoint + '/usuario/webId', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(
+            {
+            'webId':webId
         })
       })
     return await response.json()

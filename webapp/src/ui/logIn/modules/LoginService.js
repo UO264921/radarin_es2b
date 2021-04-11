@@ -5,25 +5,23 @@ import auth from "solid-auth-client";
 
 
 const Login = async (provider, webId) => {
-    const session = getDefaultSession();
     const exist = await existWebId(webId);
     const size = String(webId).length;
     if (exist && size > 0) {
         //alert("Valido " + webId);
         provider = getProvider(webId);
         //await auth.login(provider);
-        await loginWithProvider(provider, session);
+        await loginWithProvider(provider);
     }
     else if (size === parseInt(0)) {
         //alert("WebId vacio " + webId);
         //await auth.login(provider);
-        await loginWithProvider(provider, session);
+        await loginWithProvider(provider);
     }
     else {
         //alert("Invalido " + webId);
     }
 }
-
 async function existWebId(webId) {
     try {
         const fc = new FileClient(auth);
@@ -34,7 +32,6 @@ async function existWebId(webId) {
         return false;
     }
 }
-
 function getProvider(webId) {
     if (webId.includes("profile")) {
         const webIdParts = webId.split("/");
@@ -45,20 +42,16 @@ function getProvider(webId) {
     }
     return webId
 }
-
 async function loginWithProvider(provider) {
     return await login({
         oidcIssuer: provider,
         redirectUrl: window.location.href
     });
 }
-
 const Register = async (provider) => {
 
 }
-
 const Logout = async () => {
     await auth.logout().then().alert("logout")
 }
-
 export { Login, Register, Logout }
