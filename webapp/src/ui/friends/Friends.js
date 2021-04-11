@@ -23,6 +23,16 @@ import 'react-toastify/dist/ReactToastify.css';
 //import { render } from 'react-dom';
 //import data from "@solid/query-ldflex";
 
+
+// Dependences from: ~/ui/friends
+import './Friends.css';
+
+
+// Domain dependences
+import ServicesFactory from "../../domain/ServicesFactory";
+
+let friendsService = ServicesFactory.forFriendUsers();
+
 class Friends extends React.Component {
   constructor() {
     super()
