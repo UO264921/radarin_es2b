@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useSession, CombinedDataProvider, Text } from "@inrupt/solid-ui-react";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
@@ -10,6 +10,9 @@ import { LogoutButton } from "@inrupt/solid-ui-react";
 function MNavBarSession() {
     const { session } = useSession();
     const { webId } = session.info;
+
+    //We have logged out
+   
 
     if (!session.info.isLoggedIn) {
 
@@ -26,7 +29,7 @@ function MNavBarSession() {
         </CombinedDataProvider>
     </Nav.Link>
     <LogoutButton>
-        <Button component={ Link } to="/login" color="primary" variant="contained" className="ml-3 mr-2">Log out</Button>
+    <Button component={ Link } to="/login" color="primary" variant="contained" className="ml-3 mr-2">Log out</Button>
     </LogoutButton>
 </Nav>;
 }

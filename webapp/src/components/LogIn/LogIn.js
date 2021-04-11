@@ -5,6 +5,7 @@ import Provider from './Provider';
 import WebId from './WebId';
 import { LoginButton, RegisterButton } from "./LoginButtons"
 
+
 function LogIn(props) {
     return (
         <section style={{display:"inline-block"}}>
