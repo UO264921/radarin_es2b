@@ -48,7 +48,6 @@ router.post("/usuario/modificar/nombre", async (req, res) => {
             { returnOriginal: false })
         if (usuario)
             res.send("El nombre ha sido cambiado con éxito")
-        }
         else
             res.send("Ha habido un error al cambiar el nombre")
     }
@@ -86,6 +85,18 @@ router.post("/usuario/nombreUsuario", async (req, res) => {
         res.send("Error: Usuario no encontrado")
     }
 })
+
+//Obtener usuario con webid COMPROBAR
+router.post("/usuario", async (req, res) => {
+    let webid = req.body.webId;
+    let usuario = await Usuarios.findOne({ webid: webid })
+    if (usuario)
+        res.send(usuario)
+    else {
+        res.send("Error: Usuario no encontrado")
+    }
+})
+
 
 //Obtener nombre de usuario con webid COMPROBAR
 router.post("/usuario/webId", async (req, res) => {

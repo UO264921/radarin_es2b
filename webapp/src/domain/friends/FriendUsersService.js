@@ -8,6 +8,7 @@ import FC from "solid-file-client";
 import { toast } from 'react-toastify';
 import FileClient from "solid-file-client";
 import { addFriendRequest, getWebIdByUsername, eliminarSolicitud, aceptarSolicitud, getSolicitudesCompletadas, getSolicitudesPendientes } from "../../api/api";
+import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 
 class FriendsService {
 
@@ -277,6 +278,16 @@ class FriendsService {
     let webId = session.webId;
     return webId;
   };
+
+  async obtenerAmigos(){
+    var webId= getDefaultSession().info.webId;
+    const user = data[webId];
+    console.log(user)
+    var lista = new Array();
+    for await (const friend of user.knows) lista.push(friend.toString());
+    const users = await Promise.all(lista);
+    return users;
+}
 
 }
 
