@@ -7,6 +7,11 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import './map.css';
 import { getMarkers } from './modules/Markers';
 
+
+// Import dependences
+import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
+import { addUsuario, getNumeroUsuarios } from '../../api/api';
+
 // Dependences from: ~/util
 import { useInterval } from '../../util/hooks/UseInterval';
 import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDataConfiguration';
@@ -18,13 +23,19 @@ let currentUserService = ServicesFactory.forCurrentUser();
 
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
+
+async function checkUser(webId){
+    addUsuario(webId);
+}
+
 function MapView(props) {
+    checkUser(getDefaultSession().info.webId)
     const [state, setState] = useState({ user: currentUserService.getUser(), friends: currentUserService.getFriends() });
+
 
     let users = [state.user];
     Array.prototype.push.apply(users, state.friends);
     let usersMarkers = getMarkers(users);
-
     useInterval(() => {
         setState({ user: currentUserService.getUser(), friends: currentUserService.getFriends() });
     }, parseInt(1000 * 5));

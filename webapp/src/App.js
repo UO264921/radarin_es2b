@@ -14,7 +14,6 @@ import MapView from './ui/map/MapView';
 import MNavBar from './ui/navBar/MNavBar';
 import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
 import Profile from './ui/profile/Profile';
-
 function App(props) {
 
   //pide permisos de notificaciones al usuario
@@ -35,10 +34,9 @@ function App(props) {
   session.onLogout(() => {
     setIsLoggedIn(false)
   })
-
-  // <Welcome name={getDefaultSession().info.webId}/>}
+  
+ 
   return (
-    <SessionProvider sessionId="log-in-example">
       <BrowserRouter>
         <div className="App">
           <header>
@@ -46,36 +44,31 @@ function App(props) {
           </header>
           <div style={{ height: "60px" }}>
           </div>
+          {(!isLoggedIn) ? <LogIn/> : 
           <Switch>
             <Route path="/login">
-              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+              <MapView />
             </Route>
             <Route path="/perfil">
-              {(!isLoggedIn) ? <LogIn /> : <Profile />}
+            <Profile />
             </Route>
             <Route path="/amigos">
-              {(!isLoggedIn) ? <LogIn /> : <Friends />}
+              <Friends />
             </Route>
             <Route path="/mapa">
-              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+              <MapView />
             </Route>
             <Route path="/about">
               <About />
             </Route>
             <Route path="/">
               <div>
-                {(!isLoggedIn) ? <PlaceholderPage /> : <MapView />}
+                <MapView />
               </div>
             </Route>
-            <Route path="/friends">
-              <div>
-                <Friends />
-              </div>
-            </Route>
-          </Switch>
-        </div>
+          </Switch>}
+          </div>
       </BrowserRouter>
-    </SessionProvider>
   );
 }
 //<Welcome name={getDefaultSession().info.webId} />
