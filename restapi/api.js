@@ -2,8 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 //Modelos
-const User = require("./models/users")
-const Usuarios = require("./models/Usuarios")
+const Usuarios = require ("./models/Usuarios")
 const FriendRequest = require("./models/FriendRequest")
 
 // Devuelve el número de usuarios
@@ -49,6 +48,7 @@ router.post("/usuario/modificar/nombre", async (req, res) => {
             { returnOriginal: false })
         if (usuario)
             res.send("El nombre ha sido cambiado con éxito")
+        }
         else
             res.send("Ha habido un error al cambiar el nombre")
     }

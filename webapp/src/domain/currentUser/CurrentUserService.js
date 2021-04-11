@@ -29,7 +29,8 @@ class CurrentUserService {
     }
 
     getDefaultUser() {
-        return new UserDTO({ username: "¿Tú?", latitude: parseFloat(0.0), longitude: parseFloat(0.0) });
+        let position = this.currentUserFactory.forGetCurrentUserCoords();
+        return new UserDTO({ username: "¿Tú?", latitude: parseFloat(position.lat), longitude: parseFloat(position.lng) });
     }
 
     getFriends() {

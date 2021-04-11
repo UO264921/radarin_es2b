@@ -1,27 +1,15 @@
 import React from 'react';
 import './Friends.css';
-import FriendsService from "./FriendsService";
 import { useWebId, List, Name, Link } from "@solid/react";
 import Button from '@material-ui/core/Button';
-//import { useNotification } from "@inrupt/solid-react-components";
-/*import {
-    NotificationContainer,
-    NotificationManager,
-  } from "react-notifications";
-*/
 
-//import { Form } from "react-bootstrap";
-//import "bootstrap/dist/css/bootstrap.css";
-//import FileClient from "solid-file-client";
+
+
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-//import DocumentTitle from "react-document-title";
 import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-//import auth from "solid-auth-client";
-//import { render } from 'react-dom';
-//import data from "@solid/query-ldflex";
 
 
 // Dependences from: ~/ui/friends
@@ -31,7 +19,7 @@ import './Friends.css';
 // Domain dependences
 import ServicesFactory from "../../domain/ServicesFactory";
 
-let friendsService = ServicesFactory.forFriendUsers();
+let FriendsService = ServicesFactory.forFriendUsers();
 
 class Friends extends React.Component {
   constructor() {

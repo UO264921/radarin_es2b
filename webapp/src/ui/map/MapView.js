@@ -2,7 +2,6 @@
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 
 // Dependences from: ~/ui/map
 import './map.css';
@@ -11,7 +10,7 @@ import { getMarkers } from './modules/Markers';
 
 // Import dependences
 import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
-import { addUsuario, getNumeroUsuarios } from '../../api/api';
+import { addUsuario, modificarCoordenadas, getUsernameByWebId } from '../../api/api';
 
 // Dependences from: ~/util
 import { useInterval } from '../../util/hooks/UseInterval';
@@ -19,9 +18,6 @@ import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDa
 
 // Domain dependences
 import ServicesFactory from '../../domain/ServicesFactory';
-
-// Forced dependences
-import { addUsuario, getUsernameByWebId /*, modificarCoordenadas */ } from '../../api/api';
 
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
@@ -39,12 +35,13 @@ function MapView(props) {
     const refreshState = async () => {
         const webId = getDefaultSession().info.webId;
         let username = (await getUsernameByWebId(webId)).nombreUsuario;
-
+        
         let receivedUser = await ServicesFactory.forCurrentUser().getLoggedUser(username);
-        // await modificarCoordenadas(webId, receivedUser.getCoordinates());
         console.log("Usuario: ", receivedUser);
-        if (receivedUser != null)
+        if (receivedUser != null){
             setState({ user: receivedUser, friends: ServicesFactory.forCurrentUser().getFriends() });
+            modificarCoordenadas(getDefaultSession().info.webId,receivedUser.latitude+","+receivedUser.longitude);
+        }
     }
 
     let users = [state.user];
@@ -70,7 +67,6 @@ function MapView(props) {
             {usersMarkers}
         </MapContainer >
     );
-
 }
 
 export default MapView;
