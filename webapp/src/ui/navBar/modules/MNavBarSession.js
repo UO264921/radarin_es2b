@@ -32,3 +32,7 @@ function MNavBarSession() {
     </Nav>;
 }
 export default MNavBarSession;
+
+
+// linea 25 
+// <Text property={FOAF.name.iri.value} autosave/> 

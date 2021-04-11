@@ -7,6 +7,7 @@ import data from "@solid/query-ldflex";
 import FC from "solid-file-client";
 import { toast } from 'react-toastify';
 import FileClient from "solid-file-client";
+import { addFriendRequest,getWebIdByUsername } from "../../api/api";
 
 class FriendsService {
 
@@ -14,6 +15,18 @@ class FriendsService {
     this.webId = "";
     this.friends = this.getFriends();
   }
+  //Enviar notificaicion
+  async addFriendRequest(friendUsername, userWebId){
+    let friendWebId = getWebIdByUsername(friendUsername);
+    addFriendRequest(userWebId,friendWebId);
+    toast.info("Tu peticion de amigo ha sido enviada", {
+      position: toast.POSITION.BOTTOM_LEFT,
+      autoClose: 5000
+    });
+  }
+
+  
+
 
   async addFriend(friendWebId, userWebId) {
     let user = data[userWebId]; //sacamos nuestra informacion
