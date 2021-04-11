@@ -1,5 +1,6 @@
-import './LogIn.css';
+// Dependences from: ~/ui/logIn/modules
 import { Login, Register } from './LoginService';
+import '../logIn.css';
 
 function getProvider() {
     var provider = document.getElementById("providers").value;

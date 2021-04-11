@@ -1,7 +1,12 @@
 import { latLng } from 'leaflet';
 
-/* User DTO */
-export class User {
+/**
+ * User Data Transfer Object (DTO)
+ * 
+ * Initially, a POJO (Plain Old Java Object): https://en.wikipedia.org/wiki/Plain_old_Java_object
+ * Also includes several functionalities, as "getLatLng()" for "MapView"
+ */
+export class UserDTO {
 
     constructor(props) {
         this.username = props.username;
