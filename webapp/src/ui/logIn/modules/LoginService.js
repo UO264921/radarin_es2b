@@ -3,7 +3,6 @@ import { getDefaultSession, login } from "@inrupt/solid-client-authn-browser";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 
-
 const Login = async (provider, webId) => {
     const session = getDefaultSession();
     const exist = await existWebId(webId);
