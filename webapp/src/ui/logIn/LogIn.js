@@ -1,9 +1,9 @@
-import './LogIn.css';
+import './logIn.css';
 import React from 'react';
 import {Grid } from '@material-ui/core'
-import Provider from './Provider';
-import WebId from './WebId';
-import { LoginButton, RegisterButton } from "./LoginButtons"
+import Provider from './modules/Provider';
+import WebId from './modules/WebId';
+import { LoginButton, RegisterButton } from "./modules/LoginButtons"
 
 
 function LogIn(props) {
