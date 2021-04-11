@@ -1,7 +1,8 @@
 // External dependences
 import 'leaflet/dist/leaflet.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
+import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 
 // Dependences from: ~/ui/map
 import './map.css';
@@ -14,20 +15,42 @@ import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDa
 // Domain dependences
 import ServicesFactory from '../../domain/ServicesFactory';
 
-let currentUserService = ServicesFactory.forCurrentUser();
+// Forced dependences
+import { addUsuario, getUsernameByWebId /*, modificarCoordenadas */ } from '../../api/api';
 
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
 function MapView(props) {
-    const [state, setState] = useState({ user: currentUserService.getUser(), friends: currentUserService.getFriends() });
+    addUsuario(getDefaultSession().info.webId);
+    const [state, setState] = useState({
+        user: ServicesFactory.forCurrentUser().getDefaultUser(),
+        friends: null
+    });
+
+    // Executing promises in a React component
+    // https://www.pluralsight.com/guides/executing-promises-in-a-react-component
+
+    // Get username
+    const refreshState = async () => {
+        const webId = getDefaultSession().info.webId;
+        let username = (await getUsernameByWebId(webId)).nombreUsuario;
+
+        let receivedUser = await ServicesFactory.forCurrentUser().getLoggedUser(username);
+        // await modificarCoordenadas(webId, receivedUser.getCoordinates());
+        console.log("Usuario: ", receivedUser);
+        if (receivedUser != null)
+            setState({ user: receivedUser, friends: ServicesFactory.forCurrentUser().getFriends() });
+    }
 
     let users = [state.user];
     Array.prototype.push.apply(users, state.friends);
     let usersMarkers = getMarkers(users);
 
-    useInterval(() => {
-        setState({ user: currentUserService.getUser(), friends: currentUserService.getFriends() });
-    }, parseInt(1000 * 5));
+    useInterval(
+        useEffect(() => {
+            refreshState();
+        })
+        , parseInt(1000 * 500));
 
     return (
         <MapContainer center={state.user.getLatLng()} zoom={parseFloat(13.25)} >
