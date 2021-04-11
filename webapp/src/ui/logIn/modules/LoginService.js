@@ -11,6 +11,7 @@ const Login = async (provider, webId) => {
     if (exist && size > 0) {
         //alert("Valido " + webId);
         provider = getProvider(webId);
+        
         //await auth.login(provider);
         await loginWithProvider(provider, session);
     }
@@ -18,6 +19,7 @@ const Login = async (provider, webId) => {
         //alert("WebId vacio " + webId);
         //await auth.login(provider);
         await loginWithProvider(provider, session);
+        
     }
     else {
         //alert("Invalido " + webId);
@@ -47,6 +49,8 @@ function getProvider(webId) {
 }
 
 async function loginWithProvider(provider) {
+    var not = new Notification("Bienvenido!!"); //mostramos un mensaje de bienvenida
+    setTimeout(not.close, 3000);
     return await login({
         oidcIssuer: provider,
         redirectUrl: window.location.href

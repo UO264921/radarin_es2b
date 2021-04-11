@@ -27,6 +27,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // Dependences from: ~/ui/friends
 import './Friends.css';
 
+
 // Domain dependences
 import ServicesFactory from "../../domain/ServicesFactory";
 
