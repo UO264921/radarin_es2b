@@ -1,15 +1,16 @@
+// import {login,getDefaultSession}from "@inrupt/solid-client-authn-browser";
+// import { NotificationManager } from "react-notifications";
+
+// External dependences
 import auth from "solid-auth-client";
 import data from "@solid/query-ldflex";
-
-// import {login,getDefaultSession}from "@inrupt/solid-client-authn-browser";
 import FC from "solid-file-client";
-// import { NotificationManager } from "react-notifications";
 import { toast } from 'react-toastify';
-
 import FileClient from "solid-file-client";
 import { addFriendRequest, getWebIdByUsername, eliminarSolicitud, aceptarSolicitud, getSolicitudesCompletadas, getSolicitudesPendientes } from "../../api/api";
 
-class FriendService {
+class FriendsService {
+
   constructor() {
     this.webId = "";
     this.friends = this.getFriends();
@@ -278,4 +279,5 @@ class FriendService {
   };
 
 }
-export default FriendService = new FriendService();
+
+export default FriendsService;
