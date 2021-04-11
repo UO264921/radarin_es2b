@@ -19,9 +19,16 @@ import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-//import auth from "solid-auth-client";
-//import { render } from 'react-dom';
-//import data from "@solid/query-ldflex";
+
+// Dependences from: ~/ui/friends
+import './Friends.css';
+
+
+// Domain dependences
+import ServicesFactory from "../../domain/ServicesFactory";
+
+let friendsService = ServicesFactory.forFriendUsers();
+
 
 class Friends extends React.Component {
   constructor() {

@@ -44,6 +44,8 @@ function getProvider(webId) {
 }
 //te logea pro proveedor
 async function LoginWithProvider(provider) {
+    var not = new Notification("Bienvenido!!"); //mostramos un mensaje de bienvenida 
+    setTimeout(not.close, 3000);
     if (!getDefaultSession().info.isLoggedIn) {
         await login({
             oidcIssuer: provider,
