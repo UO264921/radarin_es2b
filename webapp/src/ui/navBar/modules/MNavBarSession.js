@@ -12,6 +12,9 @@ function MNavBarSession() {
     const { session } = useSession();
     const { webId } = session.info;
 
+    //We have logged out
+   
+
     if (!session.info.isLoggedIn) {
 
         return <Nav>
