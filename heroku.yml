@@ -1,6 +1,6 @@
 build:
   docker:
-    web: docker-compose.yaml
+    web: Dockerfile
 release:
   image: web
   command:
