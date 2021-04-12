@@ -1,4 +1,4 @@
-import './logIn.css';
+import './LogIn.css';
 import React from 'react';
 import {Grid } from '@material-ui/core'
 import Provider from './modules/Provider';

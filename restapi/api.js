@@ -80,7 +80,7 @@ router.post("/usuario/nombreUsuario", async (req, res) => {
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ nombreUsuario: nombreUsuario })
     if (usuario)
-        res.send(usuario.webid)
+        res.send(usuario)
     else {
         res.send("Error: Usuario no encontrado")
     }
