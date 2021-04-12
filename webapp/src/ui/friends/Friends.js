@@ -46,22 +46,23 @@ class Friends extends React.Component {
           </div>
           <br></br>
           <h2>Lista de peticiones de amistad</h2>
-          <List src={`${FriendsService.getPeticionesCompletadas()}`} className="list" padding-inline-start="0">{(friend) =>
-            <li key={friend} className="listElement">
-              <ConfirmRequestCard nombre={`[${friend}]`} web={getDefaultSession().info.webId}></ConfirmRequestCard>
+          <List src={`${FriendsService.getPeticionesCompletadas(getDefaultSession().info.webId)}`} className="list" padding-inline-start="0">{(request) =>
+            <li key={request} className="listElement">
+              <ConfirmRequestCard nombre={`${request}`} web={getDefaultSession().info.webId}></ConfirmRequestCard>
             </li>}
           </List>
           <br></br>
-          <List src={`${FriendsService.getPeticionesPendientes()}`} className="list" padding-inline-start="0">{(friend) =>
-            <li key={friend} className="listElement">
-              <RequestCard nombre={`[${friend}]`} web={getDefaultSession().info.webId}></RequestCard>
+          <List src={`${FriendsService.getPeticionesPendientes(getDefaultSession().info.webId)}`} className="list" padding-inline-start="0">{
+          (request) =>
+            <li key={request} className="listElement">
+              <RequestCard nombre={`${request}`} web={getDefaultSession().info.webId}></RequestCard>
             </li>}
           </List>
           <br></br>
           <h2>Lista de amigos</h2>
           <List src={`[${getDefaultSession().info.webId}].friends`} className="list" padding-inline-start="0">{(friend) =>
             <li key={friend} className="listElement">
-              <Card nombre={`[${friend}]`} web={getDefaultSession().info.webId}></Card>
+              <Card nombre={`${friend}`} web={getDefaultSession().info.webId}></Card>
             </li>}
           </List>
 
@@ -102,7 +103,7 @@ const RequestCard = (props, webId) => {
         </h4>
         <center>
           <div className="botones">
-          <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={() => FriendsService.aceptFriendRequest(props,user)} >Aceptar</Button>
+          <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={async () => await FriendsService.aceptFriendRequest(props.webid,getDefaultSession().info.webId)} >Aceptar</Button>
           <Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() => FriendsService.deleteFriendRequest(props,user)} >Eliminar</Button>
           </div>
         </center>

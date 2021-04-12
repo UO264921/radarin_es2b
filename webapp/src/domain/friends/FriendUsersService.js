@@ -32,7 +32,6 @@ class FriendsService {
         //si se ha encontrado un usuario con ese username
       } else{
         var isAmigo=await this.isAmigo(friendWebId)
-        console.log(isAmigo)
         if (!isAmigo) {
           //creamos en una entrada en la tabla peticiones con los dos webId
           addFriendRequest(userWebId, friendWebId).then(
@@ -66,6 +65,8 @@ class FriendsService {
   }
   // aceptar la peticion de amistad y añadir por parte de solicitado al solicitante
   async aceptFriendRequest(webIdSolicitante, webIdSolicitado) {
+    console.log(webIdSolicitante)
+    console.log(webIdSolicitado)
     //si no es amigo
     if (this.isAmigo(webIdSolicitado)) {
       //añadimos al amigo
@@ -110,30 +111,30 @@ class FriendsService {
       return false;
   }
 
-  async getPeticionesCompletadas() {
+  async getPeticionesCompletadas(webId) {
     var peticiones = [];
-    let lista = []
-    peticiones = await getSolicitudesCompletadas()
-    if(peticiones.length>0){
-    for (const peticion of peticiones) {
-      
-        lista.push(await getUsernameByWebId(peticion.webIdSolicitado))
-    }}
+    var lista=[]
+    peticiones = await getSolicitudesCompletadas(webId)
+    for(const peticion of peticiones){
+      console.log(peticion)
+      lista.push(await getUsernameByWebId(peticion.webidSolicitado))
+    }
     console.log(lista)
     return lista;
   }
   // listar peticiones pendientes
-  async getPeticionesPendientes() {
-    var peticiones = [];
-    let lista = []
-    peticiones = await getSolicitudesPendientes()
-    if(peticiones.length>0){
-    for (const peticion of peticiones) {
-      
-        lista.push(await getUsernameByWebId(peticion.webIdSolicitado))
-    }}
-    console.log(lista)
-    return lista;
+  async getPeticionesPendientes(webId) {
+    var request = [];
+    var lista=[]
+    request = await getSolicitudesPendientes(webId)
+    for(const peticion of request){
+      console.log(peticion)
+      var user=await getUsernameByWebId(peticion.webidSolicitante)
+      lista.push(user)
+    }
+    const peticiones = await Promise.all(lista);
+    console.log(peticiones)
+    return peticiones;
   }
 
   async addFriend(friendWebId, userWebId) {
