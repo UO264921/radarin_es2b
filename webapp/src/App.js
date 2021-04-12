@@ -1,77 +1,76 @@
+// External dependences
 import React, { useState } from 'react';
-import './App.css';
-import LogIn from './components/LogIn/LogIn';
 import { SessionProvider } from "@inrupt/solid-ui-react";
-import MNavBar from './components/NavBar/MNavBar';
-import MainPage from './components/Main/MainPage';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useSession } from "@inrupt/solid-ui-react/dist";
-import MapView from './components/map/MapView';
-import Friends from './components/Friends/Friends';
-import Perfil from './components/Perfil/Perfil';
-import About from './components/About/About';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-  function App(props) {
-    //We use this state variable
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+// Dependences from: ~/ui
+import './App.css';
+import About from './ui/about/About';
+import Friends from './ui/friends/Friends';
+import LogIn from './ui/logIn/LogIn';
+import MapView from './ui/map/MapView';
+import MNavBar from './ui/navBar/MNavBar';
+import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
+import Profile from './ui/profile/Profile';
+function App(props) {
 
-    //With this we can control the login status for solid
-    const { session } = useSession();
+  //pide permisos de notificaciones al usuario
+  Notification.requestPermission();
+  
+  //We use this state variable
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    //We have logged in
-    session.onLogin(() => {
-      setIsLoggedIn(true)
-    })
+  //With this we can control the login status for solid
+  const { session } = useSession();
 
-    //We have logged out
-    session.onLogout(() => {
-      setIsLoggedIn(false)
-    })
+  //We have logged in
+  session.onLogin(() => {
+    setIsLoggedIn(true)
+  })
 
-
-    // <Welcome name={getDefaultSession().info.webId}/>}
-    return (
-      <SessionProvider sessionId="log-in-example">
+  //We have logged out
+  session.onLogout(() => {
+    setIsLoggedIn(false)
+  })
+  
+ 
+  return (
       <BrowserRouter>
         <div className="App">
           <header>
             <MNavBar />
           </header>
-          <div style={{height:"60px"}}>
+          <div style={{ height: "60px" }}>
           </div>
+          {(!isLoggedIn) ? <LogIn/> : 
           <Switch>
             <Route path="/login">
-              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+              <MapView />
             </Route>
             <Route path="/perfil">
-              {(!isLoggedIn) ? <LogIn /> : <Perfil />}
+            <Profile />
             </Route>
             <Route path="/amigos">
-              {(!isLoggedIn) ? <LogIn /> : <Friends />}
+              <Friends />
             </Route>
             <Route path="/mapa">
-              {(!isLoggedIn) ? <LogIn /> : <MapView />}
+              <MapView />
             </Route>
             <Route path="/about">
-               <About />
+              <About />
             </Route>
             <Route path="/">
               <div>
-              {(!isLoggedIn) ? <MainPage/> : <MapView />}
+                <MapView />
               </div>
             </Route>
-            <Route path="/friends">
-              <div>
-                <Friends />
-              </div>
-            </Route>
-          </Switch>
-        </div>
+          </Switch>}
+          </div>
       </BrowserRouter>
-      </SessionProvider>
-    );
-  }
-  //<Welcome name={getDefaultSession().info.webId} />
+  );
+}
+//<Welcome name={getDefaultSession().info.webId} />
 
-  export default App;
+export default App;
