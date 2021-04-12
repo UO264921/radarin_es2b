@@ -65,7 +65,7 @@ export async function getWebIdByUsername(nombreUsuario) {
     const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
     let response = await fetch(apiEndPoint + '/usuario/nombreUsuario', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(
             {
                 'nombreUsuario': nombreUsuario
