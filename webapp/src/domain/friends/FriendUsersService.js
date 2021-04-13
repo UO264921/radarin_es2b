@@ -21,7 +21,6 @@ class FriendsService {
     //obtenemos la webId del usuario que hemos introducido
     await getWebIdByUsername(friendUsername).then(async (user) => {
       var friendWebId = user.webid
-      console.log(friendWebId)
       //si el solicitado es el mismo que el solicitante
       if (friendWebId == userWebId) {
         //sacamos notificacion 
@@ -116,10 +115,8 @@ class FriendsService {
     var lista=[]
     peticiones = await getSolicitudesCompletadas(webId)
     for(const peticion of peticiones){
-      console.log(peticion)
       lista.push(await getUsernameByWebId(peticion.webidSolicitado))
     }
-    console.log(lista)
     return lista;
   }
   // listar peticiones pendientes
@@ -128,12 +125,10 @@ class FriendsService {
     var lista=[]
     request = await getSolicitudesPendientes(webId)
     for(const peticion of request){
-      console.log(peticion)
       var user=await getUsernameByWebId(peticion.webidSolicitante)
       lista.push(user)
     }
     const peticiones = await Promise.all(lista);
-    console.log(peticiones)
     return peticiones;
   }
 
@@ -294,7 +289,6 @@ class FriendsService {
   async obtenerAmigos() {
     var webId = getDefaultSession().info.webId;
     const user = data[webId];
-    console.log(user)
     var lista = new Array();
     for await (const friend of user.knows) lista.push(friend.toString());
     const users = await Promise.all(lista);
