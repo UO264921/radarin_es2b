@@ -37,7 +37,7 @@ function MapView(props) {
         let username = (await getUsernameByWebId(webId)).nombreUsuario;
         
         let receivedUser = await ServicesFactory.forCurrentUser().getLoggedUser(username);
-        console.log("Usuario: ", receivedUser);
+        //console.log("Usuario: ", receivedUser);
         if (receivedUser != null){
             setState({ user: receivedUser, friends:await ServicesFactory.forCurrentUser().getFriends() });
             await modificarCoordenadas(getDefaultSession().info.webId,receivedUser.latitude+","+receivedUser.longitude);
