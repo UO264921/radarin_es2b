@@ -103,7 +103,7 @@ const RequestCard = (props, webId) => {
         </h4>
         <center>
           <div className="botones">
-          <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={async () => await FriendsService.aceptFriendRequest(props.webid,getDefaultSession().info.webId)} >Aceptar</Button>
+          <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={() => FriendsService.aceptFriendRequest(props.webid,getDefaultSession().info.webId)} >Aceptar</Button>
           <Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() => FriendsService.deleteFriendRequest(props,user)} >Eliminar</Button>
           </div>
         </center>
