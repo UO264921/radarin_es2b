@@ -1,5 +1,5 @@
 import FileClient from "solid-file-client";
-import auth, { handleIncomingRedirect, logout, login, register, getDefaultSession } from "@inrupt/solid-client-authn-browser";
+import auth, { handleIncomingRedirect, logout, login, getDefaultSession } from "@inrupt/solid-client-authn-browser";
 //permite logearse ya sea por proveedor como por webId
 async function Login(provider, webId) {
     //await handleIncomingRedirect();

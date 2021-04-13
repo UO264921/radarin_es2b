@@ -31,6 +31,8 @@ const Perfil = () => {
   const [nombre, setNombre] = useState(null);
   const [isBorder, setBorder] = useState("0px solid");
 
+  console.log("hola");
+
   var getUserName = useCallback(
     async function () {
       getUsernameByWebId(webId)
