@@ -21,8 +21,11 @@ class FriendsService {
     //obtenemos la webId del usuario que hemos introducido
     await getWebIdByUsername(friendUsername).then(async (user) => {
       var friendWebId = user.webid
+      if(friendWebId===undefined){
+        throw new Error();
+      }
       //si el solicitado es el mismo que el solicitante
-      if (friendWebId == userWebId) {
+      if (friendWebId === userWebId) {
         //sacamos notificacion 
         toast.warn("No te puedes añadir a ti mismo", {
           position: toast.POSITION.BOTTOM_LEFT,
@@ -33,7 +36,7 @@ class FriendsService {
         var isAmigo=await this.isAmigo(friendWebId)
         if (!isAmigo) {
           //creamos en una entrada en la tabla peticiones con los dos webId
-          addFriendRequest(userWebId, friendWebId).then(
+          await addFriendRequest(userWebId, friendWebId).then(
             ()=> toast.info("Tu peticion de amigo ha sido enviada", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
@@ -100,7 +103,7 @@ class FriendsService {
   async isAmigo(webId) {
     var amigos = await this.obtenerAmigos()
       for(const amigo of amigos)
-        if(amigo==webId){
+        if(amigo===webId){
           toast.warn("El usuario ya es tu amigo", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
@@ -125,11 +128,10 @@ class FriendsService {
     var lista=[]
     request = await getSolicitudesPendientes(webId)
     for(const peticion of request){
-      var user=await getUsernameByWebId(peticion.webidSolicitante)
-      lista.push(user)
+      lista.push(await getUsernameByWebId(peticion.webidSolicitante))
     }
-    const peticiones = await Promise.all(lista);
-    return peticiones;
+    console.log(lista);
+    return lista;
   }
 
   async addFriend(friendWebId, userWebId) {

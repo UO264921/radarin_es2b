@@ -1,5 +1,5 @@
 import FileClient from "solid-file-client";
-import auth, { handleIncomingRedirect, logout, login, getDefaultSession } from "@inrupt/solid-client-authn-browser";
+import auth, { logout, login, getDefaultSession } from "@inrupt/solid-client-authn-browser";
 //permite logearse ya sea por proveedor como por webId
 async function Login(provider, webId) {
     //await handleIncomingRedirect();
@@ -61,7 +61,7 @@ async function LoginWithProvider(provider) {
 }
 //permite registrarte en el proveedor escogido
 const Register = async (provider) => {
-
+    
 }
 
 const Logout = async () => {

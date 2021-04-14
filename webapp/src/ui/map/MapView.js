@@ -85,8 +85,3 @@ function MapView(props) {
 }
 
 export default MapView;
-
-
-async function hola(){
-    console.log("h")
-}
