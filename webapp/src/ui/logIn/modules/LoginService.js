@@ -1,24 +1,24 @@
 import FileClient from "solid-file-client";
-import auth, { handleIncomingRedirect, logout, login, getDefaultSession } from "@inrupt/solid-client-authn-browser";
-//permite logearse ya sea por proveedor como por webId
+import auth, { handleIncomingRedirect,logout, login, getDefaultSession} from "@inrupt/solid-client-authn-browser";
+import { getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
 async function Login(provider, webId) {
-    //await handleIncomingRedirect();
     const exist = await existWebId(webId);
     const size = String(webId).length;
     if (exist && size > 0) {
         //alert("Valido " + webId);
         provider = getProvider(webId);
-        //await auth.login(provider);
         await LoginWithProvider(provider);
     }
     else if (size === parseInt(0)) {
         //alert("WebId vacio " + webId);
-        //await auth.login(provider);
         await LoginWithProvider(provider);
+
     }
     else {
         alert("WebID invalido: " + webId);
     }
+   
+    
 }
 //comprueba que existe ese webId en los diferentes pods
 async function existWebId(webId) {
@@ -47,24 +47,18 @@ async function LoginWithProvider(provider) {
 
     var not = new Notification("Bienvenido!!"); //mostramos un mensaje de bienvenida 
     setTimeout(not.close, 3000);
-
-    if (!getDefaultSession().info.isLoggedIn) {
-        await login({
+    await login({
             oidcIssuer: provider,
             redirectUrl: window.location.href
-        });
-    }
-    else {
-        alert(`Logged in as ${getDefaultSession().info.webId}`)
-    }
-
+    });
 }
 //permite registrarte en el proveedor escogido
 const Register = async (provider) => {
-
+    
 }
 
 const Logout = async () => {
     logout({ returnTo: window.location.origin });
 }
+
 export { Login, Register, Logout }

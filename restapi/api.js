@@ -20,7 +20,7 @@ router.post("/usuario/add", async (req, res) => {
         res.send({ error: "Error: Este usuario ya ha sido añadido" })
     else {
         usuario = new Usuarios({
-            nombreUsuario: users.length,
+            nombreUsuario: users.length+1,
             webid: webid,
             coordinates: ""
         })
@@ -114,6 +114,7 @@ router.post("/usuario/webId", async (req, res) => {
 router.post("/friendrequest/add", async (req, res) => {
     let webidSolicitante = req.body.webidSolicitante;
     let webidSolicitado = req.body.webidSolicitado;
+    console.log(webidSolicitado+","+webidSolicitante);
     let peticion = await FriendRequest.findOne(
         {
             webidSolicitante: webidSolicitante,
