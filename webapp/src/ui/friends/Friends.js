@@ -2,7 +2,7 @@ import React from 'react';
 import './Friends.css';
 import { useWebId, List, Name, Link } from "@solid/react";
 import Button from '@material-ui/core/Button';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 
 
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
@@ -24,34 +24,56 @@ let FriendsService = ServicesFactory.forFriendUsers();
 class Friends extends React.Component {
   constructor() {
     super()
-    this.state = { users: [],peticionesCompletadas:[], getPeticionesPendientes:[] }
+    this.state = { users: [], peticionesCompletadas: [], getPeticionesPendientes: [] }
   }
 
   refreshUsers(users) {
     this.setState({ users: users })
   }
-  
 
-  async listarPeticionesCompletadas(){
-    
-  }
-  async listarPeticionesPendientes(){
-    var list=" "
-    var peticiones=await FriendsService.getPeticionesPendientes(getDefaultSession().info.webId);
+
+  async listarPeticionesCompletadas() {
+    var list = ""
+    var peticiones = await FriendsService.getPeticionesCompletadas(getDefaultSession().info.webId);
     peticiones.forEach((peticion) => {
-      list+='<div className="card" ><div><h4 className="peticiones"><Name src='+peticion.nombreUsuario+'>'+peticion.nombreUsuario+'</Name></h4>'+
-          '<center><div className="botones">'+
-          '<Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={() =>'+ FriendsService.aceptFriendRequest(peticion.webid,getDefaultSession().info.webId)+'} >Aceptar</Button>'+
-          '<Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() =>'+ FriendsService.deleteFriendRequest(peticion.webid,getDefaultSession().info.webId) +'}>Eliminar</Button>'+
-          '</div></center></div></div>';
-        console.log(peticion.nombreUsuario);
+      list += '<div className="card" ><div><h4 className="peticiones"><Name src=' + peticion.nombreUsuario + '>' + peticion.nombreUsuario + '</Name></h4>' +
+        '<center><div className="botones">' +
+        '<Button variant="contained" className="buttoncard" name="Confirmar" id="botonOpcionC" value="' + peticion.webid + '" datatype="button" >Confirmar</Button>'+
+        '</div></center></div></div>' ;
+      console.log(peticion.nombreUsuario);
     })
-    console.log("listado")
-    console.log(list)
-    var lista=document.getElementById("pendientes")
-   lista.innerHTML=list;
+    var lista = document.getElementById("pendientes");
+    lista.innerHTML = list;
+    console.log(lista);
+    if (lista !== "") {
+      let elementA = document.getElementsByName('Confirmar');
+      elementA.forEach((element) => element.onclick = ()=> FriendsService.confirmFriendRequest(getDefaultSession().info.webId,element.getAttribute("value")));
+      console.log("listado")
+    }
   }
-  
+  async listarPeticionesPendientes() {
+    var list = ""
+    var peticiones = await FriendsService.getPeticionesPendientes(getDefaultSession().info.webId);
+    peticiones.forEach((peticion) => {
+      list += '<div className="card" ><div><h4 className="peticiones"><Name src=' + peticion.nombreUsuario + '>' + peticion.nombreUsuario + '</Name></h4>' +
+        '<center><div className="botones">' +
+        '<Button variant="contained" className="buttoncard" name="Aceptar" id="botonOpcionA" value="' + peticion.webid + '" datatype="button" >Aceptar</Button>' +
+        '<Button variant="contained" className="buttoncard" name="Eliminar" id="botonOpcionE" value="' + peticion.webid + '" datatype="button">Eliminar</Button>' +
+        '</div></center></div></div>';
+      console.log(peticion.nombreUsuario);
+    })
+    var lista = document.getElementById("pendientes");
+    lista.innerHTML = list;
+    console.log(lista);
+    if (lista !== "") {
+      let elementA = document.getElementsByName('Aceptar');
+      elementA.forEach((element) => element.onclick = ()=> FriendsService.aceptFriendRequest(element.getAttribute("value"), getDefaultSession().info.webId));
+      let elementE = document.getElementsByName('Eliminar');
+      elementE.forEach((element) => element.onclick = ()=> FriendsService.deleteFriendRequest(element.getAttribute("value"), getDefaultSession().info.webId));
+      console.log("listado")
+    }
+  }
+
   render() {
     return (
       <div title="Friends">
@@ -115,8 +137,8 @@ const RequestCard = (props, webId) => {
         </h4>
         <center>
           <div className="botones">
-          <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={() => FriendsService.aceptFriendRequest(props.webid,getDefaultSession().info.webId)} >Aceptar</Button>
-          <Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() => FriendsService.deleteFriendRequest(props,user)} >Eliminar</Button>
+            <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={() => FriendsService.aceptFriendRequest(props.webid, getDefaultSession().info.webId)} >Aceptar</Button>
+            <Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() => FriendsService.deleteFriendRequest(props, user)} >Eliminar</Button>
           </div>
         </center>
       </div>
@@ -133,7 +155,7 @@ const ConfirmRequestCard = (props, webId) => {
         </h4>
         <center>
           <div className="botones">
-          <Button variant="contained" className="buttoncard" id="botonOpcionC" datatype="button" onClick={() => FriendsService.confirmFriendRequest(props,user)} >Confirmar</Button>
+            <Button variant="contained" className="buttoncard" id="botonOpcionC" datatype="button" onClick={() => FriendsService.confirmFriendRequest(props, user)} >Confirmar</Button>
           </div>
         </center>
       </div>

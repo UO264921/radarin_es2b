@@ -14,7 +14,7 @@ import MapView from './ui/map/MapView';
 import MNavBar from './ui/navBar/MNavBar';
 import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
 import Profile from './ui/profile/Profile';
-
+const auth2 = require('solid-auth-client')
 function App(props) {
 
   //pide permisos de notificaciones al usuario

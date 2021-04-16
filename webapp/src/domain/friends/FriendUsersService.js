@@ -139,7 +139,7 @@ class FriendsService {
     if (await this.isWebIdValid(friendWebId)) {
       if (friendWebId.localeCompare("") !== 0) {
         //comprobamos que no pasamos un campo vacio
-        if (await this.friendAlreadyAdded(friendWebId, userWebId)) {
+        if (await this.friendAllreadyAdded(friendWebId, userWebId)) {
           //notificamos si el amigo estaba añadido
           toast.error("Friend already added", {
             position: toast.POSITION.BOTTOM_LEFT,
