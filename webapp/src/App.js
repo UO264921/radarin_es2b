@@ -1,5 +1,5 @@
 // External dependences
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import { SessionProvider } from "@inrupt/solid-ui-react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { useSession } from "@inrupt/solid-ui-react/dist";
@@ -14,6 +14,7 @@ import MapView from './ui/map/MapView';
 import MNavBar from './ui/navBar/MNavBar';
 import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
 import Profile from './ui/profile/Profile';
+const auth2 = require('solid-auth-client')
 function App(props) {
 
   //pide permisos de notificaciones al usuario
@@ -34,6 +35,7 @@ function App(props) {
   session.onLogout(() => {
     setIsLoggedIn(false)
   })
+
   
  
   return (

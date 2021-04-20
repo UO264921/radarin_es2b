@@ -20,7 +20,7 @@ import { modificarNombreUsuario, getUsernameByWebId } from "../../api/api";
 import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import EditIcon from "@material-ui/icons/Edit";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
-import "./Profile.css";
+import "./profile.css";
 
 const Perfil = () => {
   const { session } = useSession();
@@ -30,6 +30,8 @@ const Perfil = () => {
   const [colorEdit, setColor] = useState("#E5DBD4");
   const [nombre, setNombre] = useState(null);
   const [isBorder, setBorder] = useState("0px solid");
+
+  console.log("hola");
 
   var getUserName = useCallback(
     async function () {

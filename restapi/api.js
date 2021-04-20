@@ -20,7 +20,7 @@ router.post("/usuario/add", async (req, res) => {
         res.send({ error: "Error: Este usuario ya ha sido añadido" })
     else {
         usuario = new Usuarios({
-            nombreUsuario: users.length,
+            nombreUsuario: users.length+1,
             webid: webid,
             coordinates: ""
         })
@@ -47,9 +47,9 @@ router.post("/usuario/modificar/nombre", async (req, res) => {
             },
             { returnOriginal: false })
         if (usuario)
-            res.send("El nombre ha sido cambiado con éxito")
+            res.send({ result:"El nombre ha sido cambiado con éxito"})
         else
-            res.send("Ha habido un error al cambiar el nombre")
+            res.send({ error:"Error: Ha habido un error al cambiar el nombre"})
     }
 })
 
@@ -67,12 +67,12 @@ router.post("/usuario/modificar/coordinates", async (req, res) => {
                 coordinates: coordinates
             })
         if (usuario)
-            res.send("La localización ha sido cambiado con éxito")
+            res.send({result: "La localización ha sido cambiado con éxito"})
         else
-            res.send("Ha habido un error al cambiar la localización")
+            res.send({error: "Error: Ha habido un error al cambiar la localización"})
     }
     else
-        res.send("Ha habido un error")
+        res.send({error: "Error: Ha habido un error"})
 })
 
 //Obtener webid con nombre de usuario COMPROBAR
@@ -80,9 +80,9 @@ router.post("/usuario/nombreUsuario", async (req, res) => {
     let nombreUsuario = req.body.nombreUsuario;
     let usuario = await Usuarios.findOne({ nombreUsuario: nombreUsuario })
     if (usuario)
-        res.send(usuario.webid)
+        res.send(usuario)
     else {
-        res.send("Error: Usuario no encontrado")
+        res.send({error: "Error: Usuario no encontrado"})
     }
 })
 
@@ -93,7 +93,7 @@ router.post("/usuario", async (req, res) => {
     if (usuario)
         res.send(usuario)
     else {
-        res.send("Error: Usuario no encontrado")
+        res.send({error: "Error: Usuario no encontrado"})
     }
 })
 
@@ -106,7 +106,7 @@ router.post("/usuario/webId", async (req, res) => {
         res.send(usuario)
     }
     else {
-        res.send("Error: Usuario no encontrado")
+        res.send({error:"Error: Usuario no encontrado"})
     }
 })
 
@@ -114,6 +114,7 @@ router.post("/usuario/webId", async (req, res) => {
 router.post("/friendrequest/add", async (req, res) => {
     let webidSolicitante = req.body.webidSolicitante;
     let webidSolicitado = req.body.webidSolicitado;
+    console.log(webidSolicitado+","+webidSolicitante);
     let peticion = await FriendRequest.findOne(
         {
             webidSolicitante: webidSolicitante,
@@ -175,12 +176,12 @@ router.post("/friendrequest/aceptar", async (req, res) => {
                 }
             })
         if (peticion)
-            res.send("La petición ha sido aceptada con éxito")
+            res.send({result: "La petición ha sido aceptada con éxito"})
         else
-            res.send("Ha habido un error al aceptar la petición")
+            res.send({error: "Ha habido un error al aceptar la petición"})
     }
     else
-        res.send("Ha habido un error")
+        res.send({error:"Ha habido un error"})
 })
 
 //Eliminar solicitud COMPROBAR
@@ -194,9 +195,9 @@ router.post("/friendrequest/delete", async (req, res) => {
         })
 
     if (peticion)
-        res.send("La petición " + peticion + " ha sido eliminada con éxito")
+        res.send({result: "La petición " + peticion + " ha sido eliminada con éxito"})
     else {
-        res.send("Ha ocurrido un error")
+        res.send({error: "Ha ocurrido un error"})
     }
 })
 
