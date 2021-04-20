@@ -14,6 +14,9 @@ import MapView from './ui/map/MapView';
 import MNavBar from './ui/navBar/MNavBar';
 import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
 import Profile from './ui/profile/Profile';
+import PaginaBloqueada from './ui/admin/PaginaBloqueada';
+import Admin from './ui/admin/Admin';
+import RAdmin from './ui/admin/RAdmin';
 const auth2 = require('solid-auth-client')
 function App(props) {
 
@@ -46,7 +49,7 @@ function App(props) {
           </header>
           <div style={{ height: "60px" }}>
           </div>
-          {(!isLoggedIn) ? <LogIn/> : 
+          {(isLoggedIn) ? <LogIn/> : 
           <Switch>
             <Route path="/login">
               <MapView />
@@ -62,6 +65,15 @@ function App(props) {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/radmin">
+              <RAdmin />
+            </Route>
+            <Route path="/administrar">
+              <Admin />
+            </Route>
+            <Route path="/error">
+              <PaginaBloqueada />
             </Route>
             <Route path="/">
               <div>

@@ -4,6 +4,9 @@ import {Grid } from '@material-ui/core'
 import Provider from './modules/Provider';
 import WebId from './modules/WebId';
 import { LoginButton, RegisterButton } from "./modules/LoginButtons"
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 
 function LogIn(props) {
@@ -22,7 +25,7 @@ function LogIn(props) {
                 <RegisterButton />
                 <LoginButton />
             </Grid>
-
+            <a ><Nav.Link as={Link} to="/radmin" >Accede como administrador</Nav.Link></a>
         </section>
     );
 }
