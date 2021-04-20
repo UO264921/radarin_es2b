@@ -167,7 +167,6 @@ router.post("/usuario/webId", async (req, res) => {
 router.post("/friendrequest/add", async (req, res) => {
     let webidSolicitante = req.body.webidSolicitante;
     let webidSolicitado = req.body.webidSolicitado;
-    console.log(webidSolicitado+","+webidSolicitante);
     let peticion = await FriendRequest.findOne(
         {
             webidSolicitante: webidSolicitante,
