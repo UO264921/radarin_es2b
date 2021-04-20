@@ -8,7 +8,7 @@ import LoginButton from "./modules/LoginButtons"
 
 function LogIn(props) {
     return (
-        <div style={{display:"inline-block"}}>
+        <section style={{display:"inline-block"}}>
             <div style={{paddingTop:"10%"}}>
             <img src="TracingApp-01.jpg" width="400" height="700" alt="logo"/>
             </div>

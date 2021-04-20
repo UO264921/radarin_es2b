@@ -26,7 +26,12 @@ import{useWebId } from "@solid/react";
 function MapView(props) {
     
     const webId=useWebId();
-    addUsuario(webId);
+    
+    if(webId!==undefined){
+        addUsuario(webId);
+        //checkAccount(webId);
+    }
+
     const [state, setState] = useState({
         user: ServicesFactory.forCurrentUser().getDefaultUser(),
         friends: null,
@@ -38,6 +43,7 @@ function MapView(props) {
 
     // Get username
     const refreshState = async () => {
+        console.log("hola")
         let amigosCerca=false;
         let username = (await getUsernameByWebId(webId)).nombreUsuario;
         let distancia;
@@ -64,6 +70,7 @@ function MapView(props) {
             await modificarCoordenadas(webId,receivedUser.latitude+","+receivedUser.longitude);
         }
     }
+    
 
     useInterval(refreshState,10000);
     

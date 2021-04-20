@@ -1,10 +1,10 @@
 // External dependences
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { useSession } from "@inrupt/solid-ui-react/dist";
 
-import {Session} from "@inrupt/solid-client-authn-browser";
+import { Session } from "@inrupt/solid-client-authn-browser";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -26,14 +26,30 @@ function App(props) {
 
   //pide permisos de notificaciones al usuario
   Notification.requestPermission();
-  
+
   return (
-    <div className="App">
-    <LoggedOut>
-      <LogIn />
-    </LoggedOut>
-    <LoggedIn>
     <BrowserRouter>
+      <div className="App">
+        <LoggedOut>
+        <Switch>
+          <Route path="/login">
+            <LogIn />
+          </Route>
+          <Route path="/radmin">
+            <RAdmin />
+          </Route>
+          <Route path="/administrar">
+            <Admin />
+          </Route>
+          <Route path="/error">
+            <PaginaBloqueada />
+          </Route>
+          <Route path="/">
+            <LogIn />
+          </Route>
+          </Switch>
+        </LoggedOut>
+        <LoggedIn>
           <header>
             <MNavBar />
           </header>
@@ -44,7 +60,7 @@ function App(props) {
               <LogIn />
             </Route>
             <Route path="/perfil">
-            <Profile />
+              <Profile />
             </Route>
             <Route path="/amigos">
               <Friends />
@@ -61,9 +77,10 @@ function App(props) {
               </div>
             </Route>
           </Switch>
-      </BrowserRouter>
-    </LoggedIn>
-    </div>
+        </LoggedIn>
+      </div>
+    </BrowserRouter>
+
 
 
     /** 
