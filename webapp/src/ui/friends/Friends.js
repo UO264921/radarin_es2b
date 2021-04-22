@@ -1,0 +1,132 @@
+import React from 'react';
+import './Friends.css';
+import { useWebId, List, Name, Link } from "@solid/react";
+import Button from '@material-ui/core/Button';
+
+
+
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
+import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+// Dependences from: ~/ui/friends
+import './Friends.css';
+
+
+// Domain dependences
+import ServicesFactory from "../../domain/ServicesFactory";
+
+let FriendsService = ServicesFactory.forFriendUsers();
+
+class Friends extends React.Component {
+  constructor() {
+    super()
+    this.state = { users: [] }
+  }
+
+  refreshUsers(users) {
+    this.setState({ users: users })
+  }
+
+  render() {
+    return (
+      <div title="Friends">
+        <div className="prueba">
+          <h2>Añadir Amigos</h2>
+          <div className="wrap">
+            <div className="search">
+              <input type="text" className="friends-webid-input" placeholder="pepito" id="input" />
+              <button type="submit" className="searchButton" onClick={() => FriendsService.addFriendRequestService(document.getElementById("input").value, getDefaultSession().info.webId)}>
+                <SearchOutlinedIcon className="iconSearch" />
+              </button>
+            </div>
+          </div>
+          <br></br>
+          <h2>Lista de peticiones de amistad</h2>
+          <List src={`${FriendsService.getPeticionesCompletadas(getDefaultSession().info.webId)}`} className="list" padding-inline-start="0">{(request) =>
+            <li key={request} className="listElement">
+              <ConfirmRequestCard nombre={`${request}`} web={getDefaultSession().info.webId}></ConfirmRequestCard>
+            </li>}
+          </List>
+          <br></br>
+          <List src={`${FriendsService.getPeticionesPendientes(getDefaultSession().info.webId)}`} className="list" padding-inline-start="0">{
+          (request) =>
+            <li key={request} className="listElement">
+              <RequestCard nombre={`${request}`} web={getDefaultSession().info.webId}></RequestCard>
+            </li>}
+          </List>
+          <br></br>
+          <h2>Lista de amigos</h2>
+          <List src={`[${getDefaultSession().info.webId}].friends`} className="list" padding-inline-start="0">{(friend) =>
+            <li key={friend} className="listElement">
+              <Card nombre={`${friend}`} web={getDefaultSession().info.webId}></Card>
+            </li>}
+          </List>
+
+          <ToastContainer />
+        </div>
+      </div>
+    )
+  }
+}
+
+const Card = (props, webId) => {
+  var user = "" + useWebId();
+  return (
+    <div className="card" >
+      <div>
+        <h4 className="amigos">
+          <Name src={props.nombre}>{props.nombre}</Name>
+        </h4>
+        <center>
+          <div className="botones">
+            <Button variant="contained" className="buttoncard" id="botonOpcionP"><Link href={props.nombre} className="link" datatype="link">Profile</Link></Button>
+            <Button variant="contained" className="buttoncard" id="botonOpcionD" datatype="button" onClick={() => FriendsService.deleteFriend(props, user)} >Delete</Button>
+          </div>
+        </center>
+      </div>
+    </div>
+  );
+};
+
+
+const RequestCard = (props, webId) => {
+  var user = "" + useWebId();
+  return (
+    <div className="card" >
+      <div>
+        <h4 className="peticiones">
+          <Name src={props.nombre}>{props.nombre}</Name>
+        </h4>
+        <center>
+          <div className="botones">
+          <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={async () => await FriendsService.aceptFriendRequest(props.webid,getDefaultSession().info.webId)} >Aceptar</Button>
+          <Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() => FriendsService.deleteFriendRequest(props,user)} >Eliminar</Button>
+          </div>
+        </center>
+      </div>
+    </div>
+  );
+};
+const ConfirmRequestCard = (props, webId) => {
+  var user = "" + useWebId();
+  return (
+    <div className="card" >
+      <div>
+        <h4 className="peticiones">
+          <Name src={props.nombre}>{props.nombre}</Name>
+        </h4>
+        <center>
+          <div className="botones">
+          <Button variant="contained" className="buttoncard" id="botonOpcionC" datatype="button" onClick={() => FriendsService.confirmFriendRequest(props,user)} >Confirmar</Button>
+          </div>
+        </center>
+      </div>
+    </div>
+  );
+};
+
+export default Friends;
