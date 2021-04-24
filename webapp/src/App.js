@@ -12,13 +12,11 @@ import Friends from './ui/friends/Friends';
 import LogIn from './ui/logIn/LogIn';
 import MapView from './ui/map/MapView';
 import MNavBar from './ui/navBar/MNavBar';
-import PlaceholderPage from './ui/placeholderPage/PlaceholderPage';
 import Profile from './ui/profile/Profile';
 function App(props) {
 
   //pide permisos de notificaciones al usuario
-  Notification.requestPermission();
-  
+ // Notification.requestPermission();
   
   //We use this state variable
   const [isLoggedIn, setIsLoggedIn] = useState(false);
