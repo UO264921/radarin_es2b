@@ -19,6 +19,7 @@ function App(props) {
   //pide permisos de notificaciones al usuario
   Notification.requestPermission();
   
+  
   //We use this state variable
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
