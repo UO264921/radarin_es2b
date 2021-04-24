@@ -25,7 +25,7 @@ const auth2 = require('solid-auth-client')
 function App(props) {
 
   //pide permisos de notificaciones al usuario
-  Notification.requestPermission();
+ // Notification.requestPermission();
 
   return (
     <BrowserRouter>
