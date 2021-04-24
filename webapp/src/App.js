@@ -1,6 +1,5 @@
 // External dependences
 import React, { useState } from 'react';
-import { SessionProvider } from "@inrupt/solid-ui-react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { useSession } from "@inrupt/solid-ui-react/dist";
 import "bootstrap/dist/css/bootstrap.min.css";
