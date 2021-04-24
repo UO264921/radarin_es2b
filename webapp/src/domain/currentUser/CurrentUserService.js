@@ -35,14 +35,12 @@ class CurrentUserService {
         return new UserDTO({ username: "Tú", latitude: parseFloat(position.lat), longitude: parseFloat(position.lng) });
     }
 
-    async getFriends() {
+    async getFriends(webId) {
         //var amigos =  await this.obtenerAmigos();
-        var amigos = await new FriendsService().obtenerAmigos();
+        var amigos = await new FriendsService(webId).obtenerAmigos();
         var lista = [];
-        console.log(amigos)
         for(const webidAmigo of amigos){
             var amigo = await getUsuarioByWebId(webidAmigo);
-            console.log(amigo);
             var coordenadas = amigo.coordinates.split(",");
             lista.push(new UserDTO({ username: amigo.nombreUsuario, latitude: coordenadas[0], longitude: coordenadas[1] }))
         }
