@@ -23,7 +23,7 @@ class Admin extends React.Component {
       elementB.forEach((element) => element.onclick = ()=> bloquearUsuario(element.id));
     }  
   }
-
+  
   render() {
     return (
       <div title="Admin">

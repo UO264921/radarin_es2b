@@ -35,9 +35,9 @@ class CurrentUserService {
         return new UserDTO({ username: "Tú", latitude: parseFloat(position.lat), longitude: parseFloat(position.lng) });
     }
 
-    async getFriends() {
+    async getFriends(webId) {
         //var amigos =  await this.obtenerAmigos();
-        var amigos = await new FriendsService().obtenerAmigos();
+        var amigos = await new FriendsService(webId).obtenerAmigos();
         var lista = [];
         for(const webidAmigo of amigos){
             var amigo = await getUsuarioByWebId(webidAmigo);

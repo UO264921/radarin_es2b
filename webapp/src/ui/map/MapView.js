@@ -1,6 +1,6 @@
 // External dependences
 import 'leaflet/dist/leaflet.css';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
 // Dependences from: ~/ui/map
@@ -19,28 +19,36 @@ import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDa
 // Domain dependences
 import ServicesFactory from '../../domain/ServicesFactory';
 
+import{useWebId } from "@solid/react";
+
 // Functional React Component using React Hooks
 // https://es.reactjs.org/docs/components-and-props.html
 function MapView(props) {
     
-    addUsuario(getDefaultSession().info.webId);
+    const webId=useWebId();
+    
+    if(webId!==undefined){
+        addUsuario(webId);
+        //checkAccount(webId);
+    }
+
     const [state, setState] = useState({
         user: ServicesFactory.forCurrentUser().getDefaultUser(),
         friends: null,
         near:false
     });
-
+    
     // Executing promises in a React component
     // https://www.pluralsight.com/guides/executing-promises-in-a-react-component
 
     // Get username
     const refreshState = async () => {
+        console.log("hola")
         let amigosCerca=false;
-        const webId = getDefaultSession().info.webId;
         let username = (await getUsernameByWebId(webId)).nombreUsuario;
         let distancia;
         let receivedUser = await ServicesFactory.forCurrentUser().getLoggedUser(username);
-        let amigos=await ServicesFactory.forCurrentUser().getFriends();
+        let amigos=await ServicesFactory.forCurrentUser().getFriends(webId);
         let numeroDeAmigosTotal=amigos.length;
         let numeroDeAmigo=0;
         for(const amigo of amigos){
@@ -59,9 +67,10 @@ function MapView(props) {
         }
         if (receivedUser != null){
             setState({ user: receivedUser, friends:amigos ,near:amigosCerca});
-            await modificarCoordenadas(getDefaultSession().info.webId,receivedUser.latitude+","+receivedUser.longitude);
+            await modificarCoordenadas(webId,receivedUser.latitude+","+receivedUser.longitude);
         }
     }
+    
 
     useInterval(refreshState,10000);
     
