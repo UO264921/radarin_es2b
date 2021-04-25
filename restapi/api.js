@@ -63,6 +63,16 @@ router.post("/usuario/desbloquear", async (req, res) => {
     }
 })
 
+// Devuelve el estado de la cuenta de un usuario
+router.post("/usuario/estadoCuenta", async (req, res) => {
+    let webid = req.body.webid;
+    let usuario = await Usuarios.findOne({ webid: webid })
+    if (usuario)
+        res.send({estado: usuario.estadoCuenta})
+    else
+        res.send({ error: "Error: Este usuario no existe" })
+})
+
 //Añadir usuario COMPROBAR
 router.post("/usuario/add", async (req, res) => {
     let webid = req.body.webid;
