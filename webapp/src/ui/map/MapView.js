@@ -10,7 +10,7 @@ import { getMarkers, calcularDistancia } from './modules/Markers';
 
 // Import dependences
 import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
-import { addUsuario, modificarCoordenadas, getUsernameByWebId } from '../../api/api';
+import { addUsuario, modificarCoordenadas, getUsernameByWebId, getEstadoCuentaUsuario } from '../../api/api';
 
 // Dependences from: ~/util
 import { useInterval } from '../../util/hooks/UseInterval';
@@ -28,9 +28,17 @@ function MapView(props) {
     const webId=useWebId();
     
     if(webId!==undefined){
-        addUsuario(webId);
-        //checkAccount(webId);
+        addUsuario(webId).then(async function(){
+            let estado=await getEstadoCuentaUsuario(webId);
+            if (estado.estado==="BLOQUEADA"){
+                var a=document.getElementsByTagName("button");
+                a[1].click();
+                let url=window.location.toString()
+                window.location.href =url.replace(window.location.pathname,"/error");
+            }
+        });   
     }
+
 
     const [state, setState] = useState({
         user: ServicesFactory.forCurrentUser().getDefaultUser(),
@@ -43,7 +51,6 @@ function MapView(props) {
 
     // Get username
     const refreshState = async () => {
-        console.log("hola")
         let amigosCerca=false;
         let username = (await getUsernameByWebId(webId)).nombreUsuario;
         let distancia;

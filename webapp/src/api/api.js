@@ -61,6 +61,21 @@ export async function desbloquearUsuario(webid) {
     return await response.json()
 }
 
+// Devuelve el estado de la cuenta de un usuario
+export async function getEstadoCuentaUsuario(webid) {
+    const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
+    let response = await fetch(apiEndPoint + '/usuario/estadoCuenta',{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+            { 
+                'webid': webid,
+            })
+    })
+    return await response.json()
+}
+
+
 //Modificar nombre de usuario COMPROBAR
 export async function modificarNombreUsuario(webid, nombreUsuario) {
     const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api'

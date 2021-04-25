@@ -5,7 +5,9 @@ class RAdmin extends React.Component {
 
   async acceder(password){
     if(password=="hola"){
-      window.location.href ="http://localhost:3000/administrar";
+      let url=window.location.toString()
+      url=url.replace("radmin","administrar")
+      window.location.href =url;
     }
   }
 
