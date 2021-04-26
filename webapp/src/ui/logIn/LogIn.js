@@ -2,7 +2,6 @@ import './LogIn.css';
 import React from 'react';
 import {Grid } from '@material-ui/core'
 import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import LoginButton from "./modules/LoginButtons"
 

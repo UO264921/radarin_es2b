@@ -1,28 +1,18 @@
+//Dependences external
 import React from 'react';
 import './Friends.css';
 import { useWebId, List, Name, Link } from "@solid/react";
 import Button from '@material-ui/core/Button';
-import { useEffect } from 'react';
-
-
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useInterval } from '../../util/hooks/UseInterval';
-
 
 // Dependences from: ~/ui/friends
 import './Friends.css';
 
-
 // Domain dependences
 import ServicesFactory from "../../domain/ServicesFactory";
-
-
-
-
-
 
 const Friends =()=> {
   

@@ -2,9 +2,14 @@ package es.uniovi.eii.appmovil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Message;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -13,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     WebView visorWeb;
     String url = "http://radarines2bwebapp.herokuapp.com/";
+    String url2 = "http://radarines1awebapp.herokuapp.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         ajustes.setJavaScriptCanOpenWindowsAutomatically(true);
         ajustes.setAllowContentAccess(true);
         ajustes.setDomStorageEnabled(true);
+        ajustes.setSupportMultipleWindows(true);
         visorWeb.loadUrl(url);
-        visorWeb.setWebViewClient(new WebViewClient());
     }
 
 
