@@ -93,6 +93,29 @@ Pod -> Interfaz_Grafica: Devuelve los amigos
 Interfaz_Grafica -> Interfaz_Grafica: Muestra los amigos
 ----
 
+=== Ver amigos en el mapa
+
+. El usuario al estár en el mapa verá una marca donde esten sus amigos
+. Cada cierto tiempo se actualizara su posición y la de sus amigos
+
+[plantuml, {plantUMLDir}verAmigosMapa, svg]
+----
+@startuml
+actor Usuario
+participant Interfaz_Grafica
+database Base_De_Datos
+database Pod
+Usuario -> Interfaz_Grafica: Mapa
+Interfaz_Grafica -> Base_De_Datos: Pide la ubicación del usuario
+Interfaz_Grafica <- Base_De_Datos: Devuelve la ubicación del usuario
+
+Interfaz_Grafica -> Pod: Pide los webid de los amigos
+Interfaz_Grafica -> Base_De_Datos: Pide la ubicación de cada amigo
+Interfaz_Grafica <- Base_De_Datos: Devuelve la ubicación de los amigos
+Interfaz_Grafica -> Interfaz_Grafica: Muestra con los datos al usuario y a sus amigos
+@enduml
+----
+
 === Notificaciones
 
 . El usuario activa la ubicación y permite usarlo a la aplicación.
