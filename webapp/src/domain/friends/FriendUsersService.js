@@ -1,16 +1,15 @@
+/* eslint-disable no-array-constructor */
 // import {login,getDefaultSession}from "@inrupt/solid-client-authn-browser";
 // import { NotificationManager } from "react-notifications";
 
 // External dependences
-import React from "react";
 import auth from "solid-auth-client";
 import data from "@solid/query-ldflex";
 import FC from "solid-file-client";
 import { toast } from 'react-toastify';
 import FileClient from "solid-file-client";
 import { addFriendRequest, getWebIdByUsername, eliminarSolicitud, aceptarSolicitud, getSolicitudesCompletadas, getSolicitudesPendientes, getUsernameByWebId } from "../../api/api";
-import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
-import { useWebId } from "@solid/react";
+
 
 
 class FriendsService {
