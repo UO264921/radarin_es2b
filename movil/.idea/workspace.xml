@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25894bad-7c35-4c45-bc03-b1fecaf3480c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../webapp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/ui/friends/Friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/ui/friends/Friends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/ui/logIn/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/ui/logIn/LogIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/ui/navBar/modules/MNavBarSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/ui/navBar/modules/MNavBarSession.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1rfIwYE6gDZc1w5hsxLi6oMm5Bv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AppMovil" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25894bad-7c35-4c45-bc03-b1fecaf3480c" name="Default Changelist" comment="" />
+      <created>1619360956522</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619360956522</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="713" y="378" key="#Notifications" timestamp="1619361227976">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="713" y="378" key="#Notifications/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361227976" />
+    <state x="241" y="106" width="1177" height="800" key="AVDManager" timestamp="1619361190861">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="241" y="106" width="1177" height="800" key="AVDManager/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361190861" />
+    <state x="608" y="270" key="FileChooserDialogImpl" timestamp="1619361282848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="608" y="270" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361282848" />
+    <state width="622" height="224" key="GridCell.Tab.0.bottom" timestamp="1619361131281">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="224" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361131281" />
+    <state width="622" height="224" key="GridCell.Tab.0.center" timestamp="1619361131280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="224" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361131280" />
+    <state width="622" height="224" key="GridCell.Tab.0.left" timestamp="1619361131280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="224" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361131280" />
+    <state width="622" height="224" key="GridCell.Tab.0.right" timestamp="1619361131281">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="224" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.-598.1080.2560@0.0.1920.1040" timestamp="1619361131281" />
+  </component>
+</project>
