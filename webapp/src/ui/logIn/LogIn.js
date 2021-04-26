@@ -13,7 +13,7 @@ function LogIn(props) {
             </div>
             <Grid className="container-buttons" container direction="column">
                 <LoginButton className="loginButton" />
-            </Grid        >
+            </Grid>
             <a href={Link}><Nav.Link as={Link} to="/radmin" >Accede como administrador</Nav.Link></a>
         </section>
     );
