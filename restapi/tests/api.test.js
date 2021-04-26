@@ -26,12 +26,12 @@ afterAll(async () => {
  * Product test suite.
 */
 describe('user ', () => {
-    /**
-     * Test that we can list users without any error.
+    
+    //Test that we can list users without any error.
      
     it('can be listed',async () => {
         const response = await request(app).get("/api/users/list");
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(404);
     });
 
     /**
