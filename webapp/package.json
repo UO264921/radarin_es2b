@@ -41,6 +41,7 @@
     "react-toastify": "^7.0.3",
     "react-update": "^0.4.4",
     "react-use-session": "^1.2.0",
+    "saslprep": "^1.0.3",
     "slick-carousel": "^1.8.1",
     "solid-auth-client": "^2.5.5",
     "solid-file-client": "^1.2.3",
