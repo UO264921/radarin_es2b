@@ -1,8 +1,6 @@
 import './LogIn.css';
 import React from 'react';
-import { Grid } from '@material-ui/core'
-import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
+import {Grid } from '@material-ui/core'
 import LoginButton from "./modules/LoginButtons"
 
 function LogIn(props) {
@@ -14,8 +12,8 @@ function LogIn(props) {
             <Grid className="container-buttons" container direction="column">
                 <LoginButton className="loginButton" />
             </Grid>
-            <a href={Link}><Nav.Link as={Link} to="/radmin" >Accede como administrador</Nav.Link></a>
+            <a href={window.location.toString().replace(window.location.pathname,"/radmin")}>Accede como administrador</a>
         </section>
-    );
+    )
 }
 export default LogIn;
