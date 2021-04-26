@@ -24,7 +24,7 @@ afterAll(async () => {
 
 /**
  * Product test suite.
- 
+*/
 describe('user ', () => {
     /**
      * Test that we can list users without any error.
@@ -45,5 +45,5 @@ describe('user ', () => {
         expect(response.body.name).toBe(username);
         expect(response.body.email).toBe(email);
     });
+    */
 });
-*/
