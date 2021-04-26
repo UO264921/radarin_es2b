@@ -4,7 +4,6 @@ import './Friends.css';
 import { useWebId, List, Name, Link } from "@solid/react";
 import Button from '@material-ui/core/Button';
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -116,45 +115,5 @@ const Card = (props) => {
     </div>
   );
 };
-const RequestCard = (props) => {
-  const webId=useWebId();
-  const FriendsService = ServicesFactory.forFriendUsers(webId);
-  var user = "" + webId;
-  return (
-    <div className="card" >
-      <div>
-        <h4 className="peticiones">
-          <Name src={props.nombre.nombreUsuario}>{props.nombre.nombreUsuario}</Name>
-        </h4>
-        <center>
-          <div className="botones">
-            <Button variant="contained" className="buttoncard" id="botonOpcionA" datatype="button" onClick={() => FriendsService.aceptFriendRequest(props.webid, getDefaultSession().info.webId)} >Aceptar</Button>
-            <Button variant="contained" className="buttoncard" id="botonOpcionE" datatype="button" onClick={() => FriendsService.deleteFriendRequest(props, user)} >Eliminar</Button>
-          </div>
-        </center>
-      </div>
-    </div>
-  );
-};
-const ConfirmRequestCard = (props) => {
-  const webId=useWebId();
-  const FriendsService = ServicesFactory.forFriendUsers(webId);
-  var user = "" + useWebId();
-  return (
-    <div className="card" >
-      <div>
-        <h4 className="peticiones">
-          <Name src={props.nombre}>{props.nombre}</Name>
-        </h4>
-        <center>
-          <div className="botones">
-            <Button variant="contained" className="buttoncard" id="botonOpcionC" datatype="button" onClick={() => FriendsService.confirmFriendRequest(props, user)} >Confirmar</Button>
-          </div>
-        </center>
-      </div>
-    </div>
-  );
-};
-
 
 export default Friends;

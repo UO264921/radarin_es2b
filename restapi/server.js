@@ -14,7 +14,7 @@ const CONECTOR = `mongodb://${USER}:${PASSWORD}@radarin-es2b-shard-00-00.oh0ak.m
 function connect(){
     //The MONGO_URI variable is the connection string to MongoDB Atlas (for production). This env variable is created in heroku.
     mongo_uri = process.env.MONGO_URI || CONECTOR
-    mongoose.connect(mongo_uri, { useNewUrlParser: true,useUnifiedTopology: true }).then(() => {
+    mongoose.connect(mongo_uri, { useNewUrlParser: true,useUnifiedTopology: true,useFindAndModify: false, useCreateIndex:true}).then(() => {
         const app = express()
 
         //Monitoring middleware

@@ -9,7 +9,6 @@ import { getMarkers, calcularDistancia } from './modules/Markers';
 
 
 // Import dependences
-import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { addUsuario, modificarCoordenadas, getUsernameByWebId, getEstadoCuentaUsuario } from '../../api/api';
 
 // Dependences from: ~/util
@@ -65,11 +64,11 @@ function MapView(props) {
                 amigosCerca=true
                 break;
             }
-            if(numeroDeAmigo==numeroDeAmigosTotal){
+            if(numeroDeAmigo===numeroDeAmigosTotal){
                 amigosCerca=false
             }
         }
-        if(amigosCerca && state.near==false){
+        if(amigosCerca && state.near===false){
             new Notification("Tienes amigos cerca");
         }
         if (receivedUser != null){
