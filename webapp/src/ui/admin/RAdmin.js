@@ -18,6 +18,7 @@ class RAdmin extends React.Component {
             <input type="text" id="password" />
             <button onClick={()=>this.acceder(document.getElementById("password").value)}>Acceder</button>
         </div>
+        <button ><a href="/login" >Volver</a></button>
       </div>
     )
   }
