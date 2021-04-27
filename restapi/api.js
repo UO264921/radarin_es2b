@@ -11,6 +11,68 @@ router.get("/usuarios/count", async (req, res) => {
     res.send(users.length);
 })
 
+// Devuelve todos los usuarios
+router.post("/usuarios", async (req, res) => {
+    const users = await Usuarios.find({}).sort('-_id')
+    res.send(users);
+})
+
+//Bloquear a un usuario COMPROBAR
+router.post("/usuario/bloquear", async (req, res) => {
+    let webid = req.body.webid;
+    let usuario = await Usuarios.findOne({ webid: webid })
+    if (usuario){
+        let usuario = await Usuarios.findOneAndUpdate(
+            {
+                webid: webid
+            },
+            {
+                estadoCuenta: "BLOQUEADA",
+            },
+            { returnOriginal: false })
+        if (usuario)
+            res.send({ result:"El usuario ha sido bloqueado"})
+        else
+            res.send({ error:"Error: Ha habido un error al bloquear al usuario"})
+    }     
+    else {
+        res.send({ error: "Error: Este usuario no existe" })
+    }
+})
+
+//Desbloquear a un usuario COMPROBAR
+router.post("/usuario/desbloquear", async (req, res) => {
+    let webid = req.body.webid;
+    let usuario = await Usuarios.findOne({ webid: webid })
+    if (usuario){
+        let usuario = await Usuarios.findOneAndUpdate(
+            {
+                webid: webid
+            },
+            {
+                estadoCuenta: "ACTIVA",
+            },
+            { returnOriginal: false })
+        if (usuario)
+            res.send({ result:"El usuario ha sido desbloqueado"})
+        else
+            res.send({ error:"Error: Ha habido un error al desbloquear al usuario"})
+    }     
+    else {
+        res.send({ error: "Error: Este usuario no existe" })
+    }
+})
+
+// Devuelve el estado de la cuenta de un usuario
+router.post("/usuario/estadoCuenta", async (req, res) => {
+    let webid = req.body.webid;
+    let usuario = await Usuarios.findOne({ webid: webid })
+    if (usuario)
+        res.send({estado: usuario.estadoCuenta})
+    else
+        res.send({ error: "Error: Este usuario no existe" })
+})
+
 //Añadir usuario COMPROBAR
 router.post("/usuario/add", async (req, res) => {
     let webid = req.body.webid;
@@ -22,7 +84,8 @@ router.post("/usuario/add", async (req, res) => {
         usuario = new Usuarios({
             nombreUsuario: users.length+1,
             webid: webid,
-            coordinates: ""
+            coordinates: "",
+            estadoCuenta: "ACTIVA"
         })
         await usuario.save()
         res.send(usuario)
@@ -114,7 +177,6 @@ router.post("/usuario/webId", async (req, res) => {
 router.post("/friendrequest/add", async (req, res) => {
     let webidSolicitante = req.body.webidSolicitante;
     let webidSolicitado = req.body.webidSolicitado;
-    console.log(webidSolicitado+","+webidSolicitante);
     let peticion = await FriendRequest.findOne(
         {
             webidSolicitante: webidSolicitante,

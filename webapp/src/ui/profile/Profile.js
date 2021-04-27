@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 import {
-  useSession,
   CombinedDataProvider,
   Image,
   LogoutButton,
@@ -21,17 +20,15 @@ import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import EditIcon from "@material-ui/icons/Edit";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import "./profile.css";
+import { useWebId } from "@solid/react";
 
 const Perfil = () => {
-  const { session } = useSession();
-  const { webId } = session.info;
+  const  webId  = useWebId();
   const [editing, setEditing] = useState(false);
   const [textEdit, setText] = useState("Editar perfil");
   const [colorEdit, setColor] = useState("#E5DBD4");
   const [nombre, setNombre] = useState(null);
   const [isBorder, setBorder] = useState("0px solid");
-
-  console.log("hola");
 
   var getUserName = useCallback(
     async function () {

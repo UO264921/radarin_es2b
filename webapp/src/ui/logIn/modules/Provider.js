@@ -9,8 +9,8 @@ function Provider(props) {
         <div>
             <p className="provider-title">Proveedor</p>
             <select className="provider-select" name="providers" id="providers">
-                <option value="https://m.inrupt.net"> inrupt.net</option>
-                <option value="https://m.solidcommunity.net"> solidcommunity.net</option>
+                <option value="https://inrupt.net/common/popup.html"> inrupt.net</option>
+                <option value="https://solidcommunity.net/common/popup.html"> solidcommunity.net</option>
             </select>
         </div>
     );
