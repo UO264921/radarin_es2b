@@ -8,3 +8,5 @@ test('check that everything is rendering propertly', async () => {
     expect(getByText("Lista de peticiones de amistad")).toBeInTheDocument();
     expect(getByText("Lista de amigos")).toBeInTheDocument();
   });
+
+
