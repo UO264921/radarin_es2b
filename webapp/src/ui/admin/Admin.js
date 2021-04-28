@@ -15,7 +15,6 @@ class Admin extends React.Component {
     })
     var lista = document.getElementById("usuarios");
     lista.innerHTML = list;
-    console.log(lista);
     if (lista !== "") {
       let elementA = document.getElementsByName('Desbloquear');
       elementA.forEach((element) => element.onclick = ()=> desbloquearUsuario(element.id));
@@ -33,6 +32,7 @@ class Admin extends React.Component {
           <div id="usuarios" className="list" padding-inline-start="0">
           </div>
         </div>
+        <button ><a href="/login" >Volver</a></button>
       </div>
     )
   }

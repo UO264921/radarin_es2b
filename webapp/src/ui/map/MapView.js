@@ -37,8 +37,6 @@ function MapView(props) {
             }
         });   
     }
-
-
     const [state, setState] = useState({
         user: ServicesFactory.forCurrentUser().getDefaultUser(),
         friends: null,
@@ -77,7 +75,6 @@ function MapView(props) {
         }
     }
     
-
     useInterval(refreshState,10000);
     
     let users = [state.user];
