@@ -33,6 +33,7 @@ class Admin extends React.Component {
           <div id="usuarios" className="list" padding-inline-start="0">
           </div>
         </div>
+        <button ><a href="/login" >Volver</a></button>
       </div>
     )
   }
