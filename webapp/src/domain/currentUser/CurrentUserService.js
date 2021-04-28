@@ -25,7 +25,6 @@ class CurrentUserService {
 
             return new UserDTO({ username: username, latitude: position.lat, longitude: position.lng });
         } else {
-            console.log("Error al obtener la ubicación");
             return this.getDefaultUser();
         }
     }

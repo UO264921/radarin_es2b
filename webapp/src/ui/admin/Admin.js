@@ -15,7 +15,6 @@ class Admin extends React.Component {
     })
     var lista = document.getElementById("usuarios");
     lista.innerHTML = list;
-    console.log(lista);
     if (lista !== "") {
       let elementA = document.getElementsByName('Desbloquear');
       elementA.forEach((element) => element.onclick = ()=> desbloquearUsuario(element.id));
