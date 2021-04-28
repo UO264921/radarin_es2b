@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 import {
-  useSession,
   CombinedDataProvider,
   Image,
   LogoutButton,

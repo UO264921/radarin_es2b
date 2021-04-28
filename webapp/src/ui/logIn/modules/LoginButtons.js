@@ -9,7 +9,7 @@ class LoginButton extends React.Component {
     render() {
         return (
             <div>
-                <AuthButton data-testid="btini" popup={"https://inrupt.net/common/popup.html"} />
+                <AuthButton id="logout" data-testid="btini" popup={"https://inrupt.net/common/popup.html"} />
             </div>
         )
     }
