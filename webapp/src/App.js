@@ -16,10 +16,11 @@ import PaginaBloqueada from './ui/admin/PaginaBloqueada';
 import Admin from './ui/admin/Admin';
 import RAdmin from './ui/admin/RAdmin';
 
+
 function App(props) {
 
  //pide permisos de notificaciones al usuario
-  Notification.requestPermission();
+ // Notification.requestPermission();
 
   return (
     <BrowserRouter>
