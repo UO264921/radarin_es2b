@@ -262,17 +262,6 @@ class FriendsService {
       if (String(friend).localeCompare(String(id)) === 0) return true;
     return false;
   }
-  async getFriends() {
-    const friends = [];
-    let session = await auth.currentSession();
-    if (session) {
-      var id = `${session.webId}`;
-      const user = data[id];
-      for await (const friend of user.friends) friends.push(friend.toString());
-      const users = await Promise.all(friends);
-      return users;
-    }
-  }
   reload = () => {
     window.location.reload();
   };
@@ -292,9 +281,12 @@ class FriendsService {
 
   async obtenerAmigos() {
     var lista = new Array();
+    if(await this.isWebIdValid(this.webId)){
     for await (const friend of data[this.webid].friends) lista.push(friend.toString());
     const users = await Promise.all(lista);
     return users;
+    }
+    return lista;
   }
 
 }
