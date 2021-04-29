@@ -31,6 +31,9 @@ class CurrentUserService {
 
     getDefaultUser() {
         let position = this.currentUserFactory.forGetCurrentUserCoords();
+        if(position==null){
+            position={lat:0,lng:0};
+        }
         return new UserDTO({ username: "Tú", latitude: parseFloat(position.lat), longitude: parseFloat(position.lng) });
     }
 
