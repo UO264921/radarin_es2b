@@ -26,15 +26,12 @@ const Friends =()=> {
         '<center><div className="botones">' +
         '<Button variant="contained" className="buttoncard" name="Confirmar" id="botonOpcionC" value="' + peticion.webid + '" datatype="button" >Confirmar</Button>'+
         '</div></center></div></div>' ;
-      console.log(peticion.nombreUsuario);
     })
     var lista = document.getElementById("pendientes");
     lista.innerHTML = list;
-    console.log(lista);
     if (lista !== "") {
       let elementA = document.getElementsByName('Confirmar');
       elementA.forEach((element) => element.onclick = ()=> FriendsService.confirmFriendRequest(webId,element.getAttribute("value")));
-      console.log("listado")
     }
   }
   async function listarPeticionesPendientes() {
@@ -46,17 +43,14 @@ const Friends =()=> {
         '<Button variant="contained" className="buttoncard" name="Aceptar" id="botonOpcionA" value="' + peticion.webid + '" datatype="button" >Aceptar</Button>' +
         '<Button variant="contained" className="buttoncard" name="Eliminar" id="botonOpcionE" value="' + peticion.webid + '" datatype="button">Eliminar</Button>' +
         '</div></center></div></div>';
-      console.log(peticion.nombreUsuario);
     })
     var lista = document.getElementById("pendientes");
     lista.innerHTML = list;
-    console.log(lista);
     if (lista !== "") {
       let elementA = document.getElementsByName('Aceptar');
       elementA.forEach((element) => element.onclick = ()=> FriendsService.aceptFriendRequest(element.getAttribute("value"), webId));
       let elementE = document.getElementsByName('Eliminar');
       elementE.forEach((element) => element.onclick = ()=> FriendsService.deleteFriendRequest(element.getAttribute("value"), webId));
-      console.log("listado")
     }
   }
 

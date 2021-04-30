@@ -25,13 +25,15 @@ class CurrentUserService {
 
             return new UserDTO({ username: username, latitude: position.lat, longitude: position.lng });
         } else {
-            console.log("Error al obtener la ubicación");
             return this.getDefaultUser();
         }
     }
 
     getDefaultUser() {
         let position = this.currentUserFactory.forGetCurrentUserCoords();
+        if(position==null){
+            position={lat:0,lng:0};
+        }
         return new UserDTO({ username: "Tú", latitude: parseFloat(position.lat), longitude: parseFloat(position.lng) });
     }
 

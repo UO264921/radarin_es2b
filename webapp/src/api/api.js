@@ -49,6 +49,7 @@ export async function bloquearUsuario(webid) {
 
 //Desbloquear cuenta de usuario COMPROBAR
 export async function desbloquearUsuario(webid) {
+    console.log("Desbloqueando"+webid)
     const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
     let response = await fetch(apiEndPoint + '/usuario/desbloquear', {
         method: 'POST',

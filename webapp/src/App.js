@@ -15,11 +15,13 @@ import Profile from './ui/profile/Profile';
 import PaginaBloqueada from './ui/admin/PaginaBloqueada';
 import Admin from './ui/admin/Admin';
 import RAdmin from './ui/admin/RAdmin';
+import {ListarUsuarios} from './ui/admin/Admin';
+
 
 function App(props) {
 
  //pide permisos de notificaciones al usuario
- Notification.requestPermission();
+ // Notification.requestPermission();
 
   return (
     <BrowserRouter>
@@ -33,7 +35,7 @@ function App(props) {
             <RAdmin />
           </Route>
           <Route path="/administrar">
-            <Admin />
+            <Admin method={ListarUsuarios}/>
           </Route>
           <Route path="/error">
             <PaginaBloqueada />

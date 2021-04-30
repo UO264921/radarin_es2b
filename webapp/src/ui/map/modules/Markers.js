@@ -6,7 +6,7 @@ import { divIcon,latLng, CRS  } from 'leaflet';
 const blue = '#004B87';
 const yellow = '#FFCD00';
 
-function iconByColourCode(colourCode) {
+export function iconByColourCode(colourCode) {
     let style = `background-color: ${colourCode};
             width: 3rem;
             height: 3rem;
@@ -26,7 +26,7 @@ function iconByColourCode(colourCode) {
     })
 };
 
-function getMarker(user, colour, key) {
+export function getMarker(user, colour, key) {
     if (colour == null)
         colour = '#FFFFFF';
     return (
