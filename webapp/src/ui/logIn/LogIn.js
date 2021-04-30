@@ -12,7 +12,7 @@ function LogIn(props) {
             <Grid className="container-buttons" container direction="column">
                 <LoginButton className="loginButton" />
             </Grid>
-            <a href={window.location.toString().replace(window.location.pathname,"/radmin")}>Accede como administrador</a>
+            <a href={window.location.origin+"/radmin"}>Accede como administrador</a>
         </section>
     )
 }
