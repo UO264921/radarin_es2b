@@ -16,7 +16,6 @@ function MNavBar() {
                 <Nav.Link as={Link} to="/mapa" >Mapa</Nav.Link>
                 <Nav.Link as={Link} to="/perfil" >Perfil</Nav.Link>
                 <Nav.Link as={Link} to="/amigos" >Mis amigos</Nav.Link>
-                <Nav.Link as={Link} to="/config" >Configuracion</Nav.Link>
                 <Nav.Link as={Link} to="/about" >Acerca de</Nav.Link>
             </Nav>
             <MNavBarSession></MNavBarSession>
