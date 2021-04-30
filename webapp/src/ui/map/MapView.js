@@ -32,8 +32,7 @@ function MapView(props) {
             if (estado.estado==="BLOQUEADA"){
                 var a=document.getElementsByTagName("button");
                 a[1].click();
-                let url=window.location.toString()
-                window.location.href =url.replace(window.location.pathname,"/error");
+                window.location.href =window.location.origin+"/error";
             }
         });   
     }
