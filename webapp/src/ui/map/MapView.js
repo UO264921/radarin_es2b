@@ -43,10 +43,6 @@ function MapView(props) {
         near:false
     });
     
-    // Executing promises in a React component
-    // https://www.pluralsight.com/guides/executing-promises-in-a-react-component
-
-    // Get username
     const refreshState = async () => {
         let amigosCerca=false;
         let username = (await getUsernameByWebId(webId)).nombreUsuario;

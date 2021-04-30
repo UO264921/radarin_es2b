@@ -7,4 +7,6 @@ test('Comprobar que todo se renderiza correctamente', async () => {
     expect(getByText("Registrate como admin")).toBeInTheDocument();
     expect(getByText("Acceder")).toBeInTheDocument();
     expect(getByText("Volver")).toBeInTheDocument();
+    const boton1 = getByText("Acceder")
+    fireEvent.click(boton1);
   });
