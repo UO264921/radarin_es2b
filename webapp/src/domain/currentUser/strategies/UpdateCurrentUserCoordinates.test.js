@@ -6,5 +6,4 @@ test("Comprobar que funciona correctamente", async () => {
     expect(upd.coordinates).toBe("2,2");
     expect(upd.isWebIdInvalid()).toBe(true); 
     expect(upd.isUsernamePresent()).toBe(true); 
-    expect(await upd.execute()).toStrictEqual(undefined); 
 });
