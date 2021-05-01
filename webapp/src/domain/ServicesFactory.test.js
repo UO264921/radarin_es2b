@@ -1,5 +1,3 @@
-import React from 'react'
-import { render, fireEvent, getByText,waitFor } from "@testing-library/react";
 import ServicesFactory from "./ServicesFactory";
 import CurrentUserService from "./currentUser/CurrentUserService";
 import FriendsService from "./friends/FriendUsersService";

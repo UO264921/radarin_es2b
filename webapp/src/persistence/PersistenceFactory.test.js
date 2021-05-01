@@ -1,5 +1,3 @@
-import React from 'react'
-import { render, fireEvent, getByText,waitFor } from "@testing-library/react";
 import PersistenceFactory from "./PersistenceFactory";
 import UserGateway from "./user/UserGateway";
 
