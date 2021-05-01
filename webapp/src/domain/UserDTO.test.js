@@ -1,4 +1,3 @@
-import React from "react";
 import { UserDTO } from "./UserDTO";
 import "@testing-library/jest-dom/extend-expect";
 import { latLng } from 'leaflet';

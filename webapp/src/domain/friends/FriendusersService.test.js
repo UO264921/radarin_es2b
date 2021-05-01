@@ -1,4 +1,3 @@
-import React from "react";
 import FriendUsersService from "./FriendUsersService";
 import "@testing-library/jest-dom/extend-expect";
 
