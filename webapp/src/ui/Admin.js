@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from "@material-ui/core";
-import {desbloquearUsuario,bloquearUsuario, getUsuarios} from "../../api/api.js"
+import {desbloquearUsuario,bloquearUsuario, getUsuarios} from "../api/api.js"
 
 let usuarios=[]
 
@@ -57,8 +57,7 @@ export const Admin = ({method}) => {
         <button onClick={method}>Mostrar Usuarios</button>
         <div id="usuarios" className="list" padding-inline-start="0">
         </div>
-      </div>
-      <button ><a href="/login" >Volver</a></button>
+      </div>      
     </div>
   )
 }

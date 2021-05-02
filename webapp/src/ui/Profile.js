@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 import {
   CombinedDataProvider,
   Image,
-  LogoutButton,
   Text,
 } from "@inrupt/solid-ui-react";
 import {
@@ -15,7 +14,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 
-import { modificarNombreUsuario, getUsernameByWebId } from "../../api/api";
+import { modificarNombreUsuario, getUsernameByWebId } from "../api/api";
 import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import EditIcon from "@material-ui/icons/Edit";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
@@ -145,12 +144,6 @@ const Perfil = () => {
             </IconButton>
           </CardActions>
           <br />
-          <hr />
-          <LogoutButton>
-            <button className="botonLogout">
-              <span className="logout">Logout</span>
-            </button>
-          </LogoutButton>
           <hr />
         </Card>
       </CombinedDataProvider>

@@ -4,7 +4,7 @@ import {CombinedDataProvider, Text } from "@inrupt/solid-ui-react";
 import Nav from "react-bootstrap/Nav";
 import { FOAF } from "@inrupt/lit-generated-vocab-common";
 import {useWebId } from "@solid/react";
-import LoginButton from "../../logIn/modules/LoginButtons.js"
+import LoginButton from "./LoginButtons.js"
 
 function MNavBarSession() {
     const webId  = useWebId();
