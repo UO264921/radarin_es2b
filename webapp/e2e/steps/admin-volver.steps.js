@@ -4,8 +4,8 @@ const feature = loadFeature("./features/admin-volver.feature");
 defineFeature(feature, (test) => {
   
   beforeEach(async () => {
-    await global.page.goto("https://radarines2bwebapp.herokuapp.com/")
-  })
+    await global.page.goto("https://radarines2bwebapp.herokuapp.com/");
+  });
 
   test("El usuario hace click sobre volver para ir al login", ({when,then}) => {
     
