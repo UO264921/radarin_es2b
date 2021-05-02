@@ -274,7 +274,7 @@ class FriendsService {
   async getSession() {
     let session = await auth.currentSession(localStorage);
     return session;
-  };
+  }
 
 
   async getWebId() {
