@@ -25,6 +25,14 @@ function connect() {
         app.use(express.json())
         app.use("/api", api)
 
+        app.use( (request, response) => {
+            request.header("Access-Control-Allow-Origin", "https://radarines2bwebapp.herokuapp.com/*");
+            request.header("Access-Control-Allow-Origin", "https://radarines2brestapi.herokuapp.com/*");
+            request.header("Access-Control-Allow-Origin", "http://localhost:3000/*"); // just for working until the final delivery and all deploy
+            request.header("Access-Control-Allow-Origin", "http://localhost:5000/api/*"); // " "
+            request.header("GET, POST"); // the other methods are not used in the api
+        });
+
 
         app.listen(process.env.PORT || 5000, () => {
             console.log("Server has started! Using db in " + mongo_uri)

@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
 // Dependences from: ~/ui/navBar
-import MNavBarSession from "./modules/MNavBarSession";
+import MNavBarSession from "./MNavBarSession";
 
 function MNavBar() {
     return <Navbar bg="white" expand="lg" className="navBar fixed-top align-items center shadow rounded">

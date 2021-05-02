@@ -1,7 +1,5 @@
-import React from "react";
 import CurrentUserService from "./CurrentUserService";
 import "@testing-library/jest-dom/extend-expect";
-import { latLng } from 'leaflet';
 import { UserDTO } from "../UserDTO";
 
 test ("comprobar que el currentUserService funciona correctamente", async () => {
