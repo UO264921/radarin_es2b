@@ -4,7 +4,7 @@ const feature = loadFeature('./features/admin-acceder.feature');
 defineFeature(feature, test => {
   
   beforeEach(async () => {
-    await global.page.goto('http://localhost:3000')
+    await global.page.goto('https://radarines2bwebapp.herokuapp.com/')
   })
 
   test('El usuario hace click sobre accede como admin', ({when,then}) => {
