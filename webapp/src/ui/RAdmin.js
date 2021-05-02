@@ -26,7 +26,6 @@ export default class RAdmin extends React.Component {
             <input type="text" id="password" />
             <button onClick={() => this.acceder(document.getElementById("password").value)}>Acceder</button>
           </div>
-          <Link to="/" >Volver</Link>
         </div>
       )
     else

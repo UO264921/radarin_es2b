@@ -58,8 +58,7 @@ export const Admin = ({method}) => {
         <button onClick={method}>Mostrar Usuarios</button>
         <div id="usuarios" className="list" padding-inline-start="0">
         </div>
-      </div>
-      <Link to="/" >Volver</Link>
+      </div>      
     </div>
   )
 }

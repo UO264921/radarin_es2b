@@ -7,7 +7,6 @@ test('Comprobar que todo se renderiza correctamente', async () => {
     const { getByText } = render(<Admin/>);
     expect(getByText("Mostrar Usuarios")).toBeInTheDocument();
     expect(getByText("Administrar Usuarios")).toBeInTheDocument();
-    expect(getByText("Volver")).toBeInTheDocument();
   });
 
 test('Comprobar que se ejecuta la function del boton mostrar usuarios', () => {

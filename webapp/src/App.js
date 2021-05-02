@@ -1,6 +1,6 @@
 // External dependences
 import React from 'react';
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter,Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { LoggedOut, LoggedIn } from "@solid/react";
 import { SessionProvider } from "@inrupt/solid-ui-react";
@@ -35,12 +35,15 @@ function App(props) {
               </Route>
               <Route exact path="/radmin">
                 <RAdmin />
+                <Link to="/" >Volver</Link>
               </Route>
               <Route exact path="/administrar">
                 <Admin method={ListarUsuarios} />
+                <Link to="/" >Volver</Link>
               </Route>
               <Route exact path="/error">
                 <PaginaBloqueada />
+                <Link to="/" >Volver</Link>
               </Route>
               <Route exact path="/">
                 <LogIn />
