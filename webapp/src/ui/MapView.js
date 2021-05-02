@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import {  useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 // Dependences from: ~/ui/map
 import './map.css';
@@ -74,7 +75,7 @@ function MapView(props) {
         }
     }
     
-    useInterval(refreshState,20000);
+    useInterval(refreshState,10000);
     
     let users = [state.user];
     Array.prototype.push.apply(users, state.friends);
@@ -91,6 +92,7 @@ function MapView(props) {
                 zoomOffset={parseInt(-1)}
             />
             {usersMarkers}
+            <ToastContainer />
         </MapContainer >
     );
 }
