@@ -1,23 +1,23 @@
 :root {
     --primary: grey;
     --secondary: white;
-  }
+}
 
-.loginbackground{
-    background: url("../img/pexels-cottonbro-\ peque-5967048.jpg") ;
+.loginbackground {
+    background: url("../img/pexels-cottonbro-\ peque-5967048.jpg");
     background-repeat: no-repeat;
     height: 10000px;
     width: 10000px;
     background-color: white;
 }
 
-.container-buttons{
+.container-buttons {
     margin-top: 4vh;
     align-content: center;
     margin-bottom: 4vh;
 }
 
-.loginButton{
+.loginButton {
     max-width: 800px;
     border: 2px solid var(black);
     background-Color: var(--primary);
@@ -25,6 +25,5 @@
     border-radius: 20vw;
     width: 80vw;
     height: 20%;
-    font-size:min(80px,5vw);
+    font-size: min(80px, 5vw);
 }
-
