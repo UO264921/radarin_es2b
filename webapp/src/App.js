@@ -7,7 +7,7 @@ import { LoggedOut, LoggedIn } from "@solid/react";
 // Dependences from: ~/ui
 import './App.css';
 import About from './ui/about/About';
-import {Friends, Listar} from './ui/friends/Friends';
+import {Friends} from './ui/friends/Friends';
 import LogIn from './ui/logIn/LogIn';
 import MapView from './ui/map/MapView';
 import MNavBar from './ui/navBar/MNavBar';
