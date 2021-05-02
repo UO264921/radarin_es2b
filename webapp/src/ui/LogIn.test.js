@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, getByText } from "@testing-library/react";
+import { render} from "@testing-library/react";
 import LogIn from "./LogIn";
 
 test('Comprobar que todo se renderiza correctamente', async () => {

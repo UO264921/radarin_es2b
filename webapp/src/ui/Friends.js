@@ -12,8 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Friends.css';
 
 // Domain dependences
-import ServicesFactory from "../../domain/ServicesFactory";
-import FriendsService from '../../domain/friends/FriendUsersService';
+import ServicesFactory from "../domain/ServicesFactory";
+import FriendsService from '../domain/friends/FriendUsersService';
 
 let peticionesCompletadas = []
 let peticionesPendientes = []

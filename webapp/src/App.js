@@ -6,16 +6,16 @@ import { LoggedOut, LoggedIn } from "@solid/react";
 
 // Dependences from: ~/ui
 import './App.css';
-import About from './ui/about/About';
-import {Friends} from './ui/friends/Friends';
-import LogIn from './ui/logIn/LogIn';
-import MapView from './ui/map/MapView';
-import MNavBar from './ui/navBar/MNavBar';
-import Profile from './ui/profile/Profile';
-import PaginaBloqueada from './ui/admin/PaginaBloqueada';
-import Admin from './ui/admin/Admin';
-import RAdmin from './ui/admin/RAdmin';
-import {ListarUsuarios} from './ui/admin/Admin';
+import About from './ui/About';
+import {Friends} from './ui/Friends';
+import LogIn from './ui/LogIn';
+import MapView from './ui/MapView';
+import MNavBar from './ui/MNavBar';
+import Profile from './ui/Profile';
+import PaginaBloqueada from './ui/PaginaBloqueada';
+import Admin from './ui/Admin';
+import RAdmin from './ui/RAdmin';
+import {ListarUsuarios} from './ui/Admin';
 
 
 function App(props) {
@@ -28,19 +28,19 @@ function App(props) {
       <div className="App">
         <LoggedOut>
         <Switch>
-          <Route path="/login">
+          <Route exact path="/login">
             <LogIn />
           </Route>
-          <Route path="/radmin">
+          <Route exact path="/radmin">
             <RAdmin />
           </Route>
-          <Route path="/administrar">
+          <Route exact path="/administrar">
             <Admin method={ListarUsuarios}/>
           </Route>
-          <Route path="/error">
+          <Route exact path="/error">
             <PaginaBloqueada />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <LogIn />
           </Route>
           </Switch>
@@ -52,22 +52,22 @@ function App(props) {
           <div style={{ height: "60px" }}>
           </div>
           <Switch>
-            <Route path="/login">
+            <Route exact path="/login">
               <LogIn />
             </Route>
-            <Route path="/perfil">
+            <Route exact path="/perfil">
               <Profile />
             </Route>
-            <Route path="/amigos">
+            <Route exact path="/amigos">
               <Friends/>
             </Route>
-            <Route path="/mapa">
+            <Route exact path="/mapa">
               <MapView />
             </Route>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <div>
                 <MapView />
               </div>

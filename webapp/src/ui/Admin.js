@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from "@material-ui/core";
-import {desbloquearUsuario,bloquearUsuario, getUsuarios} from "../../api/api.js"
+import {desbloquearUsuario,bloquearUsuario, getUsuarios} from "../api/api.js"
 
 let usuarios=[]
 

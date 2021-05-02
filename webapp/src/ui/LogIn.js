@@ -1,7 +1,7 @@
 import './LogIn.css';
 import React from 'react';
 import {Grid } from '@material-ui/core'
-import LoginButton from "./modules/LoginButtons"
+import LoginButton from "./LoginButtons"
 
 function LogIn(props) {
     return (
