@@ -1,1 +1,0 @@
-{"issuer":"https://inrupt.net/","grant_types":["implicit"],"redirect_uris":["https://inrupt.net/common/popup.html"],"response_types":["id_token token"],"scope":"openid profile"}
