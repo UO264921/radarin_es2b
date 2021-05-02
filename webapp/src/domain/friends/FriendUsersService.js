@@ -68,11 +68,10 @@ class FriendsService {
         autoClose: 5000
       });
     }
+    this.reload()
   }
   // aceptar la peticion de amistad y añadir por parte de solicitado al solicitante
   async aceptFriendRequest(webIdSolicitante, webIdSolicitado) {
-    console.log(webIdSolicitante)
-    console.log(webIdSolicitado)
     //si no es amigo
     if (this.isAmigo(webIdSolicitado)) {
       //añadimos al amigo
@@ -86,6 +85,7 @@ class FriendsService {
         });
       }
     }
+    this.reload()
   }
   // confirmar la peticion de amistad y añadir por parte del solicitante al solicitado
   async confirmFriendRequest(webIdSolicitante, webIdSolicitado) {
@@ -102,12 +102,12 @@ class FriendsService {
         });
       }
     }
+    this.reload()
   }
   //comprobamos si es o no amigo
   async isAmigo(webId) {
     var amigos = await this.obtenerAmigos()
       for(const amigo of amigos){
-      console.log(amigo+" "+webId)
         if(amigo===webId){
           toast.warn("El usuario ya es tu amigo", {
             position: toast.POSITION.BOTTOM_LEFT,
@@ -126,6 +126,7 @@ class FriendsService {
     for(const peticion of peticiones){
       lista.push(await getUsernameByWebId(peticion.webidSolicitado))
     }
+    console.log("Lista:"+lista)
     return lista;
   }
   // listar peticiones pendientes
@@ -136,7 +137,7 @@ class FriendsService {
     for(const peticion of request){
       lista.push(await getUsernameByWebId(peticion.webidSolicitante))
     }
-    console.log(lista);
+    console.log("Lista Completa:"+lista)
     return lista;
   }
 
@@ -147,24 +148,24 @@ class FriendsService {
         //comprobamos que no pasamos un campo vacio
         if (await this.friendAllreadyAdded(friendWebId, userWebId)) {
           //notificamos si el amigo estaba añadido
-          toast.error("Friend already added", {
+          toast.error("Este amigo ya ha sido añadido", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
           });
           return false;
         } else {
           await user.knows.add(data[friendWebId]); //añadimos el amigo
-          toast.info("Your friend has been added", {
+          toast.info("Tu amigo ha sido añadido", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
 
           });
           await this.sleep(5000);
-          //this.reload();
+          this.reload();
           return true;
         }
       } else {
-        toast.error("Empty string", {
+        toast.error("Cadena vacia", {
           position: toast.POSITION.BOTTOM_LEFT,
           autoClose: 5000
 
@@ -172,7 +173,7 @@ class FriendsService {
         return false;
       }
     } else {
-      toast.error("Invalid WebId ", {
+      toast.error("WebId inválido", {
         position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 5000
 
@@ -191,7 +192,7 @@ class FriendsService {
     if (await this.isWebIdValid(friendWebId)) {
       if (friendWebId.localeCompare("") !== 0) {
         if (await !this.friendAllreadyAdded(friendWebId, userWebId)) {
-          toast.error("An error occurred when deleting the friend (maybe it was previously deleted)", {
+          toast.error("Ocurrió un error mientras se borraba al usuario(quizá ya se había borrado antes)", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
 
@@ -199,7 +200,7 @@ class FriendsService {
 
         } else {
           await user.knows.delete(data[friendWebId]); //añadimos el amigo
-          toast.info("User will be deleted from your friends", {
+          toast.info("El usuario ha sido eliminado de tus amigos", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 5000
 
@@ -209,7 +210,7 @@ class FriendsService {
           this.reload();
         }
       } else {
-        toast.error("Empty string", {
+        toast.error("Cadena vacia", {
           position: toast.POSITION.BOTTOM_LEFT,
           autoClose: 5000
 
@@ -217,7 +218,7 @@ class FriendsService {
 
       }
     } else {
-      toast.error("Invalid WebId ", {
+      toast.error("WebId inválido", {
         position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 5000
 
@@ -266,17 +267,6 @@ class FriendsService {
       if (String(friend).localeCompare(String(id)) === 0) return true;
     return false;
   }
-  async getFriends() {
-    const friends = [];
-    let session = await auth.currentSession();
-    if (session) {
-      var id = `${session.webId}`;
-      const user = data[id];
-      for await (const friend of user.friends) friends.push(friend.toString());
-      const users = await Promise.all(friends);
-      return users;
-    }
-  }
   reload = () => {
     window.location.reload();
   };
@@ -284,7 +274,7 @@ class FriendsService {
   async getSession() {
     let session = await auth.currentSession(localStorage);
     return session;
-  };
+  }
 
 
   async getWebId() {
@@ -296,9 +286,12 @@ class FriendsService {
 
   async obtenerAmigos() {
     var lista = new Array();
+    if(await this.isWebIdValid(this.webId)){
     for await (const friend of data[this.webid].friends) lista.push(friend.toString());
     const users = await Promise.all(lista);
     return users;
+    }
+    return lista;
   }
 
 }
