@@ -2,7 +2,7 @@ import './LogIn.css';
 import React from 'react';
 import {Grid } from '@material-ui/core'
 import LoginButton from "./LoginButtons"
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 function LogIn(props) {
     return (
         <div className="loginbackground">
