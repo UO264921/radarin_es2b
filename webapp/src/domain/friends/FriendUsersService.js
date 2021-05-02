@@ -284,10 +284,10 @@ class FriendsService {
 
   async obtenerAmigos() {
     var lista = new Array();
-    if(await this.isWebIdValid(this.webId)){
-    for await (const friend of data[this.webid].friends) lista.push(friend.toString());
-    const users = await Promise.all(lista);
-    return users;
+    if(await this.isWebIdValid(this.webid)){
+      for await (const friend of data[this.webid].friends) lista.push(friend.toString());
+      const users = await Promise.all(lista);
+      return users;
     }
     return lista;
   }
