@@ -146,12 +146,6 @@ const Perfil = () => {
           </CardActions>
           <br />
           <hr />
-          <LogoutButton>
-            <button className="botonLogout">
-              <span className="logout">Logout</span>
-            </button>
-          </LogoutButton>
-          <hr />
         </Card>
       </CombinedDataProvider>
     </Container>
