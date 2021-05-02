@@ -2,7 +2,7 @@ import './LogIn.css';
 import React from 'react';
 import {Grid } from '@material-ui/core'
 import LoginButton from "./LoginButtons"
-
+import { Link } from 'react-router-dom';
 function LogIn(props) {
     return (
         <div className="loginbackground">
@@ -12,7 +12,7 @@ function LogIn(props) {
             <Grid className="container-buttons" container direction="column">
                 <LoginButton className="loginButton" />
             </Grid>
-            <a href={window.location.origin+"/radmin"}>Accede como administrador</a>
+            <Link to="/radmin" >Accede como administrador</Link>
         </div>
         </div>
     )

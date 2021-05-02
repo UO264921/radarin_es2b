@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from "@material-ui/core";
 import {desbloquearUsuario,bloquearUsuario, getUsuarios} from "../api/api.js"
+import {Link } from 'react-router-dom';
 
 let usuarios=[]
 
@@ -58,7 +59,7 @@ export const Admin = ({method}) => {
         <div id="usuarios" className="list" padding-inline-start="0">
         </div>
       </div>
-      <button ><a href="/login" >Volver</a></button>
+      <Link to="/" >Volver</Link>
     </div>
   )
 }

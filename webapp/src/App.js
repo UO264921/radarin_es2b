@@ -42,7 +42,7 @@ function App(props) {
               <Route exact path="/error">
                 <PaginaBloqueada />
               </Route>
-              <Route exact path="/*">
+              <Route exact path="/">
                 <LogIn />
               </Route>
             </Switch>
