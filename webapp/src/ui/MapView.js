@@ -5,18 +5,18 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 
 // Dependences from: ~/ui/map
 import './map.css';
-import { getMarkers, calcularDistancia } from './modules/Markers';
+import { getMarkers, calcularDistancia } from './Markers';
 
 
 // Import dependences
-import { addUsuario, modificarCoordenadas, getUsernameByWebId, getEstadoCuentaUsuario } from '../../api/api';
+import { addUsuario, modificarCoordenadas, getUsernameByWebId, getEstadoCuentaUsuario } from '../api/api';
 
 // Dependences from: ~/util
-import { useInterval } from '../../util/hooks/UseInterval';
-import { getMapBoxAccessToken, getAttributionMessage } from '../../util/CommonDataConfiguration';
+import { useInterval } from '../util/hooks/UseInterval';
+import { getMapBoxAccessToken, getAttributionMessage } from '../util/CommonDataConfiguration';
 
 // Domain dependences
-import ServicesFactory from '../../domain/ServicesFactory';
+import ServicesFactory from '../domain/ServicesFactory';
 
 import{useWebId } from "@solid/react";
 

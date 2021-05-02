@@ -68,6 +68,7 @@ class FriendsService {
         autoClose: 5000
       });
     }
+    this.reload()
   }
   // aceptar la peticion de amistad y añadir por parte de solicitado al solicitante
   async aceptFriendRequest(webIdSolicitante, webIdSolicitado) {
@@ -84,6 +85,7 @@ class FriendsService {
         });
       }
     }
+    this.reload()
   }
   // confirmar la peticion de amistad y añadir por parte del solicitante al solicitado
   async confirmFriendRequest(webIdSolicitante, webIdSolicitado) {
@@ -100,6 +102,7 @@ class FriendsService {
         });
       }
     }
+    this.reload()
   }
   //comprobamos si es o no amigo
   async isAmigo(webId) {
@@ -123,6 +126,7 @@ class FriendsService {
     for(const peticion of peticiones){
       lista.push(await getUsernameByWebId(peticion.webidSolicitado))
     }
+    console.log("Lista:"+lista)
     return lista;
   }
   // listar peticiones pendientes
@@ -133,6 +137,7 @@ class FriendsService {
     for(const peticion of request){
       lista.push(await getUsernameByWebId(peticion.webidSolicitante))
     }
+    console.log("Lista Completa:"+lista)
     return lista;
   }
 
@@ -156,7 +161,7 @@ class FriendsService {
 
           });
           await this.sleep(5000);
-          //this.reload();
+          this.reload();
           return true;
         }
       } else {

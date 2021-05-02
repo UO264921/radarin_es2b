@@ -1,16 +1,14 @@
 // Dependences from: ~/ui/logIn/modules
 import React from "react";
 import { AuthButton } from "@solid/react";
-import '../LogIn.css';
+import './LogIn.css';
 
 
 class LoginButton extends React.Component {
 
     render() {
         return (
-            <div>
-                <AuthButton id="logout" data-testid="btini" popup={"https://inrupt.net/common/popup.html"} />
-            </div>
+                <AuthButton className="loginButton" id="logout" data-testid="btini" popup={"https://inrupt.net/common/popup.html"} />
         )
     }
 }
