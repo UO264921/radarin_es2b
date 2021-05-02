@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 import {
   CombinedDataProvider,
   Image,
-  LogoutButton,
   Text,
 } from "@inrupt/solid-ui-react";
 import {
